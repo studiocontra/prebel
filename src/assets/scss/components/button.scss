@@ -55,3 +55,16 @@
     stroke: $gray;
   }
 }
+
+.btn--clear {
+  color: $white;
+  background-color: rgba(white, 0.3);
+
+  &:hover {
+    background-color: rgba(white, 0.5);
+  }
+
+  svg {
+    stroke: $white;
+  }
+}

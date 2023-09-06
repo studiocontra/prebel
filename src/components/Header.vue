@@ -7,7 +7,7 @@
       </div>
 
       <div class="header__cta">
-        <Button :arrow="false">
+        <Button :arrow="false" theme="clear">
           Contacto
         </Button>
       </div>
