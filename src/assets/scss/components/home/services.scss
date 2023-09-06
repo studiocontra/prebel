@@ -81,8 +81,11 @@
       }
     }
 
-    .drop {
+    :deep(.drop) {
       z-index: 2;
+      top: 50%;
+      left: 50%;
+      width: 60%;
     }
   }
 

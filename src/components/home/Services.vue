@@ -50,10 +50,7 @@
                 </div>
 
                 <Drop
-                  width="290px"
-                  height="290px"
-                  top="50%"
-                  left="50%" />
+                  maxW="290px" />
               </div>
             </div>
           </div>

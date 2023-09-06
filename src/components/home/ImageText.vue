@@ -12,9 +12,7 @@
             </picture>
 
             <Drop
-              width="200px"
-              left="95%"
-              top="90%" />
+              maxW="200px" />
           </div>
         </div>
         <div class="col-lg-6">

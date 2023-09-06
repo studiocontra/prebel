@@ -102,7 +102,7 @@
   }
 
 
-  .drop {
+  :deep(.drop) {
     z-index: 2;
     display: none;
 
@@ -114,5 +114,10 @@
   .drop--1 {
     top: 50%;
     left: 80%;
+  }
+
+  .drop--2 {
+    top: 75%;
+    left: 40%;
   }
 }

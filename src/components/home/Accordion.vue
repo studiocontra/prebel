@@ -19,12 +19,10 @@
               <div
                 class="accordion-item"
                 :class="{'closed': activeAccordion !== idx}"
-                :data-idx="idx"
-              >
+                :data-idx="idx">
                 <div
                   class="accordion-item__headline"
-                  @click="toggleAccordionItem(idx)"
-                >
+                  @click="toggleAccordionItem(idx)">
                   <h3 class="title">
                     <span>
                       {{ pad(idx + 1) }}

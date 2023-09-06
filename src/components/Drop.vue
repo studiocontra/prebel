@@ -6,10 +6,21 @@
 export default {
   name: 'WaterDrop',
   props: {
-    width: String,
-    height: String,
-    top: String,
-    left: String,
+    maxW: String,
+  },
+  mounted() {
+    // document.addEventListener("mousemove", this.parallax);
+  },
+  methods: {
+    parallax(event) {
+      this.querySelectorAll(".parallax-wrap span").forEach((shift) => {
+        const position = shift.getAttribute("value");
+        const x = (window.innerWidth - event.pageX * position) / 90;
+        const y = (window.innerHeight - event.pageY * position) / 90;
+
+        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      });
+    }
   }
 }
 </script>
@@ -18,9 +29,6 @@ export default {
 @import "@scss/components/drop";
 
 .drop {
-  max-width: v-bind(width);
-  max-height: v-bind(height);
-  top: v-bind(top);
-  left: v-bind(left);
+  max-width: v-bind(maxW);
 }
 </style>

@@ -4,14 +4,10 @@
 
     <Drop
       class="footer__drop-1"
-      top="50%"
-      left="70%"
-      width="300px" />
+      maxW="300px" />
     <Drop
       class="footer__drop-2"
-      top="70%"
-      left="50%"
-      width="180px" />
+      maxW="180px" />
 
     <footer>
       <div class="container">

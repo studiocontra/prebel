@@ -34,17 +34,11 @@
 
         <Drop
           class="drop--1"
-          width="270px"
-          height="270px"
-          top="50%"
-          left="50%" />
+          maxW="270px" />
 
         <Drop
           class="drop--2"
-          width="150px"
-          height="155px"
-          top="75%"
-          left="40%" />
+          maxW="150px"/>
       </div>
     </div>
   </div>

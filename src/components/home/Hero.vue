@@ -1,10 +1,7 @@
 <template>
   <div class="home__hero">
     <Drop
-      width="380px"
-      height="400px"
-      top="50%"
-      left="50%" />
+      maxW="380px"/>
     <div class="container">
       <div class="row lg-reverse align-bottom">
         <div class="col-lg-6">

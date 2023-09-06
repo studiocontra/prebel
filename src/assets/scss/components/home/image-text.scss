@@ -42,11 +42,17 @@
     }
   }
 
-  .drop {
-    display: none;
+  :deep(.drop) {
+    top: 90%;
+    left: 85%;
+    width: 30%;
 
+    @include m576 {
+      width: 50%;
+    }
     @include m992 {
-      display: block;
+      left: 95%;
+      width: 60%;
     }
   }
 }
