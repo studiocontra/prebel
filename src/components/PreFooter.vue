@@ -1,10 +1,10 @@
 <template>
   <div class="wrap-pre-footer">
     <picture>
-      <source srcset="pre-footer.png" media="(min-width: 1200px)">
-      <source srcset="pre-footer-md.png" media="(min-width: 600px)">
-      <source srcset="pre-footer-sm.png" media="(max-width: 600px)">
-      <img :src="`pre-footer.png`" alt="Placeholder Image">
+      <source srcset="/pre-footer.png" media="(min-width: 1200px)">
+      <source srcset="/pre-footer-md.png" media="(min-width: 600px)">
+      <source srcset="/pre-footer-sm.png" media="(max-width: 600px)">
+      <img src="/pre-footer.png" alt="Placeholder Image">
     </picture>
 
     <div class="container">

@@ -2,8 +2,8 @@
   <header>
     <div class="container">
       <div class="header__logo">
-        <img src="logo-prebel.svg" alt="Prebel Logo">
-        <img src="logo-prebel-mobile.svg" class="logo-mobile" alt="Prebel Logo">
+        <img src="/logo-prebel.svg" alt="Prebel Logo">
+        <img src="/logo-prebel-mobile.svg" class="logo-mobile" alt="Prebel Logo">
       </div>
 
       <div class="header__cta">
