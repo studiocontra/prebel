@@ -5,9 +5,9 @@
         <div class="col-lg-6">
           <div class="img">
             <picture>
-              <source :srcset="`https://picsum.photos/seed/imgtxt/600/600`" media="(min-width: 1200px)">
-              <source :srcset="`https://picsum.photos/seed/imgtxt/500/500`" media="(min-width: 768px)">
-              <source :srcset="`https://picsum.photos/seed/imgtxt/626/626`" media="(min-width: 500px)">
+              <source srcset="https://picsum.photos/seed/imgtxt/600/600" media="(min-width: 1200px)">
+              <source srcset="https://picsum.photos/seed/imgtxt/900/900" media="(min-width: 768px)">
+              <source srcset="https://picsum.photos/seed/imgtxt/626/626" media="(min-width: 500px)">
               <img :src="`https://picsum.photos/seed/imgtxt/500/500`" alt="Placeholder Image">
             </picture>
 

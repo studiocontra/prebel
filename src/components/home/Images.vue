@@ -4,8 +4,10 @@
       <div class="images">
         <div class="img img--square">
           <picture>
-            <source :srcset="`https://picsum.photos/seed/images/500/600`" media="(min-width: 576px)">
-            <source :srcset="`https://picsum.photos/seed/images/350/400`" media="(max-width: 576px)">
+            <source :srcset="`https://picsum.photos/seed/images/800/900`" media="(min-width: 1200px)">
+            <source :srcset="`https://picsum.photos/seed/images/500/600`" media="(min-width: 768px)">
+            <source :srcset="`https://picsum.photos/seed/images/800/900`" media="(min-width: 500px)">
+            <source :srcset="`https://picsum.photos/seed/images/500/600`" media="(max-width: 576px)">
             <img :src="`https://picsum.photos/seed/images/500/600`" alt="">
           </picture>
         </div>
