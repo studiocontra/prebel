@@ -1,0 +1,52 @@
+.home__img-text {
+  .img {
+    position: relative;
+    margin-bottom: 2em;
+
+    @include m992 {
+      margin-bottom: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+    }
+  }
+
+  .content {
+    @include m992 {
+      padding-left: 8%;
+    }
+
+    .eyebrow {
+      margin-bottom: 2em;
+
+      @include m768 {
+        margin-bottom: 6em;
+      }
+    }
+
+    .title:not(.text) {
+      margin-bottom: 0.2em;
+      color: $gray;
+    }
+
+
+    .text, p {
+      margin: 0;
+    }
+
+    .text {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .drop {
+    display: none;
+
+    @include m992 {
+      display: block;
+    }
+  }
+}

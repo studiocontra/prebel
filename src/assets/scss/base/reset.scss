@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: $black;
+  background-color: $white;
+  font-size: 20px;
+  line-height: 1.4;
+
+  @include font();
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:active,
+  &:link,
+  &:visited {
+    color: inherit;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @include m768 {
+    padding: 0 32px;
+  }
+}
+
+.section {
+  padding: 60px 0;
+
+  @include m768 {
+    padding: 90px 0;
+  }
+}
+

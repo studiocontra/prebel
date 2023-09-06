@@ -1,0 +1,39 @@
+.wrap-pre-footer {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0;
+  background: linear-gradient(to left, $gray 23.83%, $black 99.01%);
+
+  @include m768 {
+    padding: 100px 0;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 120%;
+    max-width: none;
+    transform: translateX(-50%);
+
+    @include m768 {
+      left: 5%;
+      width: 95%;
+      transform: translateX(0);
+    }
+  }
+}
+
+.pre-footer__content {
+  position: relative;
+  max-width: 700px;
+  color: $white;
+
+  .title {
+    margin-bottom: 0.5em;
+  }
+
+  .text {
+    margin-bottom: 2em;
+  }
+}

@@ -1,0 +1,130 @@
+.home-services__slider {
+  padding-bottom: 48px;
+
+  :deep(.swiper-slide) {
+    @include m768 {
+      padding: 0 8%;
+    }
+    @include m992 {
+      padding: 0 6%;
+    }
+  }
+
+  .content {
+    margin-bottom: 3em;
+
+    @include m768 {
+      margin-bottom: 0;
+    }
+
+    .title {
+      svg {
+        width: 1em;
+      }
+    }
+
+    .wrap-ctas {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+  }
+
+  .images {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .img {
+      position: relative;
+      // overflow: hidden;
+      width: 40%;
+
+      img {
+        display: block;
+        width: 100%;
+
+        @include fullAbs();
+        @include fit();
+      }
+    }
+
+    .img--1 {
+      aspect-ratio: 1 / 1.5;
+      align-self: flex-start;
+
+      img {
+        border-radius: 50% / 35%;
+      }
+    }
+
+    .img--2 {
+      aspect-ratio: 1 / 1;
+      align-self: flex-end;
+
+      img {
+        border-radius: 18px;
+      }
+
+      &::before {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 30%;
+        content: '';
+        transform: translateY(-130%);
+        border-radius: 50%;
+        background-color: $beige;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    .drop {
+      z-index: 2;
+    }
+  }
+
+  .services-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    display: none;
+    width: 44px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+    transform: translateY(-50%);
+    text-align: center;
+    color: $white;
+    border-radius: 50%;
+    background-color: $gray;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+
+    @include m768 {
+      display: inline-flex;
+    }
+
+    &:hover {
+      background-color: $black;
+    }
+  }
+
+  .services-arrow--prev {
+    left: 0;
+  }
+
+  .services-arrow--next {
+    right: 0;
+  }
+
+  :deep(.swiper-pagination) {
+    bottom: 0;
+
+    @include m768 {
+      display: none;
+    }
+  }
+}

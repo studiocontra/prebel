@@ -1,0 +1,10 @@
+.home__hero {
+  position: relative;
+  padding: 180px 0 100px;
+  color: $white;
+  background: linear-gradient(to bottom, $blue 30%, #94B2FA 80%, $white 100%);
+
+  @include m768 {
+    padding: 25vh 0 20vh;
+  }
+}
