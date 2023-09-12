@@ -1,7 +1,8 @@
 <template>
   <div class="home__hero">
     <Drop
-      maxW="380px"/>
+      maxW="380px"
+      parallax="20" />
     <div class="container">
       <div class="row lg-reverse align-bottom">
         <div class="col-lg-6">
@@ -22,12 +23,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style lang="scss" scoped>
   @import "@scss/components/home/hero";

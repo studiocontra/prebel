@@ -3,7 +3,7 @@
     <div class="container">
       <swiper
         class="swiper home-services__slider"
-        :modules="modules"
+        :modules="[Navigation, Pagination]"
         :loop="true"
         :navigation="{
           prevEl: '.services-arrow--prev',
@@ -67,7 +67,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -78,18 +78,6 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  data() {
-    return {
-      modules: [Navigation, Pagination],
-    };
-  }
-}
 </script>
 
 <style lang="scss" scoped>

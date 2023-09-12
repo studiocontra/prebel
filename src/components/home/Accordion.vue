@@ -54,35 +54,31 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HomeAccordion',
-  data() {
-    return {
-      isAdding: false,
-      activeAccordion: null
-    };
-  },
-  mounted() {
-    this.toggleAccordionItem(0);
-  },
-  methods: {
-    toggleAccordionItem(idx) {
-      if(this.activeAccordion === idx) return this.activeAccordion = null;
+<script setup>
+import { ref } from 'vue';
 
-      this.activeAccordion = idx;
+const activeAccordion = ref(null);
 
-      const contentWrapper = document.querySelector(`.accordion-item[data-idx="${idx}"] .accordion-item__content`);
-      const contentHeight = contentWrapper.scrollHeight;
+function toggleAccordionItem(idx) {
+  if(activeAccordion.value === idx) return activeAccordion.value = null;
 
-      contentWrapper.style.maxHeight = `${contentHeight}px`;
-    },
-    pad(num) {
-      var s = "000" + num;
-      return s.substr(s.length - 2);
-    }
-  }
+  activeAccordion.value = idx;
+
+  const contentWrapper = document.querySelector(`.accordion-item[data-idx="${idx}"] .accordion-item__content`);
+  const contentHeight = contentWrapper.scrollHeight;
+
+  contentWrapper.style.maxHeight = `${contentHeight}px`;
+};
+
+onMounted(() => {
+  toggleAccordionItem(0)
+});
+
+function pad(num) {
+  var s = "000" + num;
+  return s.substr(s.length - 2);
 }
+
 </script>
 
 <style lang="scss" scoped>

@@ -4,7 +4,7 @@
       <div class="home-news__box">
         <swiper
           class="swiper home-news__slider"
-          :modules="modules"
+          :modules="[Pagination, EffectFade]"
           effect="fade"
           :fadeEffect="{
             crossFade: true
@@ -54,7 +54,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -65,23 +65,10 @@ import { Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  data() {
-    return {
-      modules: [Pagination, EffectFade],
-    };
-  },
-  methods: {
-    pad(num) {
-      var s = "000" + num;
-      return s.substr(s.length - 2);
-    }
-  }
-}
+function pad(num) {
+  var s = "000" + num;
+  return s.substr(s.length - 2);
+};
 </script>
 
 

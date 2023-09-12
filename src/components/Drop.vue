@@ -1,5 +1,5 @@
 <template>
-  <div class="drop" style=""></div>
+  <div class="drop" ref="drop"></div>
 </template>
 
 <script>
@@ -10,16 +10,13 @@ export default {
   },
   mounted() {
     // document.addEventListener("mousemove", this.parallax);
+
+    const drop  = this.$refs.drop;
+    console.log(drop);
   },
   methods: {
     parallax(event) {
-      this.querySelectorAll(".parallax-wrap span").forEach((shift) => {
-        const position = shift.getAttribute("value");
-        const x = (window.innerWidth - event.pageX * position) / 90;
-        const y = (window.innerHeight - event.pageY * position) / 90;
-
-        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-      });
+      const drop  = this.$refs.drop;
     }
   }
 }

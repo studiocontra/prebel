@@ -41,37 +41,6 @@
   </div>
 </template>
 
-<script>
-// import Swiper core and required modules
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper Vue.js components
-import { Pagination, EffectFade } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  data() {
-    return {
-      modules: [Pagination, EffectFade],
-    };
-  },
-  methods: {
-    pad(num) {
-      var s = "000" + num;
-      return s.substr(s.length - 2);
-    }
-  }
-}
-</script>
-
-
 <style lang="scss" scoped>
   @import "@scss/components/home/image-text";
 </style>
