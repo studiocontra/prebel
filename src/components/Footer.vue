@@ -4,10 +4,12 @@
 
     <Drop
       class="footer__drop-1"
-      maxW="300px" />
+      maxW="300px"
+      :parallax="-7" />
     <Drop
       class="footer__drop-2"
-      maxW="180px" />
+      maxW="180px"
+      :parallax="2" />
 
     <footer>
       <div class="container">

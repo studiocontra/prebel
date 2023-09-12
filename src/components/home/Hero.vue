@@ -1,8 +1,8 @@
 <template>
-  <div class="home__hero">
+  <div class="hero hero--home">
     <Drop
       maxW="380px"
-      parallax="20" />
+      :parallax="-15" />
     <div class="container">
       <div class="row lg-reverse align-bottom">
         <div class="col-lg-6">
@@ -25,5 +25,6 @@
 </template>
 
 <style lang="scss" scoped>
+  @import "@scss/components/hero";
   @import "@scss/components/home/hero";
 </style>

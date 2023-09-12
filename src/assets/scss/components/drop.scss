@@ -5,7 +5,7 @@
   translate: -50% -50%;
   background: transparent;
   border-radius: 52% 43% 43% 52% / 45% 52% 48% 52%;
-  box-shadow: inset -5px 10px 5px rgba($black, 0.1), -8px 15px 5px rgba($black, 0.15), -8px 10px 5px rgba($black, 0.1), inset 0 0 12px rgba($blue, 0.3), inset 8px -8px 12px rgba($white, 0.3);
+  box-shadow: inset -5px 10px 10px rgba(#03214f, 0.1), -8px 15px 5px rgba($black, 0.15), -8px 10px 5px rgba($black, 0.1), inset 0 0 16px rgba(#03214f, 0.4), inset 8px -8px 12px rgba($blue, 0.1);
   // backdrop-filter: blur(2px);
 
   &:before {

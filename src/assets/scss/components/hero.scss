@@ -1,0 +1,10 @@
+.hero {
+  position: relative;
+  padding: 180px 0 100px;
+  min-height: 80lvh;
+  color: $white;
+
+  @include m768 {
+    padding: 25vh 0 20vh;
+  }
+}

@@ -1,3 +1,14 @@
+.home__services {
+  position: relative;
+
+  .drop {
+    z-index: 2;
+    top: 50%;
+    left: 70%;
+    width: 60%;
+  }
+}
+
 .home-services__slider {
   padding-bottom: 48px;
 
@@ -79,13 +90,6 @@
         background-color: $beige;
         aspect-ratio: 1 / 1;
       }
-    }
-
-    :deep(.drop) {
-      z-index: 2;
-      top: 50%;
-      left: 50%;
-      width: 60%;
     }
   }
 

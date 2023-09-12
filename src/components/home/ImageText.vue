@@ -12,7 +12,9 @@
             </picture>
 
             <Drop
-              maxW="200px" />
+              maxW="200px"
+              :parallax="-7"
+              workspace=".home__img-text" />
           </div>
         </div>
         <div class="col-lg-6">

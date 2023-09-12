@@ -8,7 +8,3 @@
     <HomeImageText />
   </main>
 </template>
-
-<style lang="scss" scoped>
-  @import "@scss/pages/home";
-</style>

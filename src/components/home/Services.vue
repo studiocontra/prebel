@@ -1,5 +1,9 @@
 <template>
   <div class="section home__services">
+    <Drop
+      maxW="290px"
+      :parallax="5" />
+
     <div class="container">
       <swiper
         class="swiper home-services__slider"
@@ -48,9 +52,6 @@
                     <img :src="`https://picsum.photos/seed/news2-${id}/150/150`" alt="">
                   </picture>
                 </div>
-
-                <Drop
-                  maxW="290px" />
               </div>
             </div>
           </div>
