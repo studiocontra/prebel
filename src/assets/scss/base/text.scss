@@ -25,6 +25,7 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 13px;
+  font-weight: 400;
 
   @include m768 {
     font-size: 15px;

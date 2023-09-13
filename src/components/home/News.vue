@@ -16,7 +16,7 @@
             },
             clickable: true
           }"
-          :slides-per-view="1">
+          :slidesPerView="1">
           <swiper-slide v-for="(item, id) in 4" :key="id">
             <div class="row">
               <div class="col-lg-6">

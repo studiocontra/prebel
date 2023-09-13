@@ -1,0 +1,43 @@
+.eyebrow {
+  margin-bottom: 3em;
+}
+
+.card {
+  margin-bottom: 4.5em;
+
+  @include m768 {
+    padding: 0 1em;
+  }
+}
+
+.card__image {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.8em;
+  border-radius: 18px;
+  aspect-ratio: 4 / 3;
+
+  img {
+    @include fullAbs();
+    @include fit();
+  }
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1 1 auto;
+  align-items: center;
+
+  .title {
+    margin-bottom: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .btn {
+    margin-top: auto;
+    display: inline-flex;
+    width: auto;
+  }
+}

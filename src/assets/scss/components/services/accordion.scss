@@ -1,0 +1,132 @@
+.services__accordion {
+  .eyebrow {
+    margin-bottom: 2em;
+  }
+
+  .accordion-group {
+    margin-bottom: 5em;
+  }
+}
+
+.services-accordion__content {
+  margin-top: 32px;
+  padding-top: 24px;
+  color: $black;
+  border-top: 1px solid $black;
+
+  @include m768 {
+    padding-top: 36px;
+  }
+  @include m992 {
+    margin-top: 0;
+  }
+
+  .accordion-item.closed {
+    .accordion-item__content {
+      max-height: 0 !important;
+    }
+  }
+
+  .accordion-item {
+    margin-bottom: 32px;
+
+    @include m768 {
+      margin-bottom: 36px;
+    }
+
+    // &:last-child {
+    //   .accordion-item__content {
+    //     border: 0;
+    //   }
+    // }
+  }
+
+  .accordion-item__headline {
+    display: flex;
+    padding-bottom: 24px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+
+    @include m768 {
+      padding-bottom: 36px;
+    }
+
+    .icon,
+    .title {
+      margin: 0;
+      pointer-events: none;
+    }
+
+    .icon {
+      margin-right: 20px;
+
+      svg {
+        width: 24px;
+
+        @include m768 {
+          width: 48px;
+        }
+
+        :deep(path) {
+          stroke: $black;
+        }
+      }
+    }
+  }
+
+
+  .accordion-item__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    border-bottom: 1px solid $black;
+
+    @include m768 {
+      padding: 0 10%;
+    }
+
+    .text {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 32px;
+      color: $black;
+
+      @include m768 {
+        padding: 32px 0;
+      }
+
+      &::before {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        display: block;
+        width: clamp(80px, 40%, 150px);
+        content: '';
+        opacity: 0.3;
+        border-radius: 50%;
+        background-color: $green_light;
+        aspect-ratio: 1 / 1;
+
+        @include m768 {
+          top: 50%;
+          translate: -40% -50%;
+        }
+        @include m992 {
+          translate: -50% -50%;
+        }
+      }
+
+      p {
+        position: relative;
+        z-index: 2;
+      }
+
+      a {
+        text-decoration: underline;
+        color: $black;
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@
           nextEl: '.services-arrow--next'
         }"
         :pagination="true"
-        :slides-per-view="1">
+        :slidesPerView="1">
         <swiper-slide v-for="(item, id) in 2" :key="id">
           <div class="row align-center">
             <div class="col-md-7 col-lg-6">

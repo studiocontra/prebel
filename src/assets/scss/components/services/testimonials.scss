@@ -1,0 +1,92 @@
+.testimonials__slider {
+  padding-top: 3em;
+
+  .single-testimonial {
+    display: block;
+
+    @include m992 {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .quote--top {
+      flex: 0 0 60px;
+      align-self: flex-start;
+    }
+
+    .quote--bottom {
+      display: inline;
+      translate: -100% 0;
+    }
+
+    .content {
+      @include m992 {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: flex-end;
+      }
+    }
+
+    .title {
+      @include m992 {
+        display: inline;
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .author {
+      @include m992 {
+        padding-left: 50px;
+        flex: 0 0 250px;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      span {
+        display: block;
+        color: $gray;
+      }
+    }
+  }
+
+  :deep(.swiper-pagination) {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    margin-top: 3em;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 18px;
+
+    @include m992 {
+      padding-left: 60px;
+    }
+
+    .swiper-pagination-bullet {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      padding: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in;
+      text-align: center;
+      opacity: 1;
+      color: $white;
+      border-radius: 50%;
+      background-color: $gray;
+      flex: 0 0 44px;
+
+      &:hover,
+      &-active {
+        background-color: $black;
+      }
+    }
+  }
+}

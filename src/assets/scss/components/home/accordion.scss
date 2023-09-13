@@ -48,13 +48,16 @@
 
     .icon {
       margin-right: 20px;
-      fill: $black;
 
       svg {
         width: 24px;
 
         @include m768 {
           width: 48px;
+        }
+
+        :deep(path) {
+          stroke: $white;
         }
       }
     }

@@ -33,8 +33,8 @@
 
                   <div class="icon">
                     <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path v-if="activeAccordion !== idx" d="M25 1V49" stroke="#EDEBE3" stroke-width="2" stroke-linecap="round"/>
-                      <path d="M49 25L1 25" stroke="#EDEBE3" stroke-width="2" stroke-linecap="round"/>
+                      <path v-if="activeAccordion !== idx" d="M25 1V49" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M49 25L1 25" stroke-width="2" stroke-linecap="round"/>
                     </svg>
 
                   </div>
@@ -42,7 +42,9 @@
 
                 <div class="accordion-item__content">
                   <div class="text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod veritatis dolores, impedit obcaecati neque nostrum ducimus quia eos eveniet, ex laboriosam voluptates aliquid accusamus reprehenderit maxime praesentium cupiditate voluptas consequuntur.
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod veritatis dolores, impedit obcaecati neque nostrum ducimus quia eos eveniet, ex laboriosam voluptates aliquid accusamus reprehenderit maxime praesentium cupiditate voluptas consequuntur.
+                    </p>
                   </div>
                 </div>
               </div>
