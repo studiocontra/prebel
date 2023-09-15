@@ -14,9 +14,11 @@
     <footer>
       <div class="container">
         <div class="footer__content">
-          <div class="footer__logo">
-            <img src="/logo-prebel.svg" alt=" Prebel Logo">
-          </div>
+          <NuxtLink to="/">
+            <div class="footer__logo">
+              <img src="/logo-prebel.svg" alt=" Prebel Logo">
+            </div>
+          </NuxtLink>
 
           <div class="footer__copy">
             <div class="text">
@@ -49,9 +51,9 @@
           <div class="footer__menu">
             <ul>
               <li>
-                <a href="#">
+                <NuxtLink to="/services">
                   Servicios
-                </a>
+                </NuxtLink>
               </li>
               <li>
                 <a href="#">

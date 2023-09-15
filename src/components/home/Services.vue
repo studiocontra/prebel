@@ -32,9 +32,11 @@
                   <Button href="/services">
                     Ver servicio
                   </Button>
-                  <Button href="/services" theme="light">
-                    Ver todos
-                  </Button>
+                  <NuxtLink to="/services">
+                    <Button href="/services" theme="light">
+                      Ver todos
+                    </Button>
+                  </NuxtLink>
                 </div>
               </div>
             </div>

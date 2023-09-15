@@ -22,6 +22,7 @@
     border-radius: 50%;
     background-color: $green_light;
     aspect-ratio: 1 / 1;
+    transition: left 0.2s ease-in;
 
     @include m768 {
       left: 55%;

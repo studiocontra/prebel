@@ -1,0 +1,39 @@
+.hero--services {
+  background: linear-gradient(to bottom, $black 10%, $gray 43%, $white 100%);
+
+  :deep(.drop) {
+    top: 85%;
+    left: 75%;
+    z-index: 2;
+  }
+
+  .title {
+    strong {
+      font-weight: 100;
+      background-color: $black;
+      padding: 4px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.hero__image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+
+  @include m768 {
+    margin: 0 auto;
+  }
+
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+
+    @include fullAbs();
+    @include fit();
+  }
+}

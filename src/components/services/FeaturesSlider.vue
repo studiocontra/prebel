@@ -7,7 +7,7 @@
     </div>
 
     <div class="wrap-services-slider">
-      <div class="circle"></div>
+      <div class="circle" ref="circle"></div>
       <swiper
         class="swiper services-features__slider"
         :modules="[Scrollbar]"
@@ -23,7 +23,9 @@
           '1800': {
             slidesPerView: 2.4,
           },
-        }">
+        }"
+        @init="moveCircle"
+        @slideChange="moveCircle">
         <swiper-slide v-for="(item, id) in 4" :key="id">
           <Drop
             maxW="180px"
@@ -60,6 +62,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -77,6 +80,15 @@ function pad(num) {
 
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
+}
+
+const circle = ref(null);
+
+function moveCircle(swiper) {
+  const totalSlides = swiper.slides.length;
+  const activeSlide = swiper.activeIndex + 1;
+
+  circle.value.style.left = `${(80 / totalSlides) * activeSlide}%`
 }
 </script>
 

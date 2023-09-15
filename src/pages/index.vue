@@ -1,7 +1,7 @@
 <template>
   <main class="homepage">
     <HomeHero />
-    <HomeNews />
+    <HomeNews :slides="4" />
     <HomeServices />
     <HomeImages />
     <HomeAccordion />

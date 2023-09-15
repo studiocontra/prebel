@@ -1,9 +1,9 @@
 <template>
-  <div class="section home__news">
+  <div class="section wrap-news">
     <div class="container">
-      <div class="home-news__box">
+      <div class="news__box">
         <swiper
-          class="swiper home-news__slider"
+          class="swiper news__slider"
           :modules="[Pagination, EffectFade]"
           effect="fade"
           :fadeEffect="{
@@ -17,7 +17,7 @@
             clickable: true
           }"
           :slidesPerView="1">
-          <swiper-slide v-for="(item, id) in 4" :key="id">
+          <swiper-slide v-for="(item, id) in props.slides" :key="id">
             <div class="row">
               <div class="col-lg-6">
                 <div class="img">
@@ -64,6 +64,10 @@ import { Pagination, EffectFade } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+
+const props = defineProps({
+  slides: Number
+});
 
 function pad(num) {
   var s = "000" + num;

@@ -5,6 +5,7 @@
     <ServicesAccordion />
     <ServicesFeaturesSlider />
     <ServicesClients />
-    <ServicesTestimonials />
+    <ServicesTestimonials
+     />
   </main>
 </template>
