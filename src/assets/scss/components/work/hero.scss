@@ -1,0 +1,40 @@
+.hero--work {
+  background: linear-gradient(to bottom, $green 10%, $green_light 75%, $white 100%);
+
+  :deep(.drop) {
+    z-index: 2;
+    top: 45%;
+    left: 65%;
+  }
+
+  .title {
+    strong {
+      padding: 4px;
+      border-radius: 4px;
+      background-color: $green;
+      font-weight: 100;
+    }
+  }
+}
+
+.hero__image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-width: 520px;
+  aspect-ratio: 1.6 / 1;
+
+  @include m768 {
+    margin-left: auto;
+  }
+
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+
+    @include fullAbs();
+    @include fit();
+  }
+}

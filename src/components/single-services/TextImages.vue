@@ -27,14 +27,14 @@
           <div class="images">
             <div class="img img--1">
               <picture>
-                <source :srcset="`https://picsum.photos/seed/news${id}/320/480`" media="(min-width: 576px)">
-                <img :src="`https://picsum.photos/seed/news${id}/150/230`" alt="">
+                <source :srcset="`https://picsum.photos/seed/services-imgtext/320/480`" media="(min-width: 576px)">
+                <img :src="`https://picsum.photos/seed/services-imgtext/150/230`" alt="">
               </picture>
             </div>
             <div class="img img--2">
               <picture>
-                <source :srcset="`https://picsum.photos/seed/news2-${id}/250/250`" media="(min-width: 768px)">
-                <img :src="`https://picsum.photos/seed/news2-${id}/150/150`" alt="">
+                <source :srcset="`https://picsum.photos/seed/services-imgtext2-/250/250`" media="(min-width: 768px)">
+                <img :src="`https://picsum.photos/seed/services-imgtext2-/150/150`" alt="">
               </picture>
             </div>
           </div>

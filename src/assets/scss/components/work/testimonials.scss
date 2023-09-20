@@ -1,0 +1,40 @@
+.testimonials__headline {
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.card {
+  margin-bottom: 3em;
+
+  @include m768 {
+    padding: 0 1em;
+    margin-bottom: 4.5em;
+  }
+}
+
+.card__image {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.8em;
+  border-radius: 18px;
+  aspect-ratio: 4 / 3;
+
+  img {
+    @include fullAbs();
+    @include fit();
+  }
+}
+
+.card__content {
+  text-align: center;
+
+  .text {
+    p {
+      margin: 0;
+    }
+
+    .light {
+      color: $gray;
+    }
+  }
+}
