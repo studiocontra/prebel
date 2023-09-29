@@ -32,7 +32,7 @@
             </div>
 
             <div class="card__content">
-              <Button>
+              <Button theme="dark">
                 Conoce más
               </Button>
             </div>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="card__content">
-              <Button>
+              <Button theme="dark">
                 Conoce más
               </Button>
             </div>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="card__content">
-              <Button>
+              <Button theme="dark">
                 Conoce más
               </Button>
             </div>

@@ -1,0 +1,28 @@
+.principles {
+  padding: 60px 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .item {
+    margin-bottom: 1em;
+
+    @include m768 {
+      width: 45%;
+      margin-bottom: 2em;
+    }
+    @include m992 {
+      width: 35%;
+    }
+  }
+
+  .item:nth-child(even) {
+    @include m992 {
+      width: 33%;
+    }
+  }
+}

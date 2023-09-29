@@ -39,6 +39,19 @@
   }
 }
 
+.btn--dark {
+  color: $white;
+  background-color: $black;
+
+  &:hover {
+    background-color: darken($black, 14);
+  }
+
+  svg {
+    stroke: $white;
+  }
+}
+
 .btn--light {
   color: $black;
   background-color: $white;

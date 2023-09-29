@@ -1,12 +1,12 @@
 <template>
   <header>
     <div class="container">
-      <NuxtLink to="/">
-        <div class="header__logo">
+      <div class="header__logo">
+        <NuxtLink to="/">
           <img src="/logo-prebel.svg" alt="Prebel Logo">
           <img src="/logo-prebel-mobile.svg" class="logo-mobile" alt="Prebel Logo">
-        </div>
-      </NuxtLink>
+        </NuxtLink>
+      </div>
 
       <div class="header__cta">
         <Button :arrow="false" theme="clear">
