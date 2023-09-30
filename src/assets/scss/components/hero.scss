@@ -1,10 +1,20 @@
 .hero {
   position: relative;
-  padding: 180px 0 100px;
   min-height: 80lvh;
+  padding: 180px 0 100px;
   color: $white;
 
   @include m768 {
     padding: 25vh 0 20vh;
+  }
+
+  .title {
+    strong {
+      display: inline-block;
+      padding: 2px 4px 10px;
+      border-radius: 4px;
+      font-weight: 100;
+      line-height: 1;
+    }
   }
 }

@@ -14,18 +14,31 @@
         </Button>
       </div>
 
-      <div class="header__hamburger">
+      <div
+        class="header__hamburger"
+        :class="{'header__hamburger--active': isMenuOpen}"
+        @click="toggleMenu">
         <div class="hamburger">
           <div class="hamburger__inner"></div>
         </div>
       </div>
     </div>
+
+    <transition name="fade">
+      <Menu
+        v-if="isMenuOpen"
+        @close-menu="toggleMenu" />
+    </transition>
   </header>
 </template>
 
-<script>
-export default {
-  name: 'MainHeader'
+<script setup>
+import { ref } from 'vue';
+
+const isMenuOpen = ref(false);
+
+function toggleMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
 }
 </script>
 

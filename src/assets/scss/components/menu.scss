@@ -1,0 +1,79 @@
+.wrap-main-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.menu__box {
+  padding: 48px 20px;
+  border-radius: 18px;
+  background-color: $white;
+}
+
+.main-menu {
+  max-width: 700px;
+  margin-bottom: 2em;
+
+  @include m1200 {
+    max-width: 70%;
+  }
+}
+
+.legal-menu {
+  :deep(.menu-link) {
+    @include m576 {
+      &:not(:last-child) {
+        padding-right: 10px;
+
+        &:after {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+:deep(.menu-link) {
+  display: block;
+  margin-bottom: 0.5em;
+  transition: color 0.3s ease-out;
+  color: $gray;
+  line-height: 1;
+
+  @include m576 {
+    display: inline-block;
+
+    &:not(:last-child) {
+      padding-right: 12px;
+
+      &:after {
+        display: inline-block;
+        content: '\2022';
+        font-size: 1.3em;
+        line-height: 0;
+      }
+    }
+  }
+
+  &.router-link-active,
+  &:hover {
+    color: $black;
+  }
+}
+
+
+// Transitions
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, translate 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-from {
+  translate: 0 -25px;
+}

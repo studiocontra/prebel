@@ -12,7 +12,7 @@ $medias:
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -20px;
+  margin: 0 -12px;
 
   &.no-gutters {
     margin: 0;
@@ -89,7 +89,7 @@ $medias:
 }
 
 .col-auto {
-  padding: 0 20px;
+  padding: 0 12px;
   flex: 1 1;
 }
 

@@ -3,15 +3,15 @@
 }
 
 .report__box {
-  padding: 24px 32px calc(24px - 2em);
+  padding: 32px 32px calc(32px - 1em);
   border-radius: 18px;
   background-color: $beige;
 
   @include m768 {
-    padding: 10% 44px calc(10% - 2em) ;
+    padding: 10% 44px calc(10% - 1em) ;
   }
   @include m1400 {
-    padding: 126px 44px calc(126px - 2em);
+    padding: 126px 44px calc(126px - 1em);
   }
 
   .text {
@@ -28,7 +28,7 @@
 
     .btn {
       margin-right: 2em;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
     }
   }
 }

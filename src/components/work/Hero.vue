@@ -9,7 +9,7 @@
           <h1>
             <div class="title">
               <p>
-                Descubre <strong>nuestros servicios,</strong> te ofrecemos una experiencia única y personalizada.
+                En Prebel, estamos en busca de <strong>talento apasionado</strong> que comparta nuestra visión de crear productos cosméticos excepcionales que realcen la belleza y el bienestar.
               </p>
             </div>
           </h1>
