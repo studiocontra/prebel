@@ -2,31 +2,26 @@
   <div class="section home__images">
     <div class="container">
       <div class="images">
-        <div class="img img--square">
-          <picture>
-            <source :srcset="`https://picsum.photos/seed/images/800/900`" media="(min-width: 1200px)">
-            <source :srcset="`https://picsum.photos/seed/images/500/600`" media="(min-width: 768px)">
-            <source :srcset="`https://picsum.photos/seed/images/800/900`" media="(min-width: 500px)">
-            <img :src="`https://picsum.photos/seed/images/500/600`" alt="">
-          </picture>
+        <div
+          v-if="images[0].image"
+          class="img img--square">
+          <prismic-image :field="images[0].image" />
         </div>
 
-        <div class="img img--pill">
-          <picture>
-            <source :srcset="`https://picsum.photos/seed/images2/600/300`" media="(min-width: 768px)">
-            <img :src="`https://picsum.photos/seed/images2/300/150`" alt="">
-          </picture>
+        <div
+          v-if="images[1].image"
+          class="img img--pill">
+          <prismic-image :field="images[1].image" />
         </div>
 
         <div class="shape shape--1"></div>
 
         <div class="shape shape--2"></div>
 
-        <div class="img img--rectangle">
-          <picture>
-            <source :srcset="`https://picsum.photos/seed/images3/500/250`" media="(min-width: 768px)">
-            <img :src="`https://picsum.photos/seed/images3/250/125`" alt="">
-          </picture>
+        <div
+          v-if="images[2].image"
+          class="img img--rectangle">
+          <prismic-image :field="images[2].image" />
         </div>
 
         <Drop
@@ -42,6 +37,12 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  images: [Array, Boolean]
+});
+</script>
 
 <style lang="scss" scoped>
   @import "@scss/components/home/images";

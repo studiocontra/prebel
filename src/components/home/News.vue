@@ -21,29 +21,22 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="img">
-                  <picture>
-                    <source :srcset="`https://picsum.photos/seed/news${id}/599/441`" media="(min-width: 1200px)">
-                    <source :srcset="`https://picsum.photos/seed/news${id}/500/370`" media="(min-width: 768px)">
-                    <source :srcset="`https://picsum.photos/seed/news${id}/626/460`" media="(min-width: 500px)">
-                    <img :src="`https://picsum.photos/seed/news${id}/500/370`" alt="Placeholder Image">
-                  </picture>
+                  <prismic-image :field="item.image" />
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="content">
                   <span class="eyebrow">
-                    Noticias y updates
+                    {{ item.eyebrow }}
                   </span>
 
                   <h2 class="title">
-                    Prebel en la Feria de Cosmeticos
+                    {{ item.headline }}
                   </h2>
 
-                  <div class="text">
-                    <p>
-                      Durante la feria, PREBEL exhibió su amplia gama de productos cosméticos innovadores y de alta calidad, captando la atención de profesionales de la industria y visitantes por igual. El stand de la empresa presentó formulaciones vanguardistas, diseños atractivos de envases y una exhibición de sus últimos lanzamientos.
-                    </p>
-                  </div>
+                  <prismic-rich-text
+                    :field="item.content"
+                    class="text" />
                 </div>
               </div>
             </div>
@@ -66,7 +59,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const props = defineProps({
-  slides: Number
+  slides: [Array, Boolean]
 });
 
 function pad(num) {

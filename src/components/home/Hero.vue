@@ -7,22 +7,27 @@
       <div class="row lg-reverse align-bottom">
         <div class="col-lg-6">
           <span class="title title--xl">
-            Bienvenidos
+            {{ greeting }}
           </span>
         </div>
         <div class="col-lg-6">
           <h1>
-            <div class="title">
-              <p>
-                Con más de 80 años en la industria cosmética y de cuidado personal, en PREBEL establecemos relaciones duraderas y rentables con nuestros clientes.
-              </p>
-            </div>
+            <prismic-rich-text
+              :field="content"
+              class="title" />
           </h1>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  content: Object,
+  greeting: String,
+});
+</script>
 
 <style lang="scss" scoped>
   @import "@scss/components/hero";
