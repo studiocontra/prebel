@@ -85,6 +85,92 @@
           }
         }
       },
+      "facts_headline": {
+        "type": "Text",
+        "config": {
+          "label": "Facts Headline",
+          "placeholder": ""
+        }
+      },
+      "facts_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Facts Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "facts_items": {
+        "type": "Group",
+        "config": {
+          "label": "Facts Items",
+          "fields": {
+            "headline": {
+              "type": "Text",
+              "config": {
+                "label": "Headline",
+                "placeholder": ""
+              }
+            },
+            "content": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Content",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "type": "Group",
+        "config": {
+          "label": "About",
+          "fields": {
+            "eyebrow": {
+              "type": "Text",
+              "config": {
+                "label": "Eyebrow",
+                "placeholder": ""
+              }
+            },
+            "headline": {
+              "type": "Text",
+              "config": {
+                "label": "Headline",
+                "placeholder": ""
+              }
+            },
+            "content": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Content",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "select": "document"
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

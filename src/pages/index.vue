@@ -4,8 +4,11 @@
     <HomeNews :slides="homeData.news" />
     <HomeServices />
     <HomeImages :images="homeData.images" />
-    <HomeAccordion />
-    <HomeImageText />
+    <HomeAccordion
+      :headline="homeData.facts_headline"
+      :description="homeData.facts_description"
+      :items="homeData.facts_items" />
+    <HomeImageText v-bind="homeData.about[0]" />
   </main>
 </template>
 
@@ -17,4 +20,5 @@ const { data } = await useAsyncData("[home]", () =>
 );
 
 const homeData = data.value.data
+// console.log(data.value.lang);
 </script>

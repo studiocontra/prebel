@@ -4,12 +4,7 @@
       <div class="row align-center">
         <div class="col-lg-6">
           <div class="img">
-            <picture>
-              <source srcset="https://picsum.photos/seed/imgtxt/600/600" media="(min-width: 1200px)">
-              <source srcset="https://picsum.photos/seed/imgtxt/900/900" media="(min-width: 768px)">
-              <source srcset="https://picsum.photos/seed/imgtxt/626/626" media="(min-width: 500px)">
-              <img :src="`https://picsum.photos/seed/imgtxt/500/500`" alt="Placeholder Image">
-            </picture>
+            <prismic-image :field="image" />
 
             <Drop
               maxW="200px"
@@ -20,18 +15,16 @@
         <div class="col-lg-6">
           <div class="content">
             <span class="eyebrow">
-              Sobre Prebel
+              {{ eyebrow }}
             </span>
 
             <h2 class="title">
-              Propósito
+              {{ headline }}
             </h2>
 
-            <div class="title text">
-              <p>
-                Embellecemos vidas es nuestra inspiración para crear un espacio laboral humano, incluyente y enriquecedor para nuestros empleados.
-              </p>
-            </div>
+            <prismic-rich-text
+              :field="content"
+              class="title text" />
 
             <Button>
               Conoce más
@@ -42,6 +35,15 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  eyebrow: String,
+  headline: String,
+  content: Array,
+  image: Object
+});
+</script>
 
 <style lang="scss" scoped>
   @import "@scss/components/home/image-text";
