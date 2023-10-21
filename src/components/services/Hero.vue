@@ -7,25 +7,27 @@
       <div class="row align-center">
         <div class="col-lg-6">
           <h1>
-            <div class="title">
-              <p>
-                Descubre <strong>nuestros servicios,</strong> te ofrecemos una experiencia única y personalizada.
-              </p>
-            </div>
+            <prismic-rich-text
+              :field="headline"
+              class="title" />
           </h1>
         </div>
         <div class="col-lg-6">
           <div class="hero__image">
-            <picture>
-              <source :srcset="`https://picsum.photos/seed/sero-services/250/500`" media="(min-width: 768px)">
-              <img :src="`https://picsum.photos/seed/sero-services/125/250`" alt="">
-            </picture>
+            <prismic-image :field="image" />
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  headline: Object,
+  image: Object,
+});
+</script>
 
 <style lang="scss" scoped>
   @import "@scss/components/hero";

@@ -2,7 +2,7 @@
   <div class="section testimonials">
     <div class="container">
       <h2 class="eyebrow">
-        Testimonios
+        {{ eyebrow }}
       </h2>
 
       <swiper
@@ -16,7 +16,7 @@
           clickable: true
         }"
         :slidesPerView="1">
-        <swiper-slide v-for="(item, id) in 6" :key="id">
+        <swiper-slide v-for="(item, id) in items" :key="id">
           <div class="single-testimonial">
             <div class="quote quote--top">
               <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,11 +25,9 @@
             </div>
 
             <div class="content">
-              <div class="title">
-                <p>
-                  Durante la feria, PREBEL exhibió su amplia gama de productos cosméticos innovadores y de alta calidad, captando la atención de profesionales de la industria y visitantes por igual.
-                </p>
-              </div>
+              <prismic-rich-text
+                :field="item.testimonial"
+                class="title" />
 
               <div class="quote quote--bottom">
                 <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,11 +39,11 @@
 
             <div class="author">
               <p>
-                Lorem, ipsum dolor.
+                {{ item.name }}
               </p>
 
               <span>
-                Director of company
+                {{ item.title }}
               </span>
             </div>
           </div>
@@ -56,6 +54,10 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  eyebrow: String,
+  items: [Array, Boolean],
+});
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/vue';
 

@@ -26,7 +26,7 @@
                       {{ pad(idx + 1) }}
                     </span>
 
-                    {{ item.headline }}
+                    {{ item.name }}
                   </h3>
 
                   <div class="icon">
@@ -56,6 +56,7 @@
 import { ref, onMounted } from 'vue';
 
 const props = defineProps({
+  data: Object,
   headline: String,
   description: Object,
   items: [Array, Boolean]
@@ -74,9 +75,9 @@ function toggleAccordionItem(idx) {
   contentWrapper.style.maxHeight = `${contentHeight}px`;
 };
 
-onMounted(() => {
-  toggleAccordionItem(0)
-});
+// onMounted(() => {
+//   toggleAccordionItem(0)
+// });
 
 function pad(num) {
   var s = "000" + num;

@@ -2,7 +2,7 @@
   <div class="section services-features">
     <div class="container">
       <h2 class="eyebrow">
-        10 razones para elegirnos
+        {{ headline }}
       </h2>
     </div>
 
@@ -26,14 +26,14 @@
         }"
         @init="moveCircle"
         @slideChange="moveCircle">
-        <swiper-slide v-for="(item, id) in 4" :key="id">
+        <swiper-slide v-for="(item, id) in items" :key="id">
           <Drop
             maxW="180px"
             :parallax="getRandomArbitrary(-10, -3)" />
           <div class="row md-reverse align-bottom">
             <div class="col-md-5 col-lg-6">
               <div class="img">
-                <img :src="`https://picsum.photos/seed/features-services${id}/380/480`" alt="">
+                <prismic-image :field="item.image" />
               </div>
             </div>
             <div class="col-md-7 col-lg-6">
@@ -43,14 +43,12 @@
                 </span>
 
                 <h3 class="title">
-                  Our Services
+                  {{ item.headline }}
                 </h3>
 
-                <div class="text">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus modi recusandae at eaque, consectetur delectus voluptates voluptatem rem voluptate nulla quae quidem sunt tenetur commodi? Consequatur distinctio consequuntur amet.
-                  </p>
-                </div>
+                <prismic-rich-text
+                  :field="item.content"
+                  class="text" />
               </div>
             </div>
           </div>
@@ -72,6 +70,11 @@ import { Scrollbar } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+
+const props = defineProps({
+  headline: String,
+  items: [Array, Boolean],
+});
 
 function pad(num) {
   var s = "000" + num;

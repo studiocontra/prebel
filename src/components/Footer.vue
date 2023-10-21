@@ -51,7 +51,7 @@
           <div class="footer__menu">
             <ul>
               <li>
-                <NuxtLink to="/services">
+                <NuxtLink to="/servicios">
                   Servicios
                 </NuxtLink>
               </li>
@@ -78,14 +78,7 @@
             </ul>
           </div>
 
-          <div class="footer__locale">
-            <a href="" class="active">
-              Es
-            </a>
-            <a href="">
-              En
-            </a>
-          </div>
+          <Lang class="footer__locale" />
         </div>
       </div>
     </footer>

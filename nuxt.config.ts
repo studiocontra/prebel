@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n', '@nuxtjs/prismic'],
 
   i18n: {
-    locales: ['es', 'en'],  // used in URL path prefix
-    defaultLocale: 'es',    // default locale of your project for Nuxt pages and routings
+    locales: ['es-co', 'en-us'],  // used in URL path prefix
+    defaultLocale: 'es-co',    // default locale of your project for Nuxt pages and routings
   },
 
   prismic: {

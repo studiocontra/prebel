@@ -29,11 +29,11 @@
                 </h2>
 
                 <div class="wrap-ctas">
-                  <Button href="/services">
+                  <Button href="/servicios">
                     Ver servicio
                   </Button>
                   <NuxtLink to="/services">
-                    <Button href="/services" theme="light">
+                    <Button href="/servicios" theme="light">
                       Ver todos
                     </Button>
                   </NuxtLink>

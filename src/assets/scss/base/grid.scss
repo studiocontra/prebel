@@ -22,6 +22,14 @@ $medias:
     }
   }
 
+  &.space {
+    margin: 0 -32px;
+
+    >[class^="col-"] {
+      padding: 0 32px;
+    }
+  }
+
   &.justify-between {
     justify-content: space-between;
   }

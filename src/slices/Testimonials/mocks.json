@@ -1,0 +1,50 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "cattle",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"testimonial",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Est tempor cillum laborum cillum quis."
+									}
+								}
+							]
+						}
+					],
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "best",
+							"type": "Text"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "money",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
