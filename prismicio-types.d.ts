@@ -251,6 +251,212 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
+ * Item in *Legal Page → Hero*
+ */
+export interface LegalPageDocumentDataHeroItem {
+  /**
+   * Headline field in *Legal Page → Hero*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_page.hero[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *Legal Page → Hero*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_page.hero[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+type LegalPageDocumentDataSlicesSlice = TextBlockSlice;
+
+/**
+ * Content for Legal Page documents
+ */
+interface LegalPageDocumentData {
+  /**
+   * Hero field in *Legal Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_page.hero[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  hero: prismic.GroupField<Simplify<LegalPageDocumentDataHeroItem>>;
+
+  /**
+   * Slice Zone field in *Legal Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<LegalPageDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Legal Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: legal_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Legal Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Legal Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: legal_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Legal Page document from Prismic
+ *
+ * - **API ID**: `legal_page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LegalPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<LegalPageDocumentData>,
+    "legal_page",
+    Lang
+  >;
+
+/**
+ * Item in *Linea Etica → Hero*
+ */
+export interface LineaEticaDocumentDataHeroItem {
+  /**
+   * Headline field in *Linea Etica → Hero*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linea_etica.hero[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *Linea Etica → Hero*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linea_etica.hero[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+type LineaEticaDocumentDataSlicesSlice =
+  | CalloutTextContentSlice
+  | TextBlockSlice;
+
+/**
+ * Content for Linea Etica documents
+ */
+interface LineaEticaDocumentData {
+  /**
+   * Hero field in *Linea Etica*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linea_etica.hero[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  hero: prismic.GroupField<Simplify<LineaEticaDocumentDataHeroItem>>;
+
+  /**
+   * Slice Zone field in *Linea Etica*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linea_etica.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<LineaEticaDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Linea Etica*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: linea_etica.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Linea Etica*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linea_etica.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Linea Etica*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: linea_etica.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Linea Etica document from Prismic
+ *
+ * - **API ID**: `linea_etica`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LineaEticaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<LineaEticaDocumentData>,
+    "linea_etica",
+    Lang
+  >;
+
+/**
  * Item in *Services → Hero*
  */
 export interface ServicesDocumentDataHeroItem {
@@ -413,7 +619,91 @@ export type ServicesDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomeDocument | ServicesDocument;
+export type AllDocumentTypes =
+  | HomeDocument
+  | LegalPageDocument
+  | LineaEticaDocument
+  | ServicesDocument;
+
+/**
+ * Primary content in *CalloutTextContent → Primary*
+ */
+export interface CalloutTextContentSliceDefaultPrimary {
+  /**
+   * Headline field in *CalloutTextContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: callout_text_content.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *CalloutTextContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: callout_text_content.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CalloutTextContent → Items*
+ */
+export interface CalloutTextContentSliceDefaultItem {
+  /**
+   * Buton label field in *CalloutTextContent → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: callout_text_content.items[].buton_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buton_label: prismic.KeyTextField;
+
+  /**
+   * Button field in *CalloutTextContent → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: callout_text_content.items[].button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField;
+}
+
+/**
+ * Default variation for CalloutTextContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CalloutTextContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CalloutTextContentSliceDefaultPrimary>,
+  Simplify<CalloutTextContentSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CalloutTextContent*
+ */
+type CalloutTextContentSliceVariation = CalloutTextContentSliceDefault;
+
+/**
+ * CalloutTextContent Shared Slice
+ *
+ * - **API ID**: `callout_text_content`
+ * - **Description**: CalloutTextContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CalloutTextContentSlice = prismic.SharedSlice<
+  "callout_text_content",
+  CalloutTextContentSliceVariation
+>;
 
 /**
  * Primary content in *KeyFacts → Primary*
@@ -805,6 +1095,61 @@ export type TestimonialsSlice = prismic.SharedSlice<
   TestimonialsSliceVariation
 >;
 
+/**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceDefaultPrimary {
+  /**
+   * Headline field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TextBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextBlock*
+ */
+type TextBlockSliceVariation = TextBlockSliceDefault;
+
+/**
+ * TextBlock Shared Slice
+ *
+ * - **API ID**: `text_block`
+ * - **Description**: TextBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSlice = prismic.SharedSlice<
+  "text_block",
+  TextBlockSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -822,12 +1167,25 @@ declare module "@prismicio/client" {
       HomeDocumentDataImagesItem,
       HomeDocumentDataAboutItem,
       HomeDocumentDataSlicesSlice,
+      LegalPageDocument,
+      LegalPageDocumentData,
+      LegalPageDocumentDataHeroItem,
+      LegalPageDocumentDataSlicesSlice,
+      LineaEticaDocument,
+      LineaEticaDocumentData,
+      LineaEticaDocumentDataHeroItem,
+      LineaEticaDocumentDataSlicesSlice,
       ServicesDocument,
       ServicesDocumentData,
       ServicesDocumentDataHeroItem,
       ServicesDocumentDataServicesItem,
       ServicesDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CalloutTextContentSlice,
+      CalloutTextContentSliceDefaultPrimary,
+      CalloutTextContentSliceDefaultItem,
+      CalloutTextContentSliceVariation,
+      CalloutTextContentSliceDefault,
       KeyFactsSlice,
       KeyFactsSliceDefaultPrimary,
       KeyFactsSliceDefaultItem,
@@ -853,6 +1211,10 @@ declare module "@prismicio/client" {
       TestimonialsSliceDefaultItem,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
+      TextBlockSlice,
+      TextBlockSliceDefaultPrimary,
+      TextBlockSliceVariation,
+      TextBlockSliceDefault,
     };
   }
 }

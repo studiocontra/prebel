@@ -4,10 +4,7 @@
     <HomeNews :slides="homeData.news" />
     <HomeServices />
     <HomeImages :images="homeData.images" />
-    <!-- <HomeAccordion
-      :headline="homeData.facts_headline"
-      :description="homeData.facts_description"
-      :items="homeData.facts_items" /> -->
+
     <SliceZone
       :slices="homeData.slices"
       :components="{
