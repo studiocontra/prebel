@@ -19,13 +19,14 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/i18n', '@nuxtjs/prismic'],
 
+  components: [
+    { path: '~/components/slices' },
+    '~/components'
+  ],
+
   i18n: {
     locales: ['es-co', 'en-us'],  // used in URL path prefix
     defaultLocale: 'es-co',    // default locale of your project for Nuxt pages and routings
-  },
-
-  prismic: {
-    endpoint: 'prebel'
   },
 
   vite: {
@@ -39,5 +40,9 @@ export default defineNuxtConfig({
           }
       }
     },
+  },
+
+  prismic: {
+    endpoint: 'prebel'
   }
 })

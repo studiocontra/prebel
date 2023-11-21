@@ -46,6 +46,10 @@
     @include m992 {
       padding-left: 8%;
     }
+
+    .eyebrow {
+      margin-bottom: 2em;
+    }
   }
 
   :deep(.swiper-pagination) {

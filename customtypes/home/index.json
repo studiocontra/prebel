@@ -6,137 +6,27 @@
   "status": true,
   "json": {
     "Main": {
-      "hero": {
-        "type": "Group",
-        "config": {
-          "label": "Hero",
-          "fields": {
-            "content": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Content",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            },
-            "greeting": {
-              "type": "Text",
-              "config": {
-                "label": "Greeting",
-                "placeholder": ""
-              }
-            }
-          }
-        }
-      },
-      "news": {
-        "type": "Group",
-        "config": {
-          "label": "News",
-          "fields": {
-            "eyebrow": {
-              "type": "Text",
-              "config": {
-                "label": "Eyebrow",
-                "placeholder": ""
-              }
-            },
-            "headline": {
-              "type": "Text",
-              "config": {
-                "label": "Headline",
-                "placeholder": ""
-              }
-            },
-            "content": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Content",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            },
-            "image": {
-              "type": "Image",
-              "config": {
-                "label": "Image",
-                "constraint": {},
-                "thumbnails": []
-              }
-            }
-          }
-        }
-      },
-      "images": {
-        "type": "Group",
-        "config": {
-          "label": "Images",
-          "fields": {
-            "image": {
-              "type": "Image",
-              "config": {
-                "label": "Image",
-                "constraint": {},
-                "thumbnails": []
-              }
-            }
-          }
-        }
-      },
-      "about": {
-        "type": "Group",
-        "config": {
-          "label": "About",
-          "fields": {
-            "eyebrow": {
-              "type": "Text",
-              "config": {
-                "label": "Eyebrow",
-                "placeholder": ""
-              }
-            },
-            "headline": {
-              "type": "Text",
-              "config": {
-                "label": "Headline",
-                "placeholder": ""
-              }
-            },
-            "content": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Content",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            },
-            "image": {
-              "type": "Image",
-              "config": {
-                "label": "Image",
-                "constraint": {},
-                "thumbnails": []
-              }
-            },
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "Link",
-                "select": "document"
-              }
-            }
-          }
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "key_facts": {
+            "accordion": {
+              "type": "SharedSlice"
+            },
+            "image_text": {
+              "type": "SharedSlice"
+            },
+            "images_grid": {
+              "type": "SharedSlice"
+            },
+            "services_slider": {
+              "type": "SharedSlice"
+            },
+            "image_text_box": {
+              "type": "SharedSlice"
+            },
+            "page_hero": {
               "type": "SharedSlice"
             }
           }

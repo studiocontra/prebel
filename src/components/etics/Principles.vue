@@ -8,8 +8,8 @@
           </div>
 
           <prismic-rich-text
-          :field="content"
-          class="text" />
+            :field="content"
+            class="text" />
         </div>
       </div>
     </div>

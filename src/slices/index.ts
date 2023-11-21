@@ -5,13 +5,21 @@ import { defineSliceZoneComponents } from "@prismicio/vue";
 
 export const components = defineSliceZoneComponents({
   callout_text_content: defineAsyncComponent(
-    () => import("./CalloutTextContent/index.vue")
+    () => import("./CalloutTextContent/index.vue"),
   ),
-  key_facts: defineAsyncComponent(() => import("./KeyFacts/index.vue")),
-  our_clients: defineAsyncComponent(() => import("./OurClients/index.vue")),
-  service_type: defineAsyncComponent(() => import("./ServiceType/index.vue")),
+  image_text: defineAsyncComponent(() => import("./ImageText/index.vue")),
+  image_text_box: defineAsyncComponent(
+    () => import("./ImageTextBox/index.vue"),
+  ),
+  images_grid: defineAsyncComponent(() => import("./ImagesGrid/index.vue")),
+  our_clients: defineAsyncComponent(() => import("./ClientLogos/index.vue")),
+  page_hero: defineAsyncComponent(() => import("./PageHero/index.vue")),
+  service_type: defineAsyncComponent(() => import("./Accordion/index.vue")),
   services_reason: defineAsyncComponent(
-    () => import("./ServicesReason/index.vue")
+    () => import("./ServicesReason/index.vue"),
+  ),
+  services_slider: defineAsyncComponent(
+    () => import("./ServicesSlider/index.vue"),
   ),
   testimonials: defineAsyncComponent(() => import("./Testimonials/index.vue")),
   text_block: defineAsyncComponent(() => import("./TextBlock/index.vue")),

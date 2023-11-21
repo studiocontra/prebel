@@ -1,18 +1,5 @@
 <template>
   <main class="services">
-    <ServicesHero v-bind="servicesData.hero[0]" />
-    <ServicesCards
-      :headline="servicesData.services_headline"
-      :cards="servicesData.services" />
-
-    <SliceZone
-      :slices="servicesData.slices"
-      :components="{
-        service_type: ServiceType,
-        services_reason: ServicesReason,
-        our_clients: OurClients,
-        testimonials: Testimonials,
-      }" />
   </main>
 </template>
 
