@@ -14,7 +14,7 @@ defineProps(
 </script>
 
 <template>
-  <EticsPrinciples
+  <TextBlock
     :headline="slice.primary.headline"
     :content="slice.primary.content" />
 </template>

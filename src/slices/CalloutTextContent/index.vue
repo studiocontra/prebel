@@ -14,7 +14,7 @@ defineProps(
 </script>
 
 <template>
-  <EticsReport
+  <CalloutText
     :headline="slice.primary.headline"
     :content="slice.primary.content"
     :items="slice.items"

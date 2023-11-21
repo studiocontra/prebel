@@ -1,15 +1,17 @@
 <template>
-  <div class="principles">
+  <div class="hero hero--etics">
     <div class="container">
       <div class="row justify-center">
-        <div class="col-md-10 col-lg-8">
-          <div class="title">
+        <div class="col-lg-10">
+          <h1
+            v-if="headline"
+            class="title">
             {{ headline }}
-          </div>
+          </h1>
 
           <prismic-rich-text
             :field="content"
-            class="text" />
+            class="title title--text" />
         </div>
       </div>
     </div>
@@ -24,5 +26,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/etics/principles";
+  @import "@scss/components/hero";
+  @import "@scss/components/etics/hero";
 </style>

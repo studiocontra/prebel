@@ -20,4 +20,8 @@ defineProps(
     :data-slice-variation="slice.variation"
     :headline="slice.primary.headline"
     :content="slice.primary.content" />
+  <HeroTextOnly
+    v-if="slice.variation == 'text'"
+    :headline="slice.primary.headline"
+    :content="slice.primary.content" />
 </template>

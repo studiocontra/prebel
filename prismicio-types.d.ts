@@ -71,7 +71,143 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+type LegalesDocumentDataSlicesSlice = TextBlockSlice | PageHeroSlice;
+
+/**
+ * Content for Legales documents
+ */
+interface LegalesDocumentData {
+  /**
+   * Slice Zone field in *Legales*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legales.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<LegalesDocumentDataSlicesSlice> /**
+   * Meta Description field in *Legales*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: legales.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Legales*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legales.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Legales*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: legales.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Legales document from Prismic
+ *
+ * - **API ID**: `legales`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LegalesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<LegalesDocumentData>,
+    "legales",
+    Lang
+  >;
+
+type LineaEticaDocumentDataSlicesSlice =
+  | PageHeroSlice
+  | TextBlockSlice
+  | CalloutTextContentSlice;
+
+/**
+ * Content for Linea etica documents
+ */
+interface LineaEticaDocumentData {
+  /**
+   * Slice Zone field in *Linea etica*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linea_etica.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<LineaEticaDocumentDataSlicesSlice> /**
+   * Meta Description field in *Linea etica*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: linea_etica.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Linea etica*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: linea_etica.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Linea etica*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: linea_etica.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Linea etica document from Prismic
+ *
+ * - **API ID**: `linea_etica`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LineaEticaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<LineaEticaDocumentData>,
+    "linea_etica",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomeDocument
+  | LegalesDocument
+  | LineaEticaDocument;
 
 /**
  * Primary content in *Accordion → Primary*
@@ -750,86 +886,6 @@ export type PageHeroSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ServicesReason → Primary*
- */
-export interface ServicesReasonSliceDefaultPrimary {
-  /**
-   * Headline field in *ServicesReason → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services_reason.primary.headline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  headline: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *ServicesReason → Items*
- */
-export interface ServicesReasonSliceDefaultItem {
-  /**
-   * Headline field in *ServicesReason → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services_reason.items[].headline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  headline: prismic.KeyTextField;
-
-  /**
-   * Content field in *ServicesReason → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services_reason.items[].content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Image field in *ServicesReason → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services_reason.items[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Default variation for ServicesReason Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ServicesReasonSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ServicesReasonSliceDefaultPrimary>,
-  Simplify<ServicesReasonSliceDefaultItem>
->;
-
-/**
- * Slice variation for *ServicesReason*
- */
-type ServicesReasonSliceVariation = ServicesReasonSliceDefault;
-
-/**
- * ServicesReason Shared Slice
- *
- * - **API ID**: `services_reason`
- * - **Description**: ServicesReason
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ServicesReasonSlice = prismic.SharedSlice<
-  "services_reason",
-  ServicesReasonSliceVariation
->;
-
-/**
  * Primary content in *ServicesSlider → Items*
  */
 export interface ServicesSliderSliceDefaultItem {
@@ -1062,6 +1118,12 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      LegalesDocument,
+      LegalesDocumentData,
+      LegalesDocumentDataSlicesSlice,
+      LineaEticaDocument,
+      LineaEticaDocumentData,
+      LineaEticaDocumentDataSlicesSlice,
       AllDocumentTypes,
       AccordionSlice,
       AccordionSliceDefaultPrimary,
@@ -1101,11 +1163,6 @@ declare module "@prismicio/client" {
       PageHeroSliceDefault,
       PageHeroSliceHome,
       PageHeroSliceText,
-      ServicesReasonSlice,
-      ServicesReasonSliceDefaultPrimary,
-      ServicesReasonSliceDefaultItem,
-      ServicesReasonSliceVariation,
-      ServicesReasonSliceDefault,
       ServicesSliderSlice,
       ServicesSliderSliceDefaultItem,
       ServicesSliderSliceVariation,
