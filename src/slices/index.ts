@@ -12,12 +12,9 @@ export const components = defineSliceZoneComponents({
     () => import("./ImageTextBox/index.vue"),
   ),
   images_grid: defineAsyncComponent(() => import("./ImagesGrid/index.vue")),
-  our_clients: defineAsyncComponent(() => import("./ClientLogos/index.vue")),
+  client_logos: defineAsyncComponent(() => import("./ClientLogos/index.vue")),
   page_hero: defineAsyncComponent(() => import("./PageHero/index.vue")),
-  service_type: defineAsyncComponent(() => import("./Accordion/index.vue")),
-  services_reason: defineAsyncComponent(
-    () => import("./ServicesReason/index.vue"),
-  ),
+  accordion: defineAsyncComponent(() => import("./Accordion/index.vue")),
   services_slider: defineAsyncComponent(
     () => import("./ServicesSlider/index.vue"),
   ),

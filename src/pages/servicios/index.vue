@@ -8,8 +8,6 @@ const { client } = usePrismic();
 const { locale, localeCodes } = useI18n();
 
 // Import your slices
-import ServiceType from '@/slices/ServiceType';
-import ServicesReason from '@/slices/ServicesReason';
 import OurClients from '@/slices/OurClients';
 import Testimonials from '@/slices/Testimonials';
 

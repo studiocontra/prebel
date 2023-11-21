@@ -24,4 +24,4 @@ const { data } = await useAsyncData("[linea_etica]", () =>
 );
 
 const eticsData = data.value.data;
-</script>Código y Línea Ética
+</script>
