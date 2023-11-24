@@ -204,10 +204,82 @@ export type LineaEticaDocument<Lang extends string = string> =
     Lang
   >;
 
+type ServicesDocumentDataSlicesSlice =
+  | ImageTextCarouselSlice
+  | CardsSlice
+  | AccordionSlice
+  | OurClientsSlice
+  | TestimonialsSlice
+  | PageHeroSlice;
+
+/**
+ * Content for Services documents
+ */
+interface ServicesDocumentData {
+  /**
+   * Slice Zone field in *Services*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice> /**
+   * Meta Description field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: services.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ServicesDocumentData>,
+    "services",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | HomeDocument
   | LegalesDocument
-  | LineaEticaDocument;
+  | LineaEticaDocument
+  | ServicesDocument;
 
 /**
  * Primary content in *Accordion → Primary*
@@ -425,6 +497,166 @@ export type CalloutTextContentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Cards → Primary*
+ */
+export interface CardsSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *Cards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Cards → Items*
+ */
+export interface CardsSliceDefaultItem {
+  /**
+   * Image field in *Cards → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Headline field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Cards → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Cards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CardsSliceDefaultPrimary>,
+  Simplify<CardsSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *Cards → Primary*
+ */
+export interface CardsSliceLargeImagePrimary {
+  /**
+   * Eyebrow field in *Cards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Cards → Items*
+ */
+export interface CardsSliceLargeImageItem {
+  /**
+   * Image field in *Cards → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Headline field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Cards → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Large Image variation for Cards Slice
+ *
+ * - **API ID**: `largeImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardsSliceLargeImage = prismic.SharedSliceVariation<
+  "largeImage",
+  Simplify<CardsSliceLargeImagePrimary>,
+  Simplify<CardsSliceLargeImageItem>
+>;
+
+/**
+ * Slice variation for *Cards*
+ */
+type CardsSliceVariation = CardsSliceDefault | CardsSliceLargeImage;
+
+/**
+ * Cards Shared Slice
+ *
+ * - **API ID**: `cards`
+ * - **Description**: Cards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardsSlice = prismic.SharedSlice<"cards", CardsSliceVariation>;
+
+/**
  * Primary content in *ImageText → Items*
  */
 export interface ImageTextSliceDefaultItem {
@@ -582,6 +814,86 @@ type ImageTextBoxSliceVariation = ImageTextBoxSliceDefault;
 export type ImageTextBoxSlice = prismic.SharedSlice<
   "image_text_box",
   ImageTextBoxSliceVariation
+>;
+
+/**
+ * Primary content in *ImageTextCarousel → Primary*
+ */
+export interface ImageTextCarouselSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *ImageTextCarousel → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text_carousel.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ImageTextCarousel → Items*
+ */
+export interface ImageTextCarouselSliceDefaultItem {
+  /**
+   * Headline field in *ImageTextCarousel → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text_carousel.items[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *ImageTextCarousel → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text_carousel.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Image field in *ImageTextCarousel → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text_carousel.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ImageTextCarousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageTextCarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageTextCarouselSliceDefaultPrimary>,
+  Simplify<ImageTextCarouselSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ImageTextCarousel*
+ */
+type ImageTextCarouselSliceVariation = ImageTextCarouselSliceDefault;
+
+/**
+ * ImageTextCarousel Shared Slice
+ *
+ * - **API ID**: `image_text_carousel`
+ * - **Description**: ImageTextCarousel
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageTextCarouselSlice = prismic.SharedSlice<
+  "image_text_carousel",
+  ImageTextCarouselSliceVariation
 >;
 
 /**
@@ -1124,6 +1436,9 @@ declare module "@prismicio/client" {
       LineaEticaDocument,
       LineaEticaDocumentData,
       LineaEticaDocumentDataSlicesSlice,
+      ServicesDocument,
+      ServicesDocumentData,
+      ServicesDocumentDataSlicesSlice,
       AllDocumentTypes,
       AccordionSlice,
       AccordionSliceDefaultPrimary,
@@ -1138,6 +1453,14 @@ declare module "@prismicio/client" {
       CalloutTextContentSliceDefaultItem,
       CalloutTextContentSliceVariation,
       CalloutTextContentSliceDefault,
+      CardsSlice,
+      CardsSliceDefaultPrimary,
+      CardsSliceDefaultItem,
+      CardsSliceLargeImagePrimary,
+      CardsSliceLargeImageItem,
+      CardsSliceVariation,
+      CardsSliceDefault,
+      CardsSliceLargeImage,
       ImageTextSlice,
       ImageTextSliceDefaultItem,
       ImageTextSliceVariation,
@@ -1146,6 +1469,11 @@ declare module "@prismicio/client" {
       ImageTextBoxSliceDefaultItem,
       ImageTextBoxSliceVariation,
       ImageTextBoxSliceDefault,
+      ImageTextCarouselSlice,
+      ImageTextCarouselSliceDefaultPrimary,
+      ImageTextCarouselSliceDefaultItem,
+      ImageTextCarouselSliceVariation,
+      ImageTextCarouselSliceDefault,
       ImagesGridSlice,
       ImagesGridSliceDefaultPrimary,
       ImagesGridSliceVariation,

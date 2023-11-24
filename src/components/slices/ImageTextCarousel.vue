@@ -26,7 +26,7 @@
         }"
         @init="moveCircle"
         @slideChange="moveCircle">
-        <swiper-slide v-for="(item, id) in items" :key="id">
+        <swiper-slide v-for="(item, id) in slides" :key="id">
           <Drop
             maxW="180px"
             :parallax="getRandomArbitrary(-10, -3)" />
@@ -73,7 +73,7 @@ import 'swiper/css/scrollbar';
 
 const props = defineProps({
   headline: String,
-  items: [Array, Boolean],
+  slides: [Array, Boolean],
 });
 
 function pad(num) {

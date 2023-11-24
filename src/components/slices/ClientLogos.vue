@@ -33,7 +33,7 @@
 const props = defineProps({
   eyebrow: String,
   headline: String,
-  content: String,
+  content: Object,
   items: [Array, Boolean],
 });
 </script>

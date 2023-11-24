@@ -22,6 +22,15 @@ defineProps(
     :content="slice.primary.content" />
   <HeroTextOnly
     v-if="slice.variation == 'text'"
+    :data-slice-type="slice.slice_type"
+    :data-slice-variation="slice.variation"
     :headline="slice.primary.headline"
+    :content="slice.primary.content" />
+
+  <HeroImageText
+    v-if="slice.variation == 'default'"
+    :data-slice-type="slice.slice_type"
+    :data-slice-variation="slice.variation"
+    :image="slice.primary.image"
     :content="slice.primary.content" />
 </template>

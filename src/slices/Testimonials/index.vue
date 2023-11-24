@@ -14,7 +14,7 @@ defineProps(
 </script>
 
 <template>
-  <ServicesTestimonials
+  <Testimonials
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
     :eyebrow="slice.primary.eyebrow"

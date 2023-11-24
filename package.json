@@ -7,12 +7,12 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "slicemachine": "start-slicemachine"
+    "sm": "start-slicemachine"
   },
   "dependencies": {
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
-    "swiper": "^10.2.0",
+    "swiper": "^11.0.5",
     "vee-validate": "^4.11.6"
   },
   "devDependencies": {

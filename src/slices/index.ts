@@ -4,17 +4,21 @@ import { defineAsyncComponent } from "vue";
 import { defineSliceZoneComponents } from "@prismicio/vue";
 
 export const components = defineSliceZoneComponents({
+  accordion: defineAsyncComponent(() => import("./Accordion/index.vue")),
   callout_text_content: defineAsyncComponent(
     () => import("./CalloutTextContent/index.vue"),
   ),
+  cards: defineAsyncComponent(() => import("./Cards/index.vue")),
   image_text: defineAsyncComponent(() => import("./ImageText/index.vue")),
   image_text_box: defineAsyncComponent(
     () => import("./ImageTextBox/index.vue"),
   ),
+  image_text_carousel: defineAsyncComponent(
+    () => import("./ImageTextCarousel/index.vue"),
+  ),
   images_grid: defineAsyncComponent(() => import("./ImagesGrid/index.vue")),
-  client_logos: defineAsyncComponent(() => import("./ClientLogos/index.vue")),
+  our_clients: defineAsyncComponent(() => import("./ClientLogos/index.vue")),
   page_hero: defineAsyncComponent(() => import("./PageHero/index.vue")),
-  accordion: defineAsyncComponent(() => import("./Accordion/index.vue")),
   services_slider: defineAsyncComponent(
     () => import("./ServicesSlider/index.vue"),
   ),

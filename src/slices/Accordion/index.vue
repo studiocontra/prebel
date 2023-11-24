@@ -21,7 +21,7 @@ defineProps(
     :description="slice.primary.description"
     :items="slice.items" />
 
-  <ServicesAccordion
+  <AccordionDefault
     v-if="slice.variation == 'default'"
     :id="slice.id"
     :headline="slice.primary.headline"

@@ -17,11 +17,12 @@
 
               <div class="card__content">
                 <h3 class="title">
-                  {{ item.name }}
+                  {{ item.headline }}
                 </h3>
 
-                <Button>
-                  Conoce más
+                <Button
+                  v-if="item.button_link && item.button_label">
+                  {{ item.button_label }}
                 </Button>
               </div>
             </div>

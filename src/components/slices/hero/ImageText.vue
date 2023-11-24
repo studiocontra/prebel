@@ -1,5 +1,5 @@
 <template>
-  <div class="hero hero--services">
+  <div class="hero">
     <Drop
       maxW="300px"
       :parallax="-12" />
@@ -8,7 +8,7 @@
         <div class="col-lg-6">
           <h1>
             <prismic-rich-text
-              :field="headline"
+              :field="content"
               class="title" />
           </h1>
         </div>
@@ -24,7 +24,7 @@
 
 <script setup>
 const props = defineProps({
-  headline: Object,
+  content: Object,
   image: Object,
 });
 </script>
