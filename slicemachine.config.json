@@ -1,0 +1,6 @@
+{
+  "repositoryName": "prebel",
+  "adapter": "@slicemachine/adapter-nuxt",
+  "libraries": ["./src/slices"],
+  "localSliceSimulatorURL": "http://120.0.0.1:3000/slice-simulator"
+}

@@ -1,0 +1,17 @@
+.services {
+  :deep(.hero) {
+    background: linear-gradient(to bottom, $green 10%, $green_light 75%, $white 100%);
+
+    .drop {
+      top: 45%;
+      left: 65%;
+      z-index: 2;
+    }
+
+    .title {
+      strong {
+        background-color: $green;
+      }
+    }
+  }
+}

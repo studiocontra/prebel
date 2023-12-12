@@ -1,20 +1,26 @@
 {
-  "name": "nuxt-app",
+  "name": "prebel",
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "sm": "start-slicemachine"
   },
   "dependencies": {
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
-    "swiper": "^10.2.0"
+    "swiper": "^11.0.5",
+    "vee-validate": "^4.11.6"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.1"
+    "@nuxtjs/i18n": "^8.0.0-rc.5",
+    "@nuxtjs/prismic": "^3.0.0",
+    "@slicemachine/adapter-nuxt": "^0.3.28",
+    "nuxt": "^3.7.1",
+    "slice-machine-ui": "^1.21.2"
   }
 }

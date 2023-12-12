@@ -1,10 +1,37 @@
 <template>
-  <main class="services">
-    <ServicesHero />
-    <ServicesCards />
-    <ServicesAccordion />
-    <ServicesFeaturesSlider />
-    <ServicesClients />
-    <ServicesTestimonials />
+  <main class="services" v-if="data">
+    <SliceZone
+      :slices="servicesData.slices"
+      :components="{
+        page_hero: PageHero,
+        cards: Cards,
+        accordion: Accordion,
+        image_text_carousel: ImageTextCarousel,
+        our_clients: ClientLogos,
+        testimonials: Testimonials,
+      }" />
   </main>
 </template>
+
+<script setup>
+const { client } = usePrismic();
+const { locale, localeCodes } = useI18n();
+
+// Import your slices
+import Accordion from '@/slices/Accordion'
+import Cards from '@/slices/Cards'
+import ClientLogos from '@/slices/ClientLogos'
+import ImageTextCarousel from '@/slices/ImageTextCarousel'
+import PageHero from '@/slices/PageHero'
+import Testimonials from '@/slices/Testimonials'
+
+const { data } = await useAsyncData("[services]", () =>
+  client.getSingle("services", {lang: locale.value})
+);
+
+const servicesData = data.value.data;
+</script>
+
+<style lang="scss" scoped>
+  @import "@scss/pages/services";
+</style>

@@ -140,23 +140,5 @@ footer {
       grid-row: 3;
       grid-column: 3;
     }
-
-    a {
-      display: inline-flex;
-      width: 40px;
-      height: 40px;
-      margin-right: 16px;
-      text-transform: uppercase;
-      border-radius: 50%;
-      background-color: $gray;
-      font-size: 14px;
-      align-items: center;
-      justify-content: center;
-
-      &:hover,
-      &.active {
-        background-color: $black;
-      }
-    }
   }
 }
