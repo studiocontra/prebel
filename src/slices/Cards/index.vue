@@ -19,4 +19,10 @@ defineProps(
     :id="slice.id"
     :headline="slice.primary.headline"
     :cards="slice.items" />
+
+  <CardsLargeImage
+    v-if="slice.variation == 'largeImage'"
+    :id="slice.id"
+    :headline="slice.primary.headline"
+    :cards="slice.items" />
 </template>

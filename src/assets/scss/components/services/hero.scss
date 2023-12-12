@@ -18,8 +18,6 @@
   position: relative;
   display: block;
   overflow: hidden;
-  aspect-ratio: 1 / 1.65;
-  max-width: 230px;
 
   @include m768 {
     margin: 0 auto;
@@ -29,9 +27,30 @@
   img {
     display: block;
     width: 100%;
-    border-radius: 50% / 28%;
 
     @include fullAbs();
     @include fit();
+  }
+}
+
+
+.hero__image--square {
+  aspect-ratio: 4 / 3;
+
+  img {
+    border-radius: 18px;
+  }
+
+  &.hero__image--small {
+    aspect-ratio: 1.65 / 1;
+  }
+}
+
+.hero__image--pill {
+  aspect-ratio: 1 / 1.65;
+  max-width: 230px;
+
+  img {
+    border-radius: 50% / 28%;
   }
 }

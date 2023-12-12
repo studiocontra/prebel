@@ -3,7 +3,7 @@
     <div class="container">
       <div class="report__box">
         <div class="row justify-between">
-          <div class="col-lg-4">
+          <div class="col-lg-5 col-xl-4">
             <p class="title">
               {{ headline }}
             </p>

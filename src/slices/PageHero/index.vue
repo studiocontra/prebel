@@ -20,6 +20,7 @@ defineProps(
     :data-slice-variation="slice.variation"
     :headline="slice.primary.headline"
     :content="slice.primary.content" />
+
   <HeroTextOnly
     v-if="slice.variation == 'text'"
     :data-slice-type="slice.slice_type"
@@ -32,5 +33,7 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
     :image="slice.primary.image"
+    :imageStyle="slice.primary.image_style"
+    :imageSize="slice.primary.image_size"
     :content="slice.primary.content" />
 </template>

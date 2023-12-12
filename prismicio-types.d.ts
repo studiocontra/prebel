@@ -275,11 +275,145 @@ export type ServicesDocument<Lang extends string = string> =
     Lang
   >;
 
+type SingleServiceDocumentDataSlicesSlice =
+  | ServicesSliderSlice
+  | ImageTextBoxSlice
+  | PageHeroSlice;
+
+/**
+ * Content for Single Service documents
+ */
+interface SingleServiceDocumentData {
+  /**
+   * Slice Zone field in *Single Service*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_service.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SingleServiceDocumentDataSlicesSlice> /**
+   * Meta Description field in *Single Service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: single_service.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Single Service*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_service.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Single Service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: single_service.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Single Service document from Prismic
+ *
+ * - **API ID**: `single_service`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SingleServiceDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SingleServiceDocumentData>,
+    "single_service",
+    Lang
+  >;
+
+type WorkDocumentDataSlicesSlice =
+  | TestimonialsSlice
+  | PageHeroSlice
+  | CardsSlice;
+
+/**
+ * Content for Work documents
+ */
+interface WorkDocumentData {
+  /**
+   * Slice Zone field in *Work*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<WorkDocumentDataSlicesSlice> /**
+   * Meta Description field in *Work*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: work.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Work*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Work*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: work.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Work document from Prismic
+ *
+ * - **API ID**: `work`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WorkDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<WorkDocumentData>, "work", Lang>;
+
 export type AllDocumentTypes =
   | HomeDocument
   | LegalesDocument
   | LineaEticaDocument
-  | ServicesDocument;
+  | ServicesDocument
+  | SingleServiceDocument
+  | WorkDocument;
 
 /**
  * Primary content in *Accordion → Primary*
@@ -1439,6 +1573,12 @@ declare module "@prismicio/client" {
       ServicesDocument,
       ServicesDocumentData,
       ServicesDocumentDataSlicesSlice,
+      SingleServiceDocument,
+      SingleServiceDocumentData,
+      SingleServiceDocumentDataSlicesSlice,
+      WorkDocument,
+      WorkDocumentData,
+      WorkDocumentDataSlicesSlice,
       AllDocumentTypes,
       AccordionSlice,
       AccordionSliceDefaultPrimary,
