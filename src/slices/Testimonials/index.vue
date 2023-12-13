@@ -14,10 +14,15 @@ defineProps(
 </script>
 
 <template>
-  <Testimonials
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
+  <TestimonialsText
+    v-if="slice.variation === 'default'"
     :eyebrow="slice.primary.eyebrow"
+    :items="slice.items"
+  />
+  <TestimonialsVideo
+    v-if="slice.variation === 'video'"
+    :eyebrow="slice.primary.eyebrow"
+    :headline="slice.primary.headline"
     :items="slice.items"
   />
 </template>

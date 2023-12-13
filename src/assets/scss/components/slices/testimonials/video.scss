@@ -1,0 +1,87 @@
+.testimonials--video {
+  text-align: center;
+
+  .eyebrow {
+    margin-bottom: 3em;
+  }
+
+  .eyebrow,
+  .title {
+    text-align: center;
+  }
+}
+
+.card {
+  margin-bottom: 4.5em;
+}
+
+.card__image {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1em;
+  cursor: pointer;
+  border-radius: 18px;
+  aspect-ratio: 4 / 3;
+
+  img {
+    @include fullAbs();
+    @include fit();
+  }
+
+  &.backdrop {
+    &:after {
+      display: block;
+      content: '';
+      opacity: 0.3;
+      background-color: $black;
+      @include fullAbs();
+    }
+  }
+}
+
+.card__icon {
+  z-index: 2;
+  display: block;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: scale 0.3s ease-in;
+  transform-origin: center;
+  border-radius: 50%;
+  background-color: rgba($white, 0.3);
+
+  @include centerAbs();
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  svg {
+    width: 30px;
+    fill: $white;
+    @include centerAbs();
+  }
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1 1 auto;
+  align-items: center;
+
+  h3.text {
+    margin-bottom: 4px;
+    font-weight: 300;
+  }
+
+  span.text {
+    color: $gray;
+  }
+
+  .btn {
+    display: inline-flex;
+    width: auto;
+    margin-top: auto;
+  }
+}

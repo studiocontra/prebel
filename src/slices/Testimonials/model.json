@@ -45,6 +45,61 @@
           }
         }
       }
+    },
+    {
+      "id": "video",
+      "name": "Video ",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "headline": {
+          "type": "Text",
+          "config": {
+            "label": "Headline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "preview": {
+          "type": "Image",
+          "config": {
+            "label": "Preview",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "video_link": {
+          "type": "Text",
+          "config": {
+            "label": "Video Link",
+            "placeholder": ""
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        }
+      }
     }
   ]
 }
