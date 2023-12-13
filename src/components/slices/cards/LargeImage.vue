@@ -1,7 +1,7 @@
 <template>
   <div class="section work-cards">
     <div class="container">
-      <h2 class="eyebrow">
+      <h2 v-if="headline" class="eyebrow">
         {{ headline }}
       </h2>
 
