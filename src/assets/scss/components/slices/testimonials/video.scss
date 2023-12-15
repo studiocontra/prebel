@@ -85,3 +85,14 @@
     margin-top: auto;
   }
 }
+
+.modal {
+  :deep(.wrap-video) {
+    position: relative;
+    padding-bottom: 56.25%;
+
+    iframe {
+      @include fullAbs();
+    }
+  }
+}

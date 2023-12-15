@@ -48,6 +48,7 @@
   background-size: 104%;
   align-items: center;
   justify-content: center;
+  color: $white;
 
   svg {
     position: relative;
@@ -65,9 +66,9 @@
   top: 15px;
   width: 95%;
   max-width: 850px;
-  transition-delay: 0.4s;
+  transition-delay: 0.2s;
   transition-timing-function: ease-in;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   transition-property: opacity, top;
   opacity: 0;
 

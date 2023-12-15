@@ -276,7 +276,8 @@ export type ServicesDocument<Lang extends string = string> =
   >;
 
 type SingleServiceDocumentDataSlicesSlice =
-  | ServicesSliderSlice
+  | TextImagesShapesSlice
+  | OurClientsSlice
   | ImageTextBoxSlice
   | PageHeroSlice;
 
@@ -1636,6 +1637,243 @@ export type TextBlockSlice = prismic.SharedSlice<
   TextBlockSliceVariation
 >;
 
+/**
+ * Primary content in *TextImagesShape → Primary*
+ */
+export interface TextImagesShapesSliceDefaultPrimary {
+  /**
+   * Orientation field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: text_images_shapes.primary.orientation
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  orientation: prismic.SelectField<"left" | "right", "filled">;
+
+  /**
+   * Eyebrow field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Image 1 field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for TextImagesShape Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImagesShapesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextImagesShapesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *TextImagesShape → Primary*
+ */
+export interface TextImagesShapesSliceCircleImagePrimary {
+  /**
+   * Orientation field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: text_images_shapes.primary.orientation
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  orientation: prismic.SelectField<"left" | "right", "filled">;
+
+  /**
+   * Eyebrow field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Image 1 field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+}
+
+/**
+ * Circle image variation for TextImagesShape Slice
+ *
+ * - **API ID**: `circleImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImagesShapesSliceCircleImage = prismic.SharedSliceVariation<
+  "circleImage",
+  Simplify<TextImagesShapesSliceCircleImagePrimary>,
+  never
+>;
+
+/**
+ * Primary content in *TextImagesShape → Primary*
+ */
+export interface TextImagesShapesSliceSquareImagePrimary {
+  /**
+   * Orientation field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: text_images_shapes.primary.orientation
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  orientation: prismic.SelectField<"left" | "right", "filled">;
+
+  /**
+   * Eyebrow field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Image 1 field in *TextImagesShape → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+}
+
+/**
+ * Square image variation for TextImagesShape Slice
+ *
+ * - **API ID**: `squareImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImagesShapesSliceSquareImage = prismic.SharedSliceVariation<
+  "squareImage",
+  Simplify<TextImagesShapesSliceSquareImagePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextImagesShape*
+ */
+type TextImagesShapesSliceVariation =
+  | TextImagesShapesSliceDefault
+  | TextImagesShapesSliceCircleImage
+  | TextImagesShapesSliceSquareImage;
+
+/**
+ * TextImagesShape Shared Slice
+ *
+ * - **API ID**: `text_images_shapes`
+ * - **Description**: TextImagesShapes
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImagesShapesSlice = prismic.SharedSlice<
+  "text_images_shapes",
+  TextImagesShapesSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1732,6 +1970,14 @@ declare module "@prismicio/client" {
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      TextImagesShapesSlice,
+      TextImagesShapesSliceDefaultPrimary,
+      TextImagesShapesSliceCircleImagePrimary,
+      TextImagesShapesSliceSquareImagePrimary,
+      TextImagesShapesSliceVariation,
+      TextImagesShapesSliceDefault,
+      TextImagesShapesSliceCircleImage,
+      TextImagesShapesSliceSquareImage,
     };
   }
 }

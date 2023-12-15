@@ -24,4 +24,7 @@ export const components = defineSliceZoneComponents({
   ),
   testimonials: defineAsyncComponent(() => import("./Testimonials/index.vue")),
   text_block: defineAsyncComponent(() => import("./TextBlock/index.vue")),
+  text_images_shapes: defineAsyncComponent(
+    () => import("./TextImagesShape/index.vue"),
+  ),
 });

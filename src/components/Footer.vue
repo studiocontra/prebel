@@ -39,7 +39,7 @@
           <div class="footer__address">
             <div class="text">
               <p>
-                +57 604 36 56 000
+                +57 604 365 60 00
                 <br />
                 servicio.cliente@prebel.com.co
                 <br />

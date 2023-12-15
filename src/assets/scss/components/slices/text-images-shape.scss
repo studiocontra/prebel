@@ -1,0 +1,147 @@
+.text-images-shape {
+  position: relative;
+
+  .drop {
+    z-index: 2;
+    top: 50%;
+    left: 80%;
+    width: 60%;
+  }
+
+  .drop--circle {
+    top: auto;
+    bottom: 10%;
+    left: 85%;
+  }
+  .drop--square {
+    top: 40%;
+    left: 80%;
+  }
+
+  .content {
+    margin-bottom: 3em;
+
+    @include m768 {
+      margin-bottom: 0;
+    }
+
+    .title {
+      svg {
+        width: 1em;
+      }
+    }
+
+    .wrap-ctas {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+  }
+
+  .images {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .img {
+      position: relative;
+      width: 40%;
+
+
+      img {
+        display: block;
+        width: 100%;
+
+        @include fullAbs();
+        @include fit();
+      }
+    }
+
+    .img--pill {
+      aspect-ratio: 1 / 1.5;
+
+      img {
+        border-radius: 50% / 35%;
+      }
+    }
+
+    .img--square {
+      aspect-ratio: 1 / 1.2;
+
+      img {
+        border-radius: 18px;
+      }
+    }
+
+    .img--circle {
+      aspect-ratio: 1 / 1;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .images--circle,
+  .images--square {
+    .img {
+      &::before {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 50%;
+        content: '';
+        border-radius: 50% / 35%;
+        background-color: $beige;
+        aspect-ratio: 1 / 1.5;
+      }
+    }
+  }
+
+  .images--circle {
+    .img {
+      width: 60%;
+
+      &::before {
+        top: 0;
+        right: 0;
+        translate: 50% -20%;
+        z-index: 0;
+      }
+    }
+  }
+
+  .images--square {
+    .img {
+      width: 50%;
+
+      &::before {
+        z-index: 0;
+        right: 0;
+        bottom: 0;
+        translate: 120% 0;
+      }
+    }
+  }
+
+  .images--double {
+    .img--2 {
+      align-self: flex-end;
+
+      &::before {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 30%;
+        content: '';
+        border-radius: 50%;
+        background-color: $beige;
+        translate: 0 -130%;
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+}
