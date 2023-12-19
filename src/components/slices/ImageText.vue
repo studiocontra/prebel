@@ -15,7 +15,8 @@
           },
           clickable: true
         }"
-        :slidesPerView="1">
+        :slidesPerView="1"
+        :watchOverflow="true">
         <swiper-slide v-for="(item, id) in props.slides" :key="id">
           <div class="row align-center">
             <div class="col-lg-6">
@@ -42,8 +43,9 @@
                   :field="item.content"
                   class="title text" />
 
-                <Button>
-                  Conoce más
+                <Button
+                  v-if="button_label">
+                  {{ button_label }}
                 </Button>
               </div>
             </div>
@@ -66,11 +68,13 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const props = defineProps({
-  slides: [Array, Boolean],
+  button_label: String,
+  button_link: Object,
+  content: Array,
   eyebrow: String,
   headline: String,
-  content: Array,
-  image: Object
+  image: Object,
+  slides: [Array, Boolean],
 });
 
 function pad(num) {
@@ -80,5 +84,5 @@ function pad(num) {
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/home/image-text";
+  @import "@scss/components/slices/image-text";
 </style>

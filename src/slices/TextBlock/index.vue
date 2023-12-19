@@ -15,6 +15,9 @@ defineProps(
 
 <template>
   <TextBlock
+    :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
-    :content="slice.primary.content" />
+    :content="slice.primary.content"
+    :buttonLink="slice.primary.button_link"
+    :buttonLabel="slice.primary.button_label" />
 </template>

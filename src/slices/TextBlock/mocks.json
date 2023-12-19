@@ -18,6 +18,23 @@
 						}
 					}
 				]
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "gasoline",
+				"type": "Text"
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "steam",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
 			}
 		},
 		"items": []

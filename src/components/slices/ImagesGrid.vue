@@ -1,17 +1,49 @@
 <template>
   <div class="section home__images">
     <div class="container">
+      <div
+        v-if="variation == 'withText' && hasText"
+        class="images-grid__headline">
+        <div class="row justify-between">
+          <div class="col-md-5 col-lg-4">
+            <span
+              v-if="data.eyebrow"
+              role="headling">
+              {{ data.eyebrow }}
+            </span>
+
+            <h3
+              v-if="data.headline"
+              class="title">
+              {{ data.headline }}
+            </h3>
+          </div>
+
+          <div class="col-md-5 col-lg-4 col-xx-3">
+            <span
+              v-if="data.eyebrow_content"
+              role="headling">
+              {{ data.eyebrow_content }}
+            </span>
+
+            <prismic-rich-text
+              :field="data.content"
+              class="text" />
+          </div>
+        </div>
+      </div>
+
       <div class="images">
         <div
-          v-if="image1"
+          v-if="data.image_1"
           class="img img--square">
-          <prismic-image :field="image1" />
+          <prismic-image :field="data.image_1" />
         </div>
 
         <div
-          v-if="image2"
+          v-if="data.image_2"
           class="img img--pill">
-          <prismic-image :field="image2" />
+          <prismic-image :field="data.image_2" />
         </div>
 
         <div class="shape shape--1"></div>
@@ -19,9 +51,9 @@
         <div class="shape shape--2"></div>
 
         <div
-          v-if="image3"
+          v-if="data.image_3"
           class="img img--rectangle">
-          <prismic-image :field="image3" />
+          <prismic-image :field="data.image_3" />
         </div>
 
         <Drop
@@ -39,10 +71,17 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
 const props = defineProps({
-  image1: [Object, Boolean],
-  image2: [Object, Boolean],
-  image3: [Object, Boolean]
+  variation: String,
+  data: [Object, Boolean]
+});
+
+console.log(props.data);
+
+const hasText = computed(() => {
+  return props.data.headline && props.data.content;
 });
 </script>
 

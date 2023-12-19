@@ -1,0 +1,31 @@
+.wrap-text-image-full {
+  .img {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 18px;
+    aspect-ratio: 2 / 1;
+
+    img {
+
+      @include fullAbs;
+      @include fit;
+    }
+  }
+}
+
+.text-image-full__content {
+  margin-bottom: 2em;
+
+  .eyebrow {
+    margin-bottom: 1em;
+  }
+
+  .title {
+    margin-bottom: 0;
+  }
+
+  .content {
+    margin-bottom: 1em;
+  }
+}

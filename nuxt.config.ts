@@ -27,6 +27,7 @@ export default defineNuxtConfig({
   i18n: {
     locales: ['es-co', 'en-us'],  // used in URL path prefix
     defaultLocale: 'es-co',    // default locale of your project for Nuxt pages and routings
+    detectBrowserLanguage: false,
   },
 
   vite: {

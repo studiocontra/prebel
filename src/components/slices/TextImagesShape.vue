@@ -7,7 +7,7 @@
 
     <div class="container">
       <div class="row align-center justify-between" :class="orientation">
-        <div class="col-md-6 col-lg-5">
+        <div class="col-md-6">
           <div class="content">
             <span
               v-if="data.eyebrow"

@@ -17,6 +17,7 @@ export const components = defineSliceZoneComponents({
     () => import("./ImageTextCarousel/index.vue"),
   ),
   images_grid: defineAsyncComponent(() => import("./ImagesGrid/index.vue")),
+  locations_map: defineAsyncComponent(() => import("./LocationsMap/index.vue")),
   our_clients: defineAsyncComponent(() => import("./ClientLogos/index.vue")),
   page_hero: defineAsyncComponent(() => import("./PageHero/index.vue")),
   services_slider: defineAsyncComponent(
@@ -24,6 +25,10 @@ export const components = defineSliceZoneComponents({
   ),
   testimonials: defineAsyncComponent(() => import("./Testimonials/index.vue")),
   text_block: defineAsyncComponent(() => import("./TextBlock/index.vue")),
+  text_cards: defineAsyncComponent(() => import("./TextCards/index.vue")),
+  text_image_full: defineAsyncComponent(
+    () => import("./TextImageFull/index.vue"),
+  ),
   text_images_shapes: defineAsyncComponent(
     () => import("./TextImagesShape/index.vue"),
   ),

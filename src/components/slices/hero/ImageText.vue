@@ -5,7 +5,7 @@
       :parallax="-12" />
     <div class="container">
       <div class="row align-center justify-between">
-        <div class="col-lg-6">
+        <div :class="textCols">
           <h1>
             <prismic-rich-text
               :field="content"
@@ -34,6 +34,16 @@ const props = defineProps({
 
 const imgStyleClass = computed(() => `hero__image--${props.imageStyle}`);
 const imgSizeClass = computed(() => `hero__image--${props.imageSize}`);
+
+const textCols = computed(() => {
+  const cols = {
+    'small': 'col-lg-6',
+    'large': 'col-lg-5'
+  };
+
+  return cols[props.imageSize];
+});
+
 const imgCols = computed(() => {
   const cols = {
     'small': 'col-md-10 col-lg-5',

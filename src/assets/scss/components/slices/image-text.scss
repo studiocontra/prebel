@@ -1,4 +1,12 @@
 .home__img-text {
+  :deep(.swiper-slide) {
+    padding-bottom: 40px;
+
+    @include m768 {
+      padding-bottom: 60px;
+    }
+  }
+
   .img {
     position: relative;
     margin-bottom: 2em;
@@ -54,5 +62,9 @@
       left: 95%;
       width: 60%;
     }
+  }
+
+  :deep(.swiper-pagination-lock) {
+    display: none;
   }
 }
