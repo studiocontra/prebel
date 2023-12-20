@@ -14,7 +14,13 @@ defineProps(
 </script>
 
 <template>
-  <ImageText
+  <ImageTextDefault
+    v-if="slice.variation == 'default'"
+    :id="slice.id"
+    :slides="slice.items" />
+
+  <ImageTextWide
+    v-if="slice.variation == 'imageWide'"
     :id="slice.id"
     :slides="slice.items" />
 </template>

@@ -56,14 +56,14 @@
                 </NuxtLink>
               </li>
               <li>
-                <a href="#">
+                <NuxtLink to="/sostenibilidad">
                   Sostenibilidad
-                </a>
+                </NuxtLink>
               </li>
               <li>
-                <a href="#">
-                  Trabaja con nosotros
-                </a>
+                <NuxtLink to="/trabaja-con-nosotros">
+                  Trabaja con Nosotros
+                </NuxtLink>
               </li>
               <li>
                 <a href="#">

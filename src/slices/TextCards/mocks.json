@@ -9,15 +9,9 @@
 				"type": "Text"
 			},
 			"headline": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Laboris pariatur consectetur fugiat consectetur occaecat non amet dolor culpa cupidatat laborum dolor exercitation incididunt pariatur. Ex tempor ea exercitation qui ad consectetur nostrud cupidatat do pariatur proident ipsum. Proident reprehenderit id minim enim ut irure duis est do deserunt magna id velit aute."
-						}
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "composition",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -27,7 +21,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
@@ -45,6 +38,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],

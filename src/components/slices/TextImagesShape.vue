@@ -1,5 +1,6 @@
 <template>
-  <div class="section text-images-shape">
+  <div class="section text-images-shape"
+    :class="`text-images-shape--${props.data.orientation}`">
     <Drop
       :class="dropClass"
       :maxW="(variation == 'default') ? '290px' : '150px'"

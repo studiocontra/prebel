@@ -8,6 +8,7 @@
           <div class="col-md-5 col-lg-4">
             <span
               v-if="data.eyebrow"
+              class="eyebrow"
               role="headling">
               {{ data.eyebrow }}
             </span>
@@ -22,6 +23,7 @@
           <div class="col-md-5 col-lg-4 col-xx-3">
             <span
               v-if="data.eyebrow_content"
+              class="eyebrow"
               role="headling">
               {{ data.eyebrow_content }}
             </span>
@@ -77,8 +79,6 @@ const props = defineProps({
   variation: String,
   data: [Object, Boolean]
 });
-
-console.log(props.data);
 
 const hasText = computed(() => {
   return props.data.headline && props.data.content;

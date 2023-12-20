@@ -14,11 +14,8 @@ defineProps(
 </script>
 
 <template>
-  <section
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
-  >
-    Placeholder component for text_cards (variation: {{ slice.variation }})
-    Slices
-  </section>
+  <TextCards
+    :eyebrow="slice.primary.eyebrow"
+    :headline="slice.primary.headline"
+    :cards="slice.items" />
 </template>

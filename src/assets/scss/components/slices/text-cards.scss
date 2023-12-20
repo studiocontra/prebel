@@ -1,0 +1,55 @@
+.eyebrow {
+  margin-bottom: 3em;
+}
+
+.card {
+  margin-bottom: 4.5em;
+  border-radius: 18px;
+  background-color: $beige;
+  padding: 50px 48px;
+
+  @include m768 {
+    padding: 10% 15%;
+  }
+}
+
+.card__image {
+  position: relative;
+  margin-bottom: 1.8em;
+  max-width: 150px;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1 1 auto;
+  align-items: flex-start;
+
+  .eyebrow {
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+
+  .text {
+    margin-bottom: 1em;
+  }
+
+  .btn {
+    margin-top: auto;
+    display: inline-flex;
+    width: auto;
+  }
+}
+
+:deep(.swiper-pagination) {
+  .swiper-pagination-bullet {
+    --swiper-pagination-bullet-size: 10px;
+    background: $black;
+    opacity: 0.4;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}

@@ -3,7 +3,7 @@
 
   .drop {
     z-index: 2;
-    top: 50%;
+    top: 45%;
     left: 80%;
     width: 60%;
   }
@@ -13,6 +13,7 @@
     bottom: 10%;
     left: 85%;
   }
+
   .drop--square {
     top: 40%;
     left: 80%;
@@ -143,5 +144,19 @@
         aspect-ratio: 1 / 1;
       }
     }
+  }
+}
+
+.text-images-shape--right {
+  .drop {
+    left: 25%;
+  }
+
+  .drop--circle {
+    left: 25%;
+  }
+
+  .drop--square {
+    left: 25%;
   }
 }

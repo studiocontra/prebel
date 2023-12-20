@@ -2050,12 +2050,12 @@ export interface TextCardsSliceDefaultPrimary {
   /**
    * Headline field in *TextCards → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: text_cards.primary.headline
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  headline: prismic.RichTextField;
+  headline: prismic.KeyTextField;
 }
 
 /**

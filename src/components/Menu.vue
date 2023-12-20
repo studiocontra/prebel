@@ -19,14 +19,14 @@
             </NuxtLink>
 
             <NuxtLink
-              to="/"
+              to="/sostenibilidad"
               class="title menu-link"
               @click="$emit('closeMenu')">
               Sostenibilidad
             </NuxtLink>
 
             <NuxtLink
-              to="/"
+              to="/nosotros"
               class="title menu-link"
               @click="$emit('closeMenu')">
               Nosotros
