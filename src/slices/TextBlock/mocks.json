@@ -14,7 +14,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Qui magna quis culpa incididunt."
+							"text": "Non minim non aliquip ex deserunt laborum commodo aute incididunt adipisicing cupidatat. Eu dolor consequat laborum cillum."
 						}
 					}
 				]
@@ -35,6 +35,11 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"text_align": {
+				"__TYPE__": "FieldContent",
+				"value": "left",
+				"type": "Select"
 			}
 		},
 		"items": []

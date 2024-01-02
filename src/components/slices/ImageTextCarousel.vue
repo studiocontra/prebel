@@ -21,11 +21,11 @@
             slidesPerView: 1.4,
           },
           '1800': {
-            slidesPerView: 2.4,
+            slidesPerView: 2.3,
           },
         }"
         @init="moveCircle"
-        @slideChange="moveCircle">
+        @slideChangeTransitionStart="moveCircle">
         <swiper-slide v-for="(item, id) in slides" :key="id">
           <Drop
             maxW="180px"
@@ -38,7 +38,9 @@
             </div>
             <div class="col-md-7 col-lg-6">
               <div class="content">
-                <span class="title">
+                <span
+                  v-if="props.showIndex"
+                  class="title">
                   {{ pad(id) }}
                 </span>
 
@@ -72,6 +74,7 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 
 const props = defineProps({
+  showIndex: Boolean,
   headline: String,
   slides: [Array, Boolean],
 });

@@ -20,7 +20,15 @@
           }
         }
       },
-      "items": {}
+      "items": {
+        "country": {
+          "type": "Text",
+          "config": {
+            "label": "Country",
+            "placeholder": "ISO Code"
+          }
+        }
+      }
     }
   ]
 }

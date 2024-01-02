@@ -18,6 +18,7 @@ defineProps(
     :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
     :content="slice.primary.content"
+    :textAlign="slice.primary.text_align"
     :buttonLink="slice.primary.button_link"
     :buttonLabel="slice.primary.button_label" />
 </template>

@@ -16,6 +16,7 @@ defineProps(
 <template>
   <ImageTextCarousel
     :id="slice.id"
+    :showIndex="slice.primary.show_index"
     :headline="slice.primary.eyebrow"
     :slides="slice.items" />
 </template>

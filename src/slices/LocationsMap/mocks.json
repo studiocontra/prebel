@@ -9,6 +9,20 @@
 				"type": "Text"
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"country",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "attack",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
 	}
 ]

@@ -1195,6 +1195,17 @@ export interface ImageTextCarouselSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   eyebrow: prismic.KeyTextField;
+
+  /**
+   * Show Index Numbers field in *ImageTextCarousel → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_text_carousel.primary.show_index
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_index: prismic.BooleanField;
 }
 
 /**
@@ -1433,6 +1444,21 @@ export interface LocationsMapSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *LocationsMap → Items*
+ */
+export interface LocationsMapSliceDefaultItem {
+  /**
+   * Country field in *LocationsMap → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ISO Code
+   * - **API ID Path**: locations_map.items[].country
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  country: prismic.KeyTextField;
+}
+
+/**
  * Default variation for LocationsMap Slice
  *
  * - **API ID**: `default`
@@ -1442,7 +1468,7 @@ export interface LocationsMapSliceDefaultPrimary {
 export type LocationsMapSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<LocationsMapSliceDefaultPrimary>,
-  never
+  Simplify<LocationsMapSliceDefaultItem>
 >;
 
 /**
@@ -1981,6 +2007,17 @@ export interface TextBlockSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Text Align field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: text_block.primary.text_align
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_align: prismic.SelectField<"left" | "center", "filled">;
 
   /**
    * Button Label field in *TextBlock → Primary*
@@ -2534,6 +2571,7 @@ declare module "@prismicio/client" {
       ImagesGridSliceWithText,
       LocationsMapSlice,
       LocationsMapSliceDefaultPrimary,
+      LocationsMapSliceDefaultItem,
       LocationsMapSliceVariation,
       LocationsMapSliceDefault,
       OurClientsSlice,

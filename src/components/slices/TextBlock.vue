@@ -19,7 +19,8 @@
           <prismic-rich-text
             v-if="content"
             :field="content"
-            class="text" />
+            class="text"
+            :class="textAlign" />
 
           <div
             v-if="buttonLabel"
@@ -41,6 +42,7 @@ const props = defineProps({
   headline: String,
   buttonLabel: String,
   buttonLink: Object,
+  textAlign: String,
 });
 </script>
 

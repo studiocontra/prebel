@@ -79,6 +79,9 @@
     @include m768 {
       margin-bottom: 0;
     }
+    @include m1800 {
+      aspect-ratio: 1 / 1.3;
+    }
 
     img {
       display: block;

@@ -14,11 +14,7 @@ defineProps(
 </script>
 
 <template>
-  <section
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
-  >
-    Placeholder component for locations_map (variation: {{ slice.variation }})
-    Slices
-  </section>
+  <LocationsMap
+    :headline="slice.primary.headline"
+    :data="slice.items" />
 </template>

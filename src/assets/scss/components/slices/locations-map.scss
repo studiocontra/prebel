@@ -1,0 +1,49 @@
+.location-map {
+  padding: 60px 0;
+}
+
+.box {
+  padding: 32px;
+  border-radius: 18px;
+  background-color: $black;
+
+  @include m768 {
+    padding: 5% 44px;
+  }
+
+  .title {
+    color: $white;
+  }
+
+  .list {
+    columns: 2;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      color: $white;
+    }
+  }
+}
+
+.wrap-map {
+  margin-bottom: 2em;
+
+  @include m992 {
+    margin-bottom: 0;
+  }
+
+  svg {
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+
+    path {
+      fill: $white;
+    }
+
+    .active {
+      fill: $gray;
+    }
+  }
+}

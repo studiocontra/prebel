@@ -18,7 +18,8 @@
         }"
         :slidesPerView="1"
         :watchOverflow="true"
-        @slideChangeTransitionStart="consoleLog">
+        @init="movePagination"
+        @slideChangeTransitionStart="movePagination">
         <swiper-slide v-for="(item, id) in props.slides" :key="id">
           <div class="row align-center">
             <div class="col-md-7 col-lg-8">
@@ -94,13 +95,12 @@ function pad(num) {
   return s.substr(s.length - 2);
 };
 
-function consoleLog({slides, activeIndex}) {
+function movePagination({slides, activeIndex}) {
   const activeSlide = slides[activeIndex];
   const contentTop = activeSlide.querySelector('.content').offsetTop;
   const contentHeight = activeSlide.querySelector('.content').offsetHeight;
   const paginationTop = contentTop + contentHeight + 32;
 
-  console.log(`${paginationTop}px`);
   pagination.value.style.top = `${paginationTop}px`
 }
 </script>
