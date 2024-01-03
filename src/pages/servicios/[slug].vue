@@ -13,8 +13,9 @@
 
 <script setup>
 const { client } = usePrismic();
-const { locale, localeCodes } = useI18n();
 const route = useRoute();
+const { localeProperties } = useI18n();
+const { value: { iso, code } } = localeProperties;
 
 // Import your slices
 import ClientLogos from '@/slices/ClientLogos'
@@ -24,7 +25,7 @@ import TextImagesShape from '@/slices/TextImagesShape'
 
 const { data } = await useAsyncData(
   `[single_service-uid-${route.params.uid}]`,
-  () => client.getByUID("single_service", route.params.slug, {lang: locale.value}),
+  () => client.getByUID("single_service", route.params.slug, {lang:iso}),
 );
 
 const singleServiceData = data.value.data;

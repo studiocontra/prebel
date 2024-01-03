@@ -12,7 +12,8 @@
 
 <script setup>
 const { client } = usePrismic();
-const { locale, localeCodes } = useI18n();
+const { localeProperties } = useI18n();
+const { value: { iso, code } } = localeProperties;
 
 // Import your slices
 import Cards from '@/slices/Cards'
@@ -20,7 +21,7 @@ import PageHero from '@/slices/PageHero'
 import Testimonials from '@/slices/Testimonials'
 
 const { data } = await useAsyncData("[work]", () =>
-  client.getSingle("work", {lang: locale.value})
+  client.getSingle("work", {lang: iso})
 );
 
 const workData = data.value.data;

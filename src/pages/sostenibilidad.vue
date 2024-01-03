@@ -14,7 +14,8 @@
 
 <script setup>
 const { client } = usePrismic();
-const { locale, localeCodes } = useI18n();
+const { localeProperties } = useI18n();
+const { value: { iso, code } } = localeProperties;
 
 // Import your slices
 import ImageText from '@/slices/ImageText'
@@ -24,7 +25,7 @@ import TextImageFull from '@/slices/TextImageFull'
 import TextImagesShape from '@/slices/TextImagesShape'
 
 const { data } = await useAsyncData("[sustainability]", () =>
-  client.getSingle("sustainability", {lang: locale.value})
+  client.getSingle("sustainability", {lang: iso})
 );
 
 const sustainabilityData = data.value.data;

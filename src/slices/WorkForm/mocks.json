@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"headline_1": {
+				"__TYPE__": "FieldContent",
+				"value": "blind",
+				"type": "Text"
+			},
+			"headline_2": {
+				"__TYPE__": "FieldContent",
+				"value": "laid",
+				"type": "Text"
+			},
+			"form_eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "heart",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

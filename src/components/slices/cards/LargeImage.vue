@@ -37,11 +37,14 @@
             </div>
 
             <div class="card__content">
-              <Button
+              <NuxtLink
                 v-if="item.button_link && item.button_label"
-                theme="dark">
-                {{ item.button_label }}
-              </Button>
+                :to="`${route.path}/${item.button_link.uid}`">
+                <Button
+                  theme="dark">
+                  {{ item.button_label }}
+                </Button>
+              </NuxtLink>
             </div>
           </div>
         </swiper-slide>
@@ -55,6 +58,8 @@ const props = defineProps({
   headline: String,
   cards: [Array, Boolean],
 });
+
+const route = useRoute();
 
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/vue';

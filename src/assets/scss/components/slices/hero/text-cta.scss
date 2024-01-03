@@ -1,0 +1,14 @@
+.hero--text-cta {
+  min-height: 0;
+  padding: 100px 0;
+  text-align: center;
+
+  @include m768 {
+    padding: 20vh 0;
+  }
+
+  h1.title {
+    margin-bottom: 0.4em;
+    font-weight: 100;
+  }
+}

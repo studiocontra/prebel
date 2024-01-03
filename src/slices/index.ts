@@ -32,4 +32,5 @@ export const components = defineSliceZoneComponents({
   text_images_shapes: defineAsyncComponent(
     () => import("./TextImagesShape/index.vue"),
   ),
+  work_form: defineAsyncComponent(() => import("./WorkForm/index.vue")),
 });

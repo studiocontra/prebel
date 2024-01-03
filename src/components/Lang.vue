@@ -1,12 +1,12 @@
 <template>
   <div class="locale">
     <NuxtLink
-      :to="switchLocalePath('es-co')"
+      :to="switchLocalePath('es')"
       activeClass="active">
       Es
     </NuxtLink>
     <NuxtLink
-      :to="switchLocalePath('en-us')"
+      :to="switchLocalePath('en')"
       activeClass="active">
       En
     </NuxtLink>

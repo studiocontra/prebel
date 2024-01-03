@@ -1,0 +1,11 @@
+.single-work {
+  :deep(.hero) {
+    background: linear-gradient(to bottom, $green 10%, $green_light 75%, $white 100%);
+
+    .drop {
+      z-index: 2;
+      top: 38%;
+      left: 82%;
+    }
+  }
+}

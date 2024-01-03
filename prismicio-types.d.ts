@@ -415,6 +415,71 @@ export type SingleServiceDocument<Lang extends string = string> =
     Lang
   >;
 
+type SingleWorkDocumentDataSlicesSlice = WorkFormSlice | PageHeroSlice;
+
+/**
+ * Content for Single Work documents
+ */
+interface SingleWorkDocumentData {
+  /**
+   * Slice Zone field in *Single Work*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_work.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SingleWorkDocumentDataSlicesSlice> /**
+   * Meta Description field in *Single Work*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: single_work.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Single Work*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_work.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Single Work*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: single_work.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Single Work document from Prismic
+ *
+ * - **API ID**: `single_work`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SingleWorkDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SingleWorkDocumentData>,
+    "single_work",
+    Lang
+  >;
+
 type SustainabilityDocumentDataSlicesSlice =
   | TextImageFullSlice
   | TextBlockSlice
@@ -556,6 +621,7 @@ export type AllDocumentTypes =
   | LineaEticaDocument
   | ServicesDocument
   | SingleServiceDocument
+  | SingleWorkDocument
   | SustainabilityDocument
   | WorkDocument;
 
@@ -1705,12 +1771,71 @@ export type PageHeroSliceText = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *PageHero → Primary*
+ */
+export interface PageHeroSliceTextCtaPrimary {
+  /**
+   * Headline field in *PageHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *PageHero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Button Link field in *PageHero → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.ContentRelationshipField;
+
+  /**
+   * Button Label field in *PageHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+}
+
+/**
+ * Text with Call To action variation for PageHero Slice
+ *
+ * - **API ID**: `textCta`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeroSliceTextCta = prismic.SharedSliceVariation<
+  "textCta",
+  Simplify<PageHeroSliceTextCtaPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *PageHero*
  */
 type PageHeroSliceVariation =
   | PageHeroSliceDefault
   | PageHeroSliceHome
-  | PageHeroSliceText;
+  | PageHeroSliceText
+  | PageHeroSliceTextCta;
 
 /**
  * PageHero Shared Slice
@@ -2492,6 +2617,71 @@ export type TextImagesShapesSlice = prismic.SharedSlice<
   TextImagesShapesSliceVariation
 >;
 
+/**
+ * Primary content in *WorkForm → Primary*
+ */
+export interface WorkFormSliceDefaultPrimary {
+  /**
+   * Headline 1 field in *WorkForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_form.primary.headline_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline_1: prismic.KeyTextField;
+
+  /**
+   * Headline 2 field in *WorkForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_form.primary.headline_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline_2: prismic.KeyTextField;
+
+  /**
+   * Form eyebrow field in *WorkForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_form.primary.form_eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  form_eyebrow: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for WorkForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorkFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WorkForm*
+ */
+type WorkFormSliceVariation = WorkFormSliceDefault;
+
+/**
+ * WorkForm Shared Slice
+ *
+ * - **API ID**: `work_form`
+ * - **Description**: WorkForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkFormSlice = prismic.SharedSlice<
+  "work_form",
+  WorkFormSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -2520,6 +2710,9 @@ declare module "@prismicio/client" {
       SingleServiceDocument,
       SingleServiceDocumentData,
       SingleServiceDocumentDataSlicesSlice,
+      SingleWorkDocument,
+      SingleWorkDocumentData,
+      SingleWorkDocumentDataSlicesSlice,
       SustainabilityDocument,
       SustainabilityDocumentData,
       SustainabilityDocumentDataSlicesSlice,
@@ -2583,10 +2776,12 @@ declare module "@prismicio/client" {
       PageHeroSliceDefaultPrimary,
       PageHeroSliceHomePrimary,
       PageHeroSliceTextPrimary,
+      PageHeroSliceTextCtaPrimary,
       PageHeroSliceVariation,
       PageHeroSliceDefault,
       PageHeroSliceHome,
       PageHeroSliceText,
+      PageHeroSliceTextCta,
       ServicesSliderSlice,
       ServicesSliderSliceDefaultItem,
       ServicesSliderSliceVariation,
@@ -2620,6 +2815,10 @@ declare module "@prismicio/client" {
       TextImagesShapesSliceDefault,
       TextImagesShapesSliceCircleImage,
       TextImagesShapesSliceSquareImage,
+      WorkFormSlice,
+      WorkFormSliceDefaultPrimary,
+      WorkFormSliceVariation,
+      WorkFormSliceDefault,
     };
   }
 }

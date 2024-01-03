@@ -1,0 +1,40 @@
+{
+  "id": "work_form",
+  "type": "SharedSlice",
+  "name": "WorkForm",
+  "description": "WorkForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "headline_1": {
+          "type": "Text",
+          "config": {
+            "label": "Headline 1",
+            "placeholder": ""
+          }
+        },
+        "headline_2": {
+          "type": "Text",
+          "config": {
+            "label": "Headline 2",
+            "placeholder": ""
+          }
+        },
+        "form_eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Form eyebrow",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

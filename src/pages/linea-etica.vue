@@ -12,7 +12,8 @@
 
 <script setup>
 const { client } = usePrismic();
-const { locale, localeCodes } = useI18n();
+const { localeProperties } = useI18n();
+const { value: { iso, code } } = localeProperties;
 
 // Import your slices
 import CalloutTextContent from '@/slices/CalloutTextContent'
@@ -20,7 +21,7 @@ import PageHero from '@/slices/PageHero'
 import TextBlock from '@/slices/TextBlock'
 
 const { data } = await useAsyncData("[linea_etica]", () =>
-  client.getSingle("linea_etica", {lang: locale.value})
+  client.getSingle("linea_etica", {lang: iso})
 );
 
 const eticsData = data.value.data;

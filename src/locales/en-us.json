@@ -1,0 +1,25 @@
+{
+  "work form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter your name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your Email"
+    },
+    "ubicacion": {
+      "label": "Ubicación",
+      "placeholder": "Please choose one"
+    },
+    "area": {
+      "label": "Area",
+      "placeholder": "Please choose one"
+    },
+    "cv": {
+      "label": "Upload your CV",
+      "button label": "Select a file"
+    },
+    "submit": "Submit"
+  }
+}

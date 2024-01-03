@@ -1,0 +1,28 @@
+.work-form__headline {
+  margin-bottom: 60px;
+  text-align: center;
+
+  .title {
+    margin-bottom: 0;
+
+    &:last-of-type {
+      color: $gray;
+    }
+  }
+}
+
+.work-form__form {
+  .eyebrow {
+    text-align: center;
+    margin-bottom: 3em;
+  }
+
+  .form-field {
+    margin-bottom: 1.5em;
+
+    .eyebrow {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+}

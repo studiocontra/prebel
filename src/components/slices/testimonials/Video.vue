@@ -62,8 +62,6 @@
 <script setup>
 import { ref } from 'vue';
 
-onMounted(() => modal());
-
 const props = defineProps({
   eyebrow: String,
   headline: String,

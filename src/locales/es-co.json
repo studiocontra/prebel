@@ -1,0 +1,25 @@
+{
+  "work form": {
+    "name": {
+      "label": "Nombre",
+      "placeholder": "Ingresa tu nombre aquí"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Ingresa tu email aquí"
+    },
+    "ubicacion": {
+      "label": "Ubicación",
+      "placeholder": "Por favor selecciona una opción"
+    },
+    "area": {
+      "label": "Area",
+      "placeholder": "Por favor selecciona una opción"
+    },
+    "cv": {
+      "label": "Adjunta tu hoja de vida",
+      "button label": "Escoge un archivo"
+    },
+    "submit": "Enviar"
+  }
+}

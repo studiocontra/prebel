@@ -25,8 +25,19 @@ export default defineNuxtConfig({
   ],
 
   i18n: {
-    locales: ['es-co', 'en-us'],  // used in URL path prefix
-    defaultLocale: 'es-co',    // default locale of your project for Nuxt pages and routings
+    locales: [
+      {
+        code: 'es',
+        iso: 'es-co',
+        file: './locales/es-co.json'
+      },
+      {
+        code: 'en',
+        iso: 'en-us',
+        file: './locales/en-us.json'
+      },
+    ], // used in URL path prefix
+    defaultLocale: 'es',    // default locale of your project for Nuxt pages and routings
     detectBrowserLanguage: false,
   },
 

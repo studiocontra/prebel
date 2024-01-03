@@ -52,23 +52,23 @@
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "heroHome",
+		"variation": "home",
 		"primary": {
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"value": "pipe",
+				"type": "Text"
+			},
 			"content": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Do aliqua in commodo id officia eu aute qui velit voluptate velit laborum fugiat aliquip. Laboris sunt eiusmod duis ullamco Lorem nisi amet do."
+							"text": "Non ut consectetur adipisicing esse incididunt reprehenderit elit nulla consectetur tempor Lorem consectetur excepteur sint. In aliqua eiusmod elit est et tempor sit do enim."
 						}
 					}
 				]
-			},
-			"headline": {
-				"__TYPE__": "FieldContent",
-				"value": "surrounded",
-				"type": "Text"
 			}
 		},
 		"items": [
@@ -80,22 +80,62 @@
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "heroText",
+		"variation": "text",
 		"primary": {
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"value": "town",
+				"type": "Text"
+			},
 			"content": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Ullamco exercitation incididunt magna incididunt. Ipsum laboris ad ea dolor officia."
+							"text": "Quis aliquip commodo sit ad excepteur non aliquip proident qui mollit qui sint magna id incididunt."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textCta",
+		"primary": {
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"value": "problem",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi cupidatat commodo eiusmod laborum ullamco velit cupidatat veniam irure. Excepteur proident et officia elit sit officia eu irure."
 						}
 					}
 				]
 			},
-			"headline": {
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			},
+			"button_label": {
 				"__TYPE__": "FieldContent",
-				"value": "loose",
+				"value": "establish",
 				"type": "Text"
 			}
 		},

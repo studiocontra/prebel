@@ -19,7 +19,8 @@
 
 <script setup>
 const { client } = usePrismic();
-const { locale, localeCodes } = useI18n();
+const { localeProperties } = useI18n();
+const { value: { iso, code } } = localeProperties;
 
 // Import your slices
 import Accordion from '@/slices/Accordion'
@@ -34,7 +35,7 @@ import TextCards from '@/slices/TextCards'
 import TextImagesShape from '@/slices/TextImagesShape'
 
 const { data } = await useAsyncData("[about]", () =>
-  client.getSingle("about", {lang: locale.value})
+  client.getSingle("about", {lang: iso})
 );
 
 const aboutData = data.value.data;
