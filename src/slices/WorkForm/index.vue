@@ -19,5 +19,6 @@ defineProps(
     :data-slice-variation="slice.variation"
     :headline1="slice.primary.headline_1"
     :headline2="slice.primary.headline_2"
-    :formEyebrow="slice.primary.form_eyebrow" />
+    :formEyebrow="slice.primary.form_eyebrow"
+    :page="context" />
 </template>

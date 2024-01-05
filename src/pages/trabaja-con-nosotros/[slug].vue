@@ -2,6 +2,7 @@
   <main class="single-work" v-if="data">
     <SliceZone
       :slices="singleWorkData.slices"
+      :context="data.uid"
       :components="{
         page_hero: PageHero,
         work_form: WorkForm
@@ -25,6 +26,7 @@ const { data } = await useAsyncData(
 );
 
 const singleWorkData = data.value.data;
+
 
 useHead({
   title: data.value?.data.meta_title || 'Prebel',
