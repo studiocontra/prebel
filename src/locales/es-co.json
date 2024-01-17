@@ -2,19 +2,24 @@
   "work form": {
     "name": {
       "label": "Nombre",
-      "placeholder": "Ingresa tu nombre aquí"
+      "placeholder": "Ingresa tu nombre aquí",
+      "error": "Este valor es requerido."
     },
     "email": {
       "label": "Email",
-      "placeholder": "Ingresa tu email aquí"
+      "placeholder": "Ingresa tu email aquí",
+      "error": "Este valor es requerido.",
+      "error-email": "Este valor debe ser un correo válido."
     },
-    "ubicacion": {
+    "location": {
       "label": "Ubicación",
-      "placeholder": "Por favor selecciona una opción"
+      "placeholder": "Por favor selecciona una opción",
+      "error": "Este valor es requerido."
     },
     "area": {
       "label": "Area",
-      "placeholder": "Por favor selecciona una opción"
+      "placeholder": "Por favor selecciona una opción",
+      "error": "Este valor es requerido."
     },
     "cv": {
       "label": "Adjunta tu hoja de vida",

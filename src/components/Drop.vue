@@ -33,21 +33,13 @@ onMounted(() => {
 
     workspace.addEventListener("mousemove", addParallax);
   }
-  // addParallax();
-  // console.log(drop.value.dataset);
 });
 
 function addParallax(event) {
-  const movement = drop.value.dataset['parallax'] / 100;
-  // const x = (window.innerWidth - event.pageX * movement);
-  // const y = (window.innerHeight - event.pageY * movement);
+  const movement = drop.value.dataset['parallax'] / 200;
 
-  // drop.value.style.transform = `translateX(${x}px) translateY(${y}px)`;
-
-
-  const _w = window.innerWidth / 3;
-  const _h = window.innerHeight / 3;
-  // console.log(`${50 - (event.clientX - _w) * 0.1}% ${50 - (event.clientY - _h) * 0.1}%`);
+  const _w = window.innerWidth / 4;
+  const _h = window.innerHeight / 4;
   drop.value.style.transform = `translate(${(event.clientX - _w) * movement}%, ${(event.clientY - _h) * movement}%)`;
 }
 

@@ -31,7 +31,7 @@
             </h3>
 
             <div class="wrap-form">
-              <form action="">
+              <form action="" @submit="submitForm">
                 <div class="form-field">
                   <label
                     class="eyebrow"
@@ -44,6 +44,10 @@
                     type="text"
                     :placeholder="$t('work form.name.placeholder')"
                     v-model="state.name">
+
+                    <span class="error" v-if="showError('name')">
+                      {{ $t('work form.name.error') }}
+                    </span>
                 </div>
 
                 <div class="form-field">
@@ -58,13 +62,22 @@
                     type="email"
                     :placeholder="$t('work form.email.placeholder')"
                     v-model="state.email">
+
+                    <span class="error" v-if="showError('email')">
+                      <template v-if="v$.email.$errors[0].$validator == 'required'">
+                        {{ $t('work form.email.error') }}
+                      </template>
+                      <template v-if="v$.email.$errors[0].$validator == 'email'">
+                        {{ $t('work form.email.error-email') }}
+                      </template>
+                    </span>
                 </div>
 
                 <div class="form-field">
                   <label
                     class="eyebrow"
                     for="">
-                    {{ $t('work form.ubicacion.label') }}
+                    {{ $t('work form.location.label') }}
                   </label>
 
                   <div class="warp-select">
@@ -72,13 +85,17 @@
                       class="form-input"
                       v-model="state.location">
                       <option value="" selected disabled>
-                        {{ $t('work form.ubicacion.placeholder') }}
+                        {{ $t('work form.location.placeholder') }}
                       </option>
                       <option value="1">
                         1
                       </option>
                     </select>
                   </div>
+
+                  <span class="error" v-if="showError('location')">
+                    {{ $t('work form.location.error') }}
+                  </span>
                 </div>
 
                 <div class="form-field">
@@ -100,6 +117,10 @@
                       </option>
                     </select>
                   </div>
+
+                  <span class="error" v-if="showError('area')">
+                    {{ $t('work form.area.error') }}
+                  </span>
                 </div>
 
                 <div class="form-field">
@@ -135,7 +156,7 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { computed, reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 
@@ -151,7 +172,7 @@ const state = reactive({
   name: '',
   email: '',
   location: '',
-  area: ''
+  area: '',
 });
 
 const rules = {
@@ -161,7 +182,19 @@ const rules = {
   area: { required }
 };
 
-const v$ = useVuelidate(rules, state);
+const v$ = useVuelidate(rules, state, { $autoDirty: true });
+
+async function submitForm(e) {
+  e.preventDefault();
+  const isFormCorrect = await v$.value.$validate();
+  // you can show some extra alert to the user or just leave the each field to show it's `$errors`.
+  if (!isFormCorrect) return
+  // actually submit form
+}
+
+function showError(name) {
+  return v$.value[name].$errors.length > 0;
+};
 
 </script>
 

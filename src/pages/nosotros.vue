@@ -42,5 +42,5 @@ const aboutData = data.value.data;
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/pages/sustainability";
+  @import "@scss/pages/about";
 </style>

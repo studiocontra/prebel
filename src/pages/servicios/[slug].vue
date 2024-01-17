@@ -24,7 +24,7 @@ import PageHero from '@/slices/PageHero'
 import TextImagesShape from '@/slices/TextImagesShape'
 
 const { data } = await useAsyncData(
-  `[single_service-uid-${route.params.uid}]`,
+  `[single_service-uid-${route.params.slug}]`,
   () => client.getByUID("single_service", route.params.slug, {lang:iso}),
 );
 
