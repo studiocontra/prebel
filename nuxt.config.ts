@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@/assets/scss/base/reset.scss',
     '@/assets/scss/base/grid.scss',
     '@/assets/scss/base/text.scss',
+    '@/assets/scss/base/scroll.scss',
   ],
 
   modules: ['@nuxtjs/i18n', '@nuxtjs/prismic'],

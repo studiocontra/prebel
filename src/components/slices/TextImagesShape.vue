@@ -4,12 +4,13 @@
     <Drop
       :class="dropClass"
       :maxW="(variation == 'default') ? '290px' : '150px'"
-      :parallax="3" />
+      :parallax="3"
+      data-scroll-show />
 
     <div class="container">
       <div class="row align-center justify-between" :class="orientation">
         <div class="col-md-6">
-          <div class="content">
+          <div class="content" :data-scroll-show="props.data.orientation">
             <span
               v-if="data.eyebrow"
               class="eyebrow">
@@ -35,12 +36,16 @@
               'images--circle': variation == 'circleImage',
               'images--square': variation == 'squareImage',
             }">
-            <div class="img img--1" :class="imageShapeClass">
+            <div
+              class="img img--1"
+              :class="imageShapeClass"
+              data-scroll-show>
               <prismic-image :field="data.image_1" />
             </div>
             <div
               v-if="variation == 'default' && data.image_2"
-              class="img img--square img--2">
+              class="img img--square img--2"
+              data-scroll-show>
               <prismic-image :field="data.image_2" />
             </div>
           </div>

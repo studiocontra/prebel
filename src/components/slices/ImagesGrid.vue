@@ -3,7 +3,8 @@
     <div class="container">
       <div
         v-if="variation == 'withText' && hasText"
-        class="images-grid__headline">
+        class="images-grid__headline"
+        data-scroll-show>
         <div class="row justify-between">
           <div class="col-md-5 col-lg-4">
             <span
@@ -38,23 +39,30 @@
       <div class="images">
         <div
           v-if="data.image_1"
-          class="img img--square">
+          class="img img--square"
+          data-scroll-show="right">
           <prismic-image :field="data.image_1" />
         </div>
 
         <div
           v-if="data.image_2"
-          class="img img--pill">
+          class="img img--pill"
+          data-scroll-show>
           <prismic-image :field="data.image_2" />
         </div>
 
-        <div class="shape shape--1"></div>
+        <div
+          class="shape shape--1"
+          data-scroll-show></div>
 
-        <div class="shape shape--2"></div>
+        <div
+          class="shape shape--2"
+          data-scroll-show="left"></div>
 
         <div
           v-if="data.image_3"
-          class="img img--rectangle">
+          class="img img--rectangle"
+          data-scroll-show="left">
           <prismic-image :field="data.image_3" />
         </div>
 

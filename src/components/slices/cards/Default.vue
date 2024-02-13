@@ -20,10 +20,13 @@
                   {{ item.headline }}
                 </h3>
 
-                <Button
-                  v-if="item.button_link && item.button_label">
-                  {{ item.button_label }}
-                </Button>
+                <NuxtLink
+                  v-if="item.button_link && item.button_label"
+                  :to="`${route.path}/${item.button_link.uid}`">
+                  <Button>
+                    {{ item.button_label }}
+                  </Button>
+                </NuxtLink>
               </div>
             </div>
           </div>
@@ -38,6 +41,8 @@ const props = defineProps({
   headline: String,
   cards: [Array, Boolean],
 });
+
+const route = useRoute();
 </script>
 
 <style lang="scss" scoped>
