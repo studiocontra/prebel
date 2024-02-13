@@ -30,6 +30,7 @@
   };
 
   function hide() {
+    console.log('hide');
     if (import.meta.client) {
       isLoading.value = false
     }
@@ -76,6 +77,7 @@
 
   .loader {
     @include fullAbs;
+    position: fixed;
     z-index: 10;
   }
 </style>
