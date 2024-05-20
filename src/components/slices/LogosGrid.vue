@@ -1,7 +1,7 @@
 <template>
-  <div class="services-clients">
+  <div class="logos-grid">
     <div class="container">
-      <div class="clients__headline">
+      <div class="logos-grid__headline">
         <h2 class="eyebrow">
           {{ eyebrow }}
         </h2>
@@ -16,7 +16,7 @@
       </div>
 
 
-      <div class="row justify-center">
+      <div class="row justify-center align-center">
         <template v-for="(logo, id) in items" :key="id">
           <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xt-1">
             <div class="single-logo">
@@ -39,5 +39,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/services/clients";
+  @import "@scss/components/slices/logos-grid";
 </style>

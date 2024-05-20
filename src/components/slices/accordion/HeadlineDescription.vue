@@ -1,5 +1,5 @@
 <template>
-  <div class="section home__accordion">
+  <div class="section accordion--headline-desc">
     <div class="container">
       <div class="row justify-between">
         <div class="col-lg-5">
@@ -9,10 +9,12 @@
 
           <prismic-rich-text
             :field="description"
-            class="text" />
+            class="title" />
+
+          <prismic-image :field="image" class="img" />
         </div>
         <div class="col-lg-6">
-          <div class="home-accordion__content">
+          <div class="accordion--headline-desc__content">
             <template v-for="(item, idx) in items" :key="idx">
               <div
                 class="accordion-item"
@@ -59,6 +61,7 @@ const props = defineProps({
   data: Object,
   headline: String,
   description: Object,
+  image: [Object, Boolean],
   items: [Array, Boolean]
 });
 
@@ -87,5 +90,5 @@ function pad(num) {
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/home/accordion";
+  @import "@scss/components/slices/accordion/headline-description";
 </style>

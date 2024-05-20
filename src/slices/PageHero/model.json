@@ -64,13 +64,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "headline": {
-          "type": "Text",
-          "config": {
-            "label": "Headline",
-            "placeholder": ""
-          }
-        },
         "content": {
           "type": "StructuredText",
           "config": {

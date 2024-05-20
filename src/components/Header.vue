@@ -1,15 +1,27 @@
 <template>
-  <header>
+  <header :class="store" ref="mainHeader">
     <div class="container">
       <div class="header__logo">
         <NuxtLink to="/">
-          <img src="/logo-prebel.svg" alt="Prebel Logo">
-          <img src="/logo-prebel-mobile.svg" class="logo-mobile" alt="Prebel Logo">
+          <img
+            v-if="store === 'color'"
+            src="/logo-prebel-blue.svg"
+            alt="Prebel Logo">
+          <img
+            v-else
+            src="/logo-prebel.svg"
+            alt="Prebel Logo">
         </NuxtLink>
       </div>
 
+      <transition name="fade">
+        <Menu
+          :class="isMenuOpen && 'active'"
+          @close-menu="toggleMenu" />
+      </transition>
+
       <div class="header__cta">
-        <Button :arrow="false" theme="clear">
+        <Button :theme="store === 'color' ? 'blue' : 'clear'" class="btn--small">
           Contacto
         </Button>
       </div>
@@ -18,28 +30,36 @@
         class="header__hamburger"
         :class="{'header__hamburger--active': isMenuOpen}"
         @click="toggleMenu">
-        <div class="hamburger">
-          <div class="hamburger__inner"></div>
-        </div>
+        <div class="dot dot--circle"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot dot--circle"></div>
       </div>
     </div>
-
-    <transition name="fade">
-      <Menu
-        v-if="isMenuOpen"
-        @close-menu="toggleMenu" />
-    </transition>
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+const store = useHeaderStore();
 
 const isMenuOpen = ref(false);
+const mainHeader = ref(null);
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
+
+function setHeight() {
+  const headerHeight = mainHeader.value.offsetHeight;
+  document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+}
+
+onMounted(() => {
+  setHeight();
+  window.addEventListener('resize', setHeight);
+});
+
 </script>
 
 <style lang="scss" scoped>

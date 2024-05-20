@@ -12,6 +12,15 @@
         },
         "type": "UID"
       },
+      "header_color_scheme": {
+        "type": "Select",
+        "config": {
+          "label": "Header color scheme",
+          "placeholder": "",
+          "options": ["White", "Color"],
+          "default_value": "White"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

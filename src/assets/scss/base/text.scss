@@ -10,13 +10,20 @@
   }
 }
 
+.title--sm {
+  margin-bottom: 0.5em;
+  font-size: clamp(28px, 3vw, 32px);
+  line-height: 1.25;
+}
+
 .title--lg {
   font-size: clamp(48px, 5vw, 70px);
   line-height: 1.15;
 }
 
 .title--xl {
-  font-size: clamp(54px, 8vw, 110px);
+  font-size: clamp(52px, 6vw, 82px);
+  font-weight: 300;
   line-height: 1.15;
 }
 

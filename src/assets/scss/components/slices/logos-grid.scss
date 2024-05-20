@@ -1,9 +1,9 @@
-.services-clients {
-  background-color: $beige;
+.logos-grid {
   padding: 4em 0 1em;
+  background-color: $beige;
 }
 
-.clients__headline {
+.logos-grid__headline {
   max-width: 750px;
   margin-bottom: 4em;
 
@@ -14,4 +14,9 @@
 
 .single-logo {
   margin-bottom: 3em;
+  text-align: center;
+
+  img {
+    display: inline-block;
+  }
 }

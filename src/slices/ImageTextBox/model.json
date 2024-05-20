@@ -11,7 +11,22 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {},
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "headline": {
+          "type": "Text",
+          "config": {
+            "label": "Headline",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {
         "image": {
           "type": "Image",
@@ -19,13 +34,6 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
-          }
-        },
-        "eyebrow": {
-          "type": "Text",
-          "config": {
-            "label": "Eyebrow",
-            "placeholder": ""
           }
         },
         "headline": {

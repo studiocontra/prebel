@@ -9,6 +9,9 @@
         images_grid: ImagesGrid,
         accordion: Accordion,
         image_text: ImageText,
+        our_clients: LogosGrid,
+        locations_map: LocationsMap,
+        image_text: ImageText,
       }" />
   </main>
 </template>
@@ -17,12 +20,15 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
+const store = useHeaderStore();
 
 // Import your slices
 import Accordion from '@/slices/Accordion'
+import LogosGrid from '@/slices/LogosGrid'
 import ImageText from '@/slices/ImageText'
 import ImageTextBox from '@/slices/ImageTextBox'
 import ImagesGrid from '@/slices/ImagesGrid'
+import LocationsMap from '@/slices/LocationsMap'
 import PageHero from '@/slices/PageHero'
 import ServicesSlider from '@/slices/ServicesSlider'
 
@@ -30,5 +36,9 @@ const { data } = await useAsyncData("[home]", () =>
   client.getSingle("home", {lang: iso})
 );
 
-const homeData = data.value.data;
+const homeData = data.value?.data;
+
+onMounted(() => {
+  store.value = homeData.header_color_scheme.toLowerCase();
+});
 </script>

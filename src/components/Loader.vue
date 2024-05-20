@@ -30,7 +30,6 @@
   };
 
   function hide() {
-    console.log('hide');
     if (import.meta.client) {
       isLoading.value = false
     }

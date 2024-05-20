@@ -19,6 +19,7 @@ defineProps(
     :id="slice.id"
     :headline="slice.primary.headline"
     :description="slice.primary.description"
+    :image="slice.primary.main_image"
     :items="slice.items" />
 
   <AccordionDefault

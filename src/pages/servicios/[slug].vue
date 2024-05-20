@@ -6,7 +6,7 @@
         page_hero: PageHero,
         image_text_box: ImageTextBox,
         text_images_shapes: TextImagesShape,
-        our_clients: ClientLogos,
+        our_clients: Logosgrid,
       }" />
   </main>
 </template>
@@ -18,7 +18,7 @@ const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
 
 // Import your slices
-import ClientLogos from '@/slices/ClientLogos'
+import Logosgrid from '@/slices/Logosgrid'
 import ImageTextBox from '@/slices/ImageTextBox'
 import PageHero from '@/slices/PageHero'
 import TextImagesShape from '@/slices/TextImagesShape'

@@ -54,11 +54,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "home",
 		"primary": {
-			"headline": {
-				"__TYPE__": "FieldContent",
-				"value": "pipe",
-				"type": "Text"
-			},
 			"content": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [

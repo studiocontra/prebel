@@ -1,0 +1,41 @@
+{
+  "id": "settings",
+  "label": "Settings",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "main_menu": {
+        "type": "Group",
+        "config": {
+          "label": "Main Menu",
+          "fields": {
+            "item": {
+              "type": "Link",
+              "config": {
+                "label": "Item",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "child": {
+              "type": "Link",
+              "config": {
+                "label": "Child",
+                "select": "document"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,10 @@ export const components = defineSliceZoneComponents({
   ),
   images_grid: defineAsyncComponent(() => import("./ImagesGrid/index.vue")),
   locations_map: defineAsyncComponent(() => import("./LocationsMap/index.vue")),
-  our_clients: defineAsyncComponent(() => import("./ClientLogos/index.vue")),
+  logos_carousel: defineAsyncComponent(
+    () => import("./LogosCarousel/index.vue"),
+  ),
+  our_clients: defineAsyncComponent(() => import("./LogosGrid/index.vue")),
   page_hero: defineAsyncComponent(() => import("./PageHero/index.vue")),
   services_slider: defineAsyncComponent(
     () => import("./ServicesSlider/index.vue"),

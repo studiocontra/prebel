@@ -1,70 +1,32 @@
 <template>
-  <div class="wrap-main-menu">
-    <div class="container">
-      <div class="menu__box">
-        <div class="container">
-          <div class="main-menu">
-            <NuxtLink
-              to="/"
-              class="title menu-link"
-              @click="$emit('closeMenu')">
-              Home
-            </NuxtLink>
+  <div class="main-menu">
+    <NuxtLink
+      to="/"
+      class="menu-link"
+      @click="$emit('closeMenu')">
+      End to End products
+    </NuxtLink>
 
-            <NuxtLink
-              to="/servicios"
-              class="title menu-link"
-              @click="$emit('closeMenu')">
-              Servicios
-            </NuxtLink>
+    <NuxtLink
+      to="/sostenibilidad"
+      class="menu-link"
+      @click="$emit('closeMenu')">
+      Nuestras Categorías
+    </NuxtLink>
 
-            <NuxtLink
-              to="/sostenibilidad"
-              class="title menu-link"
-              @click="$emit('closeMenu')">
-              Sostenibilidad
-            </NuxtLink>
+    <NuxtLink
+      to="/servicios"
+      class="menu-link"
+      @click="$emit('closeMenu')">
+      Tipos de Servicios
+    </NuxtLink>
 
-            <NuxtLink
-              to="/nosotros"
-              class="title menu-link"
-              @click="$emit('closeMenu')">
-              Nosotros
-            </NuxtLink>
-
-            <NuxtLink
-              to="/trabaja-con-nosotros"
-              class="title menu-link"
-              @click="$emit('closeMenu')">
-              Trabaja con Nosotros
-            </NuxtLink>
-          </div>
-
-          <div class="legal-menu">
-            <a
-              href=""
-              class="menu-link"
-              @click="$emit('closeMenu')">
-              Pagos
-            </a>
-
-            <NuxtLink
-              to="/linea-etica"
-              class="menu-link"
-              @click="$emit('closeMenu')">
-              Línea ética
-            </NuxtLink>
-
-            <NuxtLink
-              to="/"
-              class="menu-link"
-              @click="$emit('closeMenu')">
-              Términos y Condiciones
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-    </div>
+    <NuxtLink
+      to="/nosotros"
+      class="menu-link"
+      @click="$emit('closeMenu')">
+      Nuestra Compañía
+    </NuxtLink>
   </div>
 </template>
 

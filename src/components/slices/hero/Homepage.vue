@@ -1,21 +1,30 @@
 <template>
   <div class="hero hero--home">
-    <Drop
-      maxW="380px"
-      :parallax="-15" />
     <div class="container">
-      <div class="row lg-reverse align-bottom">
-        <div class="col-lg-6">
-          <span class="title title--xl">
-            {{ headline }}
-          </span>
-        </div>
-        <div class="col-lg-6">
-          <h1>
-            <prismic-rich-text
-              :field="content"
-              class="title" />
+      <div class="row justify-center">
+        <div class="col-md-11 col-lg-10">
+          <h1 class="title title--xl">
+            <div data-row="1">
+              <span data-item="1">
+                Growing
+                <div class="media media--mobile" data-item="2"></div>
+                the ecosystem
+              </span>
+              <div class="media" data-item="2"></div>
+            </div>
+            <div data-row="2">
+              <div class="media" data-item="3"></div>
+              <span data-item="4">of</span>
+              <div class="media" data-item="5"></div>
+            </div>
+            <div data-row="3">
+              <div class="media" data-item="6"></div>
+              <span data-item="7">beauty care.</span>
+            </div>
           </h1>
+          <prismic-rich-text
+            :field="content"
+            class="text" />
         </div>
       </div>
     </div>
@@ -25,7 +34,6 @@
 <script setup>
 const props = defineProps({
   content: Object,
-  headline: String,
 });
 </script>
 

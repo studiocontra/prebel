@@ -3,9 +3,9 @@
   padding: 12px 16px 10px;
   cursor: pointer;
   transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  border: 0;
   border-radius: 10px;
   align-items: center;
-  border: 0;
 
   &:hover {
     svg {
@@ -26,12 +26,31 @@
   }
 }
 
+.btn--small {
+  span {
+    font-size: 11px;
+  }
+}
+
 .btn--default {
   color: $white;
   background-color: $gray;
 
   &:hover {
     background-color: $black;
+  }
+
+  svg {
+    stroke: $white;
+  }
+}
+
+.btn--blue {
+  color: $white;
+  background-color: $blue;
+
+  &:hover {
+    background-color: darken($blue, 14);
   }
 
   svg {
@@ -57,8 +76,8 @@
   background-color: $white;
 
   &:hover {
-    background-color: $gray;
     color: $white;
+    background-color: $gray;
 
     svg {
       stroke: $white;

@@ -6,11 +6,29 @@
   "status": true,
   "json": {
     "Main": {
+      "header_color_scheme": {
+        "type": "Select",
+        "config": {
+          "label": "Header color scheme",
+          "placeholder": "",
+          "options": ["White", "Color"],
+          "default_value": "White"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "our_clients": {
+              "type": "SharedSlice"
+            },
+            "locations_map": {
+              "type": "SharedSlice"
+            },
+            "logos_carousel": {
+              "type": "SharedSlice"
+            },
             "accordion": {
               "type": "SharedSlice"
             },

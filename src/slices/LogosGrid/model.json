@@ -1,7 +1,7 @@
 {
   "id": "our_clients",
   "type": "SharedSlice",
-  "name": "ClientLogos",
+  "name": "LogosGrid",
   "description": "OurClients",
   "variations": [
     {

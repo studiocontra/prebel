@@ -2,6 +2,16 @@
   <div class="section wrap-news">
     <div class="container">
       <div class="news__box">
+        <div class="box__headline">
+          <span class="eyebrow">
+            {{ eyebrow }}
+          </span>
+
+          <h2 class="title">
+            {{ headline }}
+          </h2>
+        </div>
+
         <swiper
           class="swiper news__slider"
           :modules="[Pagination, EffectFade]"
@@ -18,7 +28,7 @@
           }"
           :slidesPerView="1">
           <swiper-slide v-for="(item, id) in props.slides" :key="id">
-            <div class="row">
+            <div class="row align-center">
               <div class="col-lg-6">
                 <div class="img">
                   <prismic-image :field="item.image" />
@@ -26,13 +36,9 @@
               </div>
               <div class="col-lg-6">
                 <div class="content">
-                  <span class="eyebrow">
-                    {{ item.eyebrow }}
-                  </span>
-
-                  <h2 class="title">
+                  <h3 class="title title--sm">
                     {{ item.headline }}
-                  </h2>
+                  </h3>
 
                   <prismic-rich-text
                     :field="item.content"
@@ -59,6 +65,8 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const props = defineProps({
+  eyebrow: String,
+  headline: String,
   slides: [Array, Boolean]
 });
 
@@ -70,5 +78,5 @@ function pad(num) {
 
 
 <style lang="scss" scoped>
-  @import "@scss/components/home/news";
+  @import "@scss/components/slices/image-text-box";
 </style>

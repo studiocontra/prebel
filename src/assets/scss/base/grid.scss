@@ -11,8 +11,8 @@ $medias:
 
 .row {
   display: flex;
-  flex-wrap: wrap;
   margin: 0 -12px;
+  flex-wrap: wrap;
 
   &.no-gutters {
     margin: 0;
@@ -72,8 +72,8 @@ $medias:
 }
 
 [class^="col-"] {
-  padding: 0 12px;
   width: 100%;
+  padding: 0 12px;
 
   @each $media, $size in $medias {
     &.#{$media}-right {

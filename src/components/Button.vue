@@ -12,20 +12,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MainButton',
-  props: {
-    theme: {
-      type: String,
-      default: 'default'
-    },
-    arrow: {
-      type: Boolean,
-      default: true,
-    }
+<script setup>
+
+const props = defineProps({
+  theme: {
+    type: String,
+    default: 'default'
+  },
+  arrow: {
+    type: Boolean,
+    default: true,
   }
-}
+});
 </script>
 
 <style lang="scss" scoped>

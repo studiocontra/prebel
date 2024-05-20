@@ -21,6 +21,18 @@ type AboutDocumentDataSlicesSlice =
  */
 interface AboutDocumentData {
   /**
+   * Header color scheme field in *About*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: about.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
+  /**
    * Slice Zone field in *About*
    *
    * - **Field Type**: Slice Zone
@@ -76,6 +88,9 @@ export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | OurClientsSlice
+  | LocationsMapSlice
+  | LogosCarouselSlice
   | AccordionSlice
   | ImageTextSlice
   | ImagesGridSlice
@@ -87,6 +102,18 @@ type HomeDocumentDataSlicesSlice =
  * Content for Home documents
  */
 interface HomeDocumentData {
+  /**
+   * Header color scheme field in *Home*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: home.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
   /**
    * Slice Zone field in *Home*
    *
@@ -148,6 +175,18 @@ type LegalesDocumentDataSlicesSlice = TextBlockSlice | PageHeroSlice;
  * Content for Legales documents
  */
 interface LegalesDocumentData {
+  /**
+   * Header color scheme field in *Legales*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: legales.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
   /**
    * Slice Zone field in *Legales*
    *
@@ -216,6 +255,18 @@ type LineaEticaDocumentDataSlicesSlice =
  * Content for Linea etica documents
  */
 interface LineaEticaDocumentData {
+  /**
+   * Header color scheme field in *Linea etica*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: linea_etica.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
   /**
    * Slice Zone field in *Linea etica*
    *
@@ -288,6 +339,18 @@ type ServicesDocumentDataSlicesSlice =
  */
 interface ServicesDocumentData {
   /**
+   * Header color scheme field in *Services*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: services.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
+  /**
    * Slice Zone field in *Services*
    *
    * - **Field Type**: Slice Zone
@@ -346,6 +409,73 @@ export type ServicesDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Settings → Main Menu*
+ */
+export interface SettingsDocumentDataMainMenuItem {
+  /**
+   * Item field in *Settings → Main Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.main_menu[].item
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  item: prismic.LinkField;
+
+  /**
+   * Label field in *Settings → Main Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.main_menu[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Child field in *Settings → Main Menu*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.main_menu[].child
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  child: prismic.ContentRelationshipField;
+}
+
+/**
+ * Content for Settings documents
+ */
+interface SettingsDocumentData {
+  /**
+   * Main Menu field in *Settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.main_menu[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  main_menu: prismic.GroupField<Simplify<SettingsDocumentDataMainMenuItem>>;
+}
+
+/**
+ * Settings document from Prismic
+ *
+ * - **API ID**: `settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SettingsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SettingsDocumentData>,
+    "settings",
+    Lang
+  >;
+
 type SingleServiceDocumentDataSlicesSlice =
   | TextImagesShapesSlice
   | OurClientsSlice
@@ -356,6 +486,18 @@ type SingleServiceDocumentDataSlicesSlice =
  * Content for Single Service documents
  */
 interface SingleServiceDocumentData {
+  /**
+   * Header color scheme field in *Single Service*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: single_service.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
   /**
    * Slice Zone field in *Single Service*
    *
@@ -421,6 +563,18 @@ type SingleWorkDocumentDataSlicesSlice = WorkFormSlice | PageHeroSlice;
  * Content for Single Work documents
  */
 interface SingleWorkDocumentData {
+  /**
+   * Header color scheme field in *Single Work*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: single_work.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
   /**
    * Slice Zone field in *Single Work*
    *
@@ -492,6 +646,18 @@ type SustainabilityDocumentDataSlicesSlice =
  */
 interface SustainabilityDocumentData {
   /**
+   * Header color scheme field in *Sustainability*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: sustainability.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
+  /**
    * Slice Zone field in *Sustainability*
    *
    * - **Field Type**: Slice Zone
@@ -560,6 +726,18 @@ type WorkDocumentDataSlicesSlice =
  */
 interface WorkDocumentData {
   /**
+   * Header color scheme field in *Work*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: White
+   * - **API ID Path**: work.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"White" | "Color", "filled">;
+
+  /**
    * Slice Zone field in *Work*
    *
    * - **Field Type**: Slice Zone
@@ -620,6 +798,7 @@ export type AllDocumentTypes =
   | LegalesDocument
   | LineaEticaDocument
   | ServicesDocument
+  | SettingsDocument
   | SingleServiceDocument
   | SingleWorkDocument
   | SustainabilityDocument
@@ -701,6 +880,16 @@ export interface AccordionSliceHeadlineAndDescriptionPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * Main Image field in *Accordion → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
 }
 
 /**
@@ -1174,6 +1363,31 @@ export type ImageTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ImageTextBox → Primary*
+ */
+export interface ImageTextBoxSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *ImageTextBox → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text_box.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *ImageTextBox → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text_box.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *ImageTextBox → Items*
  */
 export interface ImageTextBoxSliceDefaultItem {
@@ -1186,16 +1400,6 @@ export interface ImageTextBoxSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
-
-  /**
-   * Eyebrow field in *ImageTextBox → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_text_box.items[].eyebrow
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  eyebrow: prismic.KeyTextField;
 
   /**
    * Headline field in *ImageTextBox → Items*
@@ -1227,7 +1431,7 @@ export interface ImageTextBoxSliceDefaultItem {
  */
 export type ImageTextBoxSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ImageTextBoxSliceDefaultPrimary>,
   Simplify<ImageTextBoxSliceDefaultItem>
 >;
 
@@ -1555,11 +1759,71 @@ export type LocationsMapSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ClientLogos → Primary*
+ * Primary content in *LogosCarousel → Primary*
+ */
+export interface LogosCarouselSliceDefaultPrimary {
+  /**
+   * Headline field in *LogosCarousel → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logos_carousel.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *LogosCarousel → Items*
+ */
+export interface LogosCarouselSliceDefaultItem {
+  /**
+   * Logo field in *LogosCarousel → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logos_carousel.items[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for LogosCarousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogosCarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LogosCarouselSliceDefaultPrimary>,
+  Simplify<LogosCarouselSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *LogosCarousel*
+ */
+type LogosCarouselSliceVariation = LogosCarouselSliceDefault;
+
+/**
+ * LogosCarousel Shared Slice
+ *
+ * - **API ID**: `logos_carousel`
+ * - **Description**: LogosCarousel
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LogosCarouselSlice = prismic.SharedSlice<
+  "logos_carousel",
+  LogosCarouselSliceVariation
+>;
+
+/**
+ * Primary content in *LogosGrid → Primary*
  */
 export interface OurClientsSliceDefaultPrimary {
   /**
-   * Eyebrow field in *ClientLogos → Primary*
+   * Eyebrow field in *LogosGrid → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1569,7 +1833,7 @@ export interface OurClientsSliceDefaultPrimary {
   eyebrow: prismic.KeyTextField;
 
   /**
-   * Headline field in *ClientLogos → Primary*
+   * Headline field in *LogosGrid → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1579,7 +1843,7 @@ export interface OurClientsSliceDefaultPrimary {
   headline: prismic.KeyTextField;
 
   /**
-   * Content field in *ClientLogos → Primary*
+   * Content field in *LogosGrid → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1590,11 +1854,11 @@ export interface OurClientsSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *ClientLogos → Items*
+ * Primary content in *LogosGrid → Items*
  */
 export interface OurClientsSliceDefaultItem {
   /**
-   * Logo field in *ClientLogos → Items*
+   * Logo field in *LogosGrid → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1605,7 +1869,7 @@ export interface OurClientsSliceDefaultItem {
 }
 
 /**
- * Default variation for ClientLogos Slice
+ * Default variation for LogosGrid Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1618,12 +1882,12 @@ export type OurClientsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *ClientLogos*
+ * Slice variation for *LogosGrid*
  */
 type OurClientsSliceVariation = OurClientsSliceDefault;
 
 /**
- * ClientLogos Shared Slice
+ * LogosGrid Shared Slice
  *
  * - **API ID**: `our_clients`
  * - **Description**: OurClients
@@ -1698,16 +1962,6 @@ export type PageHeroSliceDefault = prismic.SharedSliceVariation<
  * Primary content in *PageHero → Primary*
  */
 export interface PageHeroSliceHomePrimary {
-  /**
-   * Headline field in *PageHero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page_hero.primary.headline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  headline: prismic.KeyTextField;
-
   /**
    * Content field in *PageHero → Primary*
    *
@@ -2707,6 +2961,9 @@ declare module "@prismicio/client" {
       ServicesDocument,
       ServicesDocumentData,
       ServicesDocumentDataSlicesSlice,
+      SettingsDocument,
+      SettingsDocumentData,
+      SettingsDocumentDataMainMenuItem,
       SingleServiceDocument,
       SingleServiceDocumentData,
       SingleServiceDocumentDataSlicesSlice,
@@ -2748,6 +3005,7 @@ declare module "@prismicio/client" {
       ImageTextSliceDefault,
       ImageTextSliceImageWide,
       ImageTextBoxSlice,
+      ImageTextBoxSliceDefaultPrimary,
       ImageTextBoxSliceDefaultItem,
       ImageTextBoxSliceVariation,
       ImageTextBoxSliceDefault,
@@ -2767,6 +3025,11 @@ declare module "@prismicio/client" {
       LocationsMapSliceDefaultItem,
       LocationsMapSliceVariation,
       LocationsMapSliceDefault,
+      LogosCarouselSlice,
+      LogosCarouselSliceDefaultPrimary,
+      LogosCarouselSliceDefaultItem,
+      LogosCarouselSliceVariation,
+      LogosCarouselSliceDefault,
       OurClientsSlice,
       OurClientsSliceDefaultPrimary,
       OurClientsSliceDefaultItem,

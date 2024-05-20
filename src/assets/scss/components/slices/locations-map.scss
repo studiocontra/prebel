@@ -1,11 +1,10 @@
 .location-map {
   padding: 60px 0;
+  background-color: $black;
 }
 
 .box {
   padding: 32px;
-  border-radius: 18px;
-  background-color: $black;
 
   @include m768 {
     padding: 5% 44px;

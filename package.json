@@ -21,8 +21,8 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@nuxtjs/prismic": "^3.0.0",
-    "@slicemachine/adapter-nuxt": "^0.3.28",
+    "@slicemachine/adapter-nuxt": "^0.3.38",
     "nuxt": "^3.7.1",
-    "slice-machine-ui": "^1.21.2"
+    "slice-machine-ui": "^1.26.0"
   }
 }

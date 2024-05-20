@@ -1,9 +1,14 @@
-.home__accordion {
+.accordion--headline-desc {
   color: $white;
   background-color: $blue;
+
+  .img {
+    margin-top: 2em;
+    border-radius: 25% / 50%;
+  }
 }
 
-.home-accordion__content {
+.accordion--headline-desc__content {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid $white;

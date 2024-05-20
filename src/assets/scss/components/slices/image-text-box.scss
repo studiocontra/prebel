@@ -11,6 +11,16 @@
   }
 }
 
+.box__headline {
+  max-width: 650px;
+  margin: 0 auto 3em;
+  text-align: center;
+
+  .eyebrow {
+    margin-bottom: 1.5em;
+  }
+}
+
 .news__slider {
   padding: 0 24px;
 
@@ -38,11 +48,6 @@
   }
 
   .content {
-    margin-bottom: 3em;
-
-    @include m768 {
-      margin-bottom: 5em;
-    }
     @include m992 {
       padding-left: 8%;
     }
