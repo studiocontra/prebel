@@ -7,7 +7,7 @@
         cards: Cards,
         accordion: Accordion,
         image_text_carousel: ImageTextCarousel,
-        our_clients: ClientLogos,
+        our_clients: LogosGrid,
         testimonials: Testimonials,
       }" />
   </main>
@@ -21,7 +21,7 @@ const { value: { iso, code } } = localeProperties;
 // Import your slices
 import Accordion from '@/slices/Accordion'
 import Cards from '@/slices/Cards'
-import ClientLogos from '@/slices/ClientLogos'
+import LogosGrid from '@/slices/LogosGrid'
 import ImageTextCarousel from '@/slices/ImageTextCarousel'
 import PageHero from '@/slices/PageHero'
 import Testimonials from '@/slices/Testimonials'
