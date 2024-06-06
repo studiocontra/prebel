@@ -18,7 +18,7 @@ const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
 
 // Import your slices
-import Logosgrid from '@/slices/Logosgrid'
+import Logosgrid from '@/slices/LogosGrid'
 import ImageTextBox from '@/slices/ImageTextBox'
 import PageHero from '@/slices/PageHero'
 import TextImagesShape from '@/slices/TextImagesShape'
