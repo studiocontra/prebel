@@ -19,7 +19,7 @@
 
           <div class="col-lg-6">
             <div class="content">
-              <prismic-rich-text
+              <PrismicRichText
                 :field="content"
                 class="text" />
             </div>

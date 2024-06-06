@@ -85,9 +85,232 @@ interface AboutDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type AboutDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
+  prismic.PrismicDocumentWithUID<Simplify<AboutDocumentData>, "about", Lang>;
+
+/**
+ * Item in *Footer → Footer Social*
+ */
+export interface FooterDocumentDataFooterSocialItem {
+  /**
+   * Icon field in *Footer → Footer Social*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_social[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    "facebook" | "x" | "instagram" | "linkedin" | "youtube" | "vimeo"
+  >;
+
+  /**
+   * Link field in *Footer → Footer Social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_social[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Item in *Footer → Footer Menu*
+ */
+export interface FooterDocumentDataFooterMenuItem {
+  /**
+   * Label field in *Footer → Footer Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_menu[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *Footer → Footer Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_menu[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Item in *Footer → Footer Contact*
+ */
+export interface FooterDocumentDataFooterContactItem {
+  /**
+   * Headline field in *Footer → Footer Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_contact[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *Footer → Footer Contact*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_contact[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Item in *Footer → Footer Locations*
+ */
+export interface FooterDocumentDataFooterLocationsItem {
+  /**
+   * Name field in *Footer → Footer Locations*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_locations[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Address field in *Footer → Footer Locations*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_locations[].address
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  address: prismic.RichTextField;
+}
+
+/**
+ * Item in *Footer → Footer Copyright*
+ */
+export interface FooterDocumentDataFooterCopyrightItem {
+  /**
+   * Label field in *Footer → Footer Copyright*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_copyright[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *Footer → Footer Copyright*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_copyright[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Footer Description field in *Footer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  footer_description: prismic.RichTextField;
+
+  /**
+   * Footer Social field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_social[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_social: prismic.GroupField<
+    Simplify<FooterDocumentDataFooterSocialItem>
+  >;
+
+  /**
+   * Footer Menu field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_menu[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_menu: prismic.GroupField<Simplify<FooterDocumentDataFooterMenuItem>>;
+
+  /**
+   * Footer Contact field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_contact[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_contact: prismic.GroupField<
+    Simplify<FooterDocumentDataFooterContactItem>
+  >;
+
+  /**
+   * Footer Locations field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_locations[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_locations: prismic.GroupField<
+    Simplify<FooterDocumentDataFooterLocationsItem>
+  >;
+
+  /**
+   * Footer Copyright field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_copyright[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_copyright: prismic.GroupField<
+    Simplify<FooterDocumentDataFooterCopyrightItem>
+  >;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
 
 type HomeDocumentDataSlicesSlice =
+  | CardsSlice
   | OurClientsSlice
   | LocationsMapSlice
   | LogosCarouselSlice
@@ -167,7 +390,7 @@ interface HomeDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+  prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 type LegalesDocumentDataSlicesSlice = TextBlockSlice | PageHeroSlice;
 
@@ -320,7 +543,7 @@ interface LineaEticaDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type LineaEticaDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<LineaEticaDocumentData>,
     "linea_etica",
     Lang
@@ -403,76 +626,9 @@ interface ServicesDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ServicesDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<ServicesDocumentData>,
     "services",
-    Lang
-  >;
-
-/**
- * Item in *Settings → Main Menu*
- */
-export interface SettingsDocumentDataMainMenuItem {
-  /**
-   * Item field in *Settings → Main Menu*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.main_menu[].item
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  item: prismic.LinkField;
-
-  /**
-   * Label field in *Settings → Main Menu*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.main_menu[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Child field in *Settings → Main Menu*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.main_menu[].child
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  child: prismic.ContentRelationshipField;
-}
-
-/**
- * Content for Settings documents
- */
-interface SettingsDocumentData {
-  /**
-   * Main Menu field in *Settings*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.main_menu[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  main_menu: prismic.GroupField<Simplify<SettingsDocumentDataMainMenuItem>>;
-}
-
-/**
- * Settings document from Prismic
- *
- * - **API ID**: `settings`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type SettingsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<SettingsDocumentData>,
-    "settings",
     Lang
   >;
 
@@ -710,7 +866,7 @@ interface SustainabilityDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SustainabilityDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<SustainabilityDocumentData>,
     "sustainability",
     Lang
@@ -790,15 +946,15 @@ interface WorkDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type WorkDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<WorkDocumentData>, "work", Lang>;
+  prismic.PrismicDocumentWithUID<Simplify<WorkDocumentData>, "work", Lang>;
 
 export type AllDocumentTypes =
   | AboutDocument
+  | FooterDocument
   | HomeDocument
   | LegalesDocument
   | LineaEticaDocument
   | ServicesDocument
-  | SettingsDocument
   | SingleServiceDocument
   | SingleWorkDocument
   | SustainabilityDocument
@@ -1176,9 +1332,105 @@ export type CardsSliceLargeImage = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Cards → Primary*
+ */
+export interface CardsSliceRoundedPrimary {
+  /**
+   * Eyebrow field in *Cards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *Cards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * See All Link field in *Cards → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.primary.see_all_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  see_all_link: prismic.LinkField;
+
+  /**
+   * See All Label field in *Cards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.primary.see_all_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  see_all_label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Cards → Items*
+ */
+export interface CardsSliceRoundedItem {
+  /**
+   * Image field in *Cards → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Headline field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Cards → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Rounded variation for Cards Slice
+ *
+ * - **API ID**: `rounded`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardsSliceRounded = prismic.SharedSliceVariation<
+  "rounded",
+  Simplify<CardsSliceRoundedPrimary>,
+  Simplify<CardsSliceRoundedItem>
+>;
+
+/**
  * Slice variation for *Cards*
  */
-type CardsSliceVariation = CardsSliceDefault | CardsSliceLargeImage;
+type CardsSliceVariation =
+  | CardsSliceDefault
+  | CardsSliceLargeImage
+  | CardsSliceRounded;
 
 /**
  * Cards Shared Slice
@@ -1882,9 +2134,74 @@ export type OurClientsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *LogosGrid → Primary*
+ */
+export interface OurClientsSliceBlueBackgroundPrimary {
+  /**
+   * Eyebrow field in *LogosGrid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *LogosGrid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *LogosGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *LogosGrid → Items*
+ */
+export interface OurClientsSliceBlueBackgroundItem {
+  /**
+   * Logo field in *LogosGrid → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.items[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Blue Background variation for LogosGrid Slice
+ *
+ * - **API ID**: `blueBackground`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurClientsSliceBlueBackground = prismic.SharedSliceVariation<
+  "blueBackground",
+  Simplify<OurClientsSliceBlueBackgroundPrimary>,
+  Simplify<OurClientsSliceBlueBackgroundItem>
+>;
+
+/**
  * Slice variation for *LogosGrid*
  */
-type OurClientsSliceVariation = OurClientsSliceDefault;
+type OurClientsSliceVariation =
+  | OurClientsSliceDefault
+  | OurClientsSliceBlueBackground;
 
 /**
  * LogosGrid Shared Slice
@@ -2949,6 +3266,13 @@ declare module "@prismicio/client" {
       AboutDocument,
       AboutDocumentData,
       AboutDocumentDataSlicesSlice,
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataFooterSocialItem,
+      FooterDocumentDataFooterMenuItem,
+      FooterDocumentDataFooterContactItem,
+      FooterDocumentDataFooterLocationsItem,
+      FooterDocumentDataFooterCopyrightItem,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -2961,9 +3285,6 @@ declare module "@prismicio/client" {
       ServicesDocument,
       ServicesDocumentData,
       ServicesDocumentDataSlicesSlice,
-      SettingsDocument,
-      SettingsDocumentData,
-      SettingsDocumentDataMainMenuItem,
       SingleServiceDocument,
       SingleServiceDocumentData,
       SingleServiceDocumentDataSlicesSlice,
@@ -2995,9 +3316,12 @@ declare module "@prismicio/client" {
       CardsSliceDefaultItem,
       CardsSliceLargeImagePrimary,
       CardsSliceLargeImageItem,
+      CardsSliceRoundedPrimary,
+      CardsSliceRoundedItem,
       CardsSliceVariation,
       CardsSliceDefault,
       CardsSliceLargeImage,
+      CardsSliceRounded,
       ImageTextSlice,
       ImageTextSliceDefaultItem,
       ImageTextSliceImageWideItem,
@@ -3033,8 +3357,11 @@ declare module "@prismicio/client" {
       OurClientsSlice,
       OurClientsSliceDefaultPrimary,
       OurClientsSliceDefaultItem,
+      OurClientsSliceBlueBackgroundPrimary,
+      OurClientsSliceBlueBackgroundItem,
       OurClientsSliceVariation,
       OurClientsSliceDefault,
+      OurClientsSliceBlueBackground,
       PageHeroSlice,
       PageHeroSliceDefaultPrimary,
       PageHeroSliceHomePrimary,

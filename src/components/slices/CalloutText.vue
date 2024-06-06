@@ -10,7 +10,7 @@
           </div>
 
           <div class="col-lg-5">
-            <prismic-rich-text
+            <PrismicRichText
               :field="content"
               class="text" />
 

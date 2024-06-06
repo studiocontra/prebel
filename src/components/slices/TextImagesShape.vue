@@ -23,7 +23,7 @@
               {{ data.headline }}
             </h2>
 
-            <prismic-rich-text
+            <PrismicRichText
               :field="data.content"
               class="text" />
           </div>

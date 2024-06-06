@@ -20,6 +20,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "cards": {
+              "type": "SharedSlice"
+            },
             "our_clients": {
               "type": "SharedSlice"
             },
@@ -52,6 +55,13 @@
       }
     },
     "SEO & Metadata": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug",
+          "placeholder": ""
+        }
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",

@@ -40,7 +40,7 @@
                     {{ item.headline }}
                   </h3>
 
-                  <prismic-rich-text
+                  <PrismicRichText
                     :field="item.content"
                     class="text" />
                 </div>

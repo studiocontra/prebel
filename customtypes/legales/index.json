@@ -8,7 +8,7 @@
     "Main": {
       "uid": {
         "config": {
-          "label": "UID"
+          "label": "Slug"
         },
         "type": "UID"
       },

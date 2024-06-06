@@ -47,6 +47,14 @@ main {
   }
 }
 
+.container--narrow {
+  padding: 0 24px;
+
+  @include m768 {
+    padding: 0 calc(8.333% + 32px);
+  }
+}
+
 .section {
   padding: 60px 0;
 

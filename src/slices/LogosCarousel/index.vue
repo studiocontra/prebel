@@ -14,11 +14,9 @@ defineProps(
 </script>
 
 <template>
-  <section
+  <LogosCarousel
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-  >
-    Placeholder component for logos_carousel (variation: {{ slice.variation }})
-    Slices
-  </section>
+    :headline="slice.primary.headline"
+    :items="slice.items" />
 </template>

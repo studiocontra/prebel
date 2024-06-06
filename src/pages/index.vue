@@ -9,7 +9,9 @@
         images_grid: ImagesGrid,
         accordion: Accordion,
         image_text: ImageText,
+        cards: Cards,
         our_clients: LogosGrid,
+        logos_carousel: LogosCarousel,
         locations_map: LocationsMap,
         image_text: ImageText,
       }" />
@@ -24,7 +26,9 @@ const store = useHeaderStore();
 
 // Import your slices
 import Accordion from '@/slices/Accordion'
+import Cards from '@/slices/Cards'
 import LogosGrid from '@/slices/LogosGrid'
+import LogosCarousel from '@/slices/LogosCarousel'
 import ImageText from '@/slices/ImageText'
 import ImageTextBox from '@/slices/ImageTextBox'
 import ImagesGrid from '@/slices/ImagesGrid'

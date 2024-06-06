@@ -25,4 +25,12 @@ defineProps(
     :id="slice.id"
     :headline="slice.primary.headline"
     :cards="slice.items" />
+
+  <CardsRounded
+    v-if="slice.variation == 'rounded'"
+    :id="slice.id"
+    :headline="slice.primary.headline"
+    :allLink="slice.primary.see_all_link"
+    :allLabel="slice.primary.see_all_label"
+    :cards="slice.items" />
 </template>

@@ -13,7 +13,7 @@
             {{ headline }}
           </h1>
 
-          <prismic-rich-text
+          <PrismicRichText
             :field="content"
             class="text" />
 

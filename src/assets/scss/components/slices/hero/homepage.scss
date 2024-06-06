@@ -9,8 +9,16 @@
     [data-row] {
       display: flex;
       margin-bottom: 16px;
+      transition-timing-function: ease-out;
+      transition-duration: 0.2s;
+      transition-property: opacity, translate;
       flex-wrap: wrap;
       gap: 16px;
+
+      &.hidden {
+        opacity: 0;
+        translate: 0 15px;
+      }
     }
     .media--mobile[data-item="2"] {
       display: block;
@@ -19,6 +27,7 @@
         display: none;
       }
     }
+
     [data-item="1"] {
       display: flex;
       flex-wrap: wrap;

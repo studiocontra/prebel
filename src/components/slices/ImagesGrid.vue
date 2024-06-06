@@ -29,7 +29,7 @@
               {{ data.eyebrow_content }}
             </span>
 
-            <prismic-rich-text
+            <PrismicRichText
               :field="data.content"
               class="text" />
           </div>

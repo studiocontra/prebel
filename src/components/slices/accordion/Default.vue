@@ -29,7 +29,7 @@
               </div>
 
               <div class="accordion-item__content">
-                <prismic-rich-text
+                <PrismicRichText
                   :field="item.content"
                   class="text" />
               </div>

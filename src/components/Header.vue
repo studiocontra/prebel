@@ -47,7 +47,9 @@ const isMenuOpen = ref(false);
 const mainHeader = ref(null);
 
 function toggleMenu() {
-  isMenuOpen.value = !isMenuOpen.value;
+  if(window.innerWidth <= 768) {
+    isMenuOpen.value = !isMenuOpen.value;
+  }
 }
 
 function setHeight() {

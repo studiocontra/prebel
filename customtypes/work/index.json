@@ -34,6 +34,13 @@
       }
     },
     "SEO & Metadata": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug",
+          "placeholder": ""
+        }
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",

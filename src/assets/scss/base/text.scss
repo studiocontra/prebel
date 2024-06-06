@@ -4,10 +4,6 @@
   font-size: clamp(32px, 4vw, 44px);
   font-weight: 100;
   line-height: 1.25;
-
-  @include m1200 {
-    font-size: 44px;
-  }
 }
 
 .title--sm {
@@ -17,12 +13,12 @@
 }
 
 .title--lg {
-  font-size: clamp(48px, 5vw, 70px);
+  font-size: clamp(46px, 5vw, 70px);
   line-height: 1.15;
 }
 
 .title--xl {
-  font-size: clamp(52px, 6vw, 82px);
+  font-size: clamp(50px, 6vw, 82px);
   font-weight: 300;
   line-height: 1.15;
 }
@@ -36,5 +32,21 @@
 
   @include m768 {
     font-size: 15px;
+  }
+}
+
+.text {
+  &,
+  p {
+    font-size: clamp(18px, 3vw, 20px);
+    line-height: 1.4;
+    @include font();
+  }
+}
+
+.text--sm {
+  &,
+  p {
+    font-size: 16px;
   }
 }

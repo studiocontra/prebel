@@ -1,0 +1,14 @@
+.logos-carousel {
+  background-color: $beige;
+}
+
+.logos-carousel__slider {
+  :deep(.swiper-wrapper) {
+    align-items: center;
+  }
+}
+
+.single-logo {
+  width: 180px;
+  margin: 0 30px;
+}

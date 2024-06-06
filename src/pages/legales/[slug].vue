@@ -25,7 +25,6 @@ const { data } = useAsyncData(`[legales-uid-${route.params.slug}]`, () =>
   client.getByUID("legales", route.params.slug, {lang: iso}),
 );
 
-
 const pageData = data.value.data;
 console.log(pageData);
 </script>

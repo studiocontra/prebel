@@ -1,4 +1,24 @@
 {
+  "footer form": {
+    "name": {
+      "label": "Name",
+      "error": "This value is required."
+    },
+    "email": {
+      "label": "Email",
+      "error": "This value is required.",
+      "error-email": "This value should be a valid email."
+    },
+    "phone": {
+      "label": "Phone Number",
+      "error": "This value is required."
+    },
+    "message": {
+      "label": "¿What model are you interested in?",
+      "error": "This value is required."
+    },
+    "submit": "Submit"
+  },
   "work form": {
     "name": {
       "label": "Name",

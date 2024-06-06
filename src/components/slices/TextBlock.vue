@@ -16,7 +16,7 @@
             {{ headline }}
           </h3>
 
-          <prismic-rich-text
+          <PrismicRichText
             v-if="content"
             :field="content"
             class="text"

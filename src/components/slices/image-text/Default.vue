@@ -33,7 +33,7 @@
                   {{ item.headline }}
                 </h2>
 
-                <prismic-rich-text
+                <PrismicRichText
                   :field="item.content"
                   class="title text" />
 

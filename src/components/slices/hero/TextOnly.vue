@@ -9,7 +9,7 @@
             {{ headline }}
           </h1>
 
-          <prismic-rich-text
+          <PrismicRichText
             :field="content"
             class="title title--text" />
         </div>

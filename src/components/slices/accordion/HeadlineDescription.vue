@@ -7,7 +7,7 @@
             {{ headline }}
           </span>
 
-          <prismic-rich-text
+          <PrismicRichText
             :field="description"
             class="title" />
 
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="accordion-item__content">
-                  <prismic-rich-text
+                  <PrismicRichText
                     :field="item.content"
                     class="text" />
                 </div>

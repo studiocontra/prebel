@@ -25,7 +25,7 @@
             </div>
 
             <div class="content">
-              <prismic-rich-text
+              <PrismicRichText
                 :field="item.testimonial"
                 class="title" />
 

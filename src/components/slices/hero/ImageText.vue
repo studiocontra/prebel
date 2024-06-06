@@ -7,7 +7,7 @@
       <div class="row align-center justify-between">
         <div :class="textCols">
           <h1>
-            <prismic-rich-text
+            <PrismicRichText
               :field="content"
               class="title" />
           </h1>

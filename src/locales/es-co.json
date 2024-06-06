@@ -1,4 +1,24 @@
 {
+  "footer form": {
+    "name": {
+      "label": "Nombre",
+      "error": "Este valor es requerido."
+    },
+    "email": {
+      "label": "Email",
+      "error": "Este valor es requerido.",
+      "error-email": "Este valor debe ser un correo válido."
+    },
+    "phone": {
+      "label": "Número celular",
+      "error": "Este valor es requerido."
+    },
+    "message": {
+      "label": "¿Cuál modelo de atención te interesa?",
+      "error": "Este valor es requerido."
+    },
+    "submit": "Enviar"
+  },
   "work form": {
     "name": {
       "label": "Nombre",
