@@ -4,27 +4,16 @@
       <div class="header__logo">
         <NuxtLink to="/">
           <img
-            v-if="store === 'color'"
             src="/logo-prebel-blue.svg"
-            alt="Prebel Logo">
-          <img
-            v-else
-            src="/logo-prebel.svg"
             alt="Prebel Logo">
         </NuxtLink>
       </div>
 
       <transition name="fade">
         <Menu
-          :class="isMenuOpen && 'active'"
+          :class="[isMenuOpen && 'active', store]"
           @close-menu="toggleMenu" />
       </transition>
-
-      <div class="header__cta">
-        <Button :theme="store === 'color' ? 'blue' : 'clear'" class="btn--small">
-          Contacto
-        </Button>
-      </div>
 
       <div
         class="header__hamburger"

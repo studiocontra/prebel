@@ -2,7 +2,7 @@
   <div class="section logos-carousel">
     <div class="container">
       <div class="logos-carousel__headline">
-        <h3 class="title">
+        <h3 class="eyebrow">
           {{ headline }}
         </h3>
       </div>
@@ -13,9 +13,9 @@
         :loop="true"
         :slidesPerView="'auto'"
         :freemode="true"
-        :speed="750"
+        :speed="3000"
         :autoplay="{
-          delay: 3000
+          delay: 1
         }">
         <template v-for="(logo, id) in items" :key="id">
           <SwiperSlide class="single-logo">

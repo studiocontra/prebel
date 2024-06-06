@@ -1,7 +1,5 @@
 <template>
   <div class="wrap-footer">
-    <PreFooter />
-
     <footer>
       <div class="container">
         <div class="footer__content">
@@ -121,9 +119,6 @@ const { data } = await useAsyncData("[footer]", () =>
 );
 
 const footerData = data.value?.data;
-
-console.log(footerData);
-
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="section services-cards">
+  <div class="services-cards">
     <div class="container container--narrow">
       <h2 class="title">
         {{ headline }}

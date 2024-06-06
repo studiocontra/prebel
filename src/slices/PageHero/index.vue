@@ -19,7 +19,9 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
     :headline="slice.primary.headline"
-    :content="slice.primary.content" />
+    :content="slice.primary.content"
+    :bgImage="slice.primary.bg_image"
+    :showForm="slice.primary.show_contact_form" />
 
   <HeroTextOnly
     v-if="slice.variation == 'text'"

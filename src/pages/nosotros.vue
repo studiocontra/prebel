@@ -21,7 +21,7 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
-const { headerScheme, setHeaderScheme } = useHeaderScheme();
+const headerStore = useHeaderStore();
 
 // Import your slices
 import Accordion from '@/slices/Accordion'
@@ -40,7 +40,8 @@ const { data } = await useAsyncData("[about]", () =>
 );
 
 const aboutData = data.value.data;
-setHeaderScheme(aboutData.header_color_scheme);
+
+headerStore.value = aboutData.header_color_scheme.toLowerCase();
 </script>
 
 <style lang="scss" scoped>

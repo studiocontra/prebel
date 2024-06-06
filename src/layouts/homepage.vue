@@ -1,7 +1,6 @@
 <template>
   <Header />
   <slot />
-  <PreFooter />
   <Footer />
   <Loader />
 </template>

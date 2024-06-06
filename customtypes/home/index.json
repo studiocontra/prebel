@@ -11,8 +11,8 @@
         "config": {
           "label": "Header color scheme",
           "placeholder": "",
-          "options": ["White", "Color"],
-          "default_value": "White"
+          "options": ["Light", "Dark"],
+          "default_value": "Light"
         }
       },
       "slices": {

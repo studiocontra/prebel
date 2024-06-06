@@ -48,3 +48,9 @@
   translate: 0 -25px;
 }
 
+.main-menu.light {
+  :deep(.menu-link) {
+    color: $beige;
+  }
+}
+

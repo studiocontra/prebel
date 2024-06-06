@@ -1,31 +1,31 @@
 <template>
   <div class="main-menu">
     <NuxtLink
-      to="/"
+      to="/nosotros"
       class="menu-link"
       @click="$emit('closeMenu')">
-      End to End products
-    </NuxtLink>
-
-    <NuxtLink
-      to="/sostenibilidad"
-      class="menu-link"
-      @click="$emit('closeMenu')">
-      Nuestras Categorías
+      Quiénes somos
     </NuxtLink>
 
     <NuxtLink
       to="/servicios"
       class="menu-link"
       @click="$emit('closeMenu')">
-      Tipos de Servicios
+      Nuestros Servicios
+    </NuxtLink>
+
+    <NuxtLink
+      to="/sostenibilidad"
+      class="menu-link"
+      @click="$emit('closeMenu')">
+      Tipos de Soluciones
     </NuxtLink>
 
     <NuxtLink
       to="/nosotros"
       class="menu-link"
       @click="$emit('closeMenu')">
-      Nuestra Compañía
+      Categorías
     </NuxtLink>
   </div>
 </template>

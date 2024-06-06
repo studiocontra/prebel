@@ -2280,6 +2280,16 @@ export type PageHeroSliceDefault = prismic.SharedSliceVariation<
  */
 export interface PageHeroSliceHomePrimary {
   /**
+   * Headline field in *PageHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
    * Content field in *PageHero → Primary*
    *
    * - **Field Type**: Rich Text
@@ -2288,6 +2298,27 @@ export interface PageHeroSliceHomePrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Background image field in *PageHero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.bg_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bg_image: prismic.ImageField<never>;
+
+  /**
+   * Show contact form field in *PageHero → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: page_hero.primary.show_contact_form
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_contact_form: prismic.BooleanField;
 }
 
 /**

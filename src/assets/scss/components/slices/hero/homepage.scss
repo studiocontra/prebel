@@ -1,59 +1,75 @@
 .hero--home {
+  position: relative;
   padding: 0 0 5vh;
   padding-top: calc(var(--header-height) + 15vh);
-  background: $white;
 
-  .title {
-    color: $blue;
+  .hero--home__bg {
+    z-index: 0;
+    @include fullAbs();
 
-    [data-row] {
-      display: flex;
-      margin-bottom: 16px;
-      transition-timing-function: ease-out;
-      transition-duration: 0.2s;
-      transition-property: opacity, translate;
-      flex-wrap: wrap;
-      gap: 16px;
-
-      &.hidden {
-        opacity: 0;
-        translate: 0 15px;
-      }
-    }
-    .media--mobile[data-item="2"] {
-      display: block;
-
-      @include m768 {
-        display: none;
-      }
+    &:after {
+      content: '';
+      opacity: 0.3;
+      background-color: $black;
+      @include fullAbs();
     }
 
-    [data-item="1"] {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    [data-item="2"] {
-      display: none;
-      flex-basis: 160px;
-
-      @include m768 {
-        display: block;
-      }
-    }
-    [data-item="4"] {
-      width: 1.75ch;
+    img {
+      @include fullAbs();
+      @include fit();
     }
   }
 
-  .media {
-    height: 1.2em;
-    border-radius: 0.6em;
-    background-color: slategray;
-    flex: 1;
+  .container {
+    position: relative;
+
+    .title {
+      font-weight: 300;
+    }
+
+    .text {
+      max-width: 500px;
+    }
   }
 
-  .text {
-    max-width: 450px;
-    color: $black;
+  .toggle-form {
+    position: absolute;
+    z-index: 2;
+    right: 24px;
+    bottom: 0;
+    cursor: pointer;
+    transition: filter 0.2s ease-out;
+
+    @include m768 {
+      right: 32px;
+    }
+
+    &:hover {
+      filter: drop-shadow(0 0 5px $blue);
+
+      circle {
+        fill: $black;
+      }
+    }
+
+    circle {
+      transition: fill 0.2s ease-out;
+      fill: $blue;
+    }
+
+    g {
+      transform-origin: center;
+      animation: rotateCta 25s infinite linear;
+    }
+  }
+}
+
+@keyframes rotateCta {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 359deg;
   }
 }

@@ -22,7 +22,11 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
-const store = useHeaderStore();
+const headerStore = useHeaderStore();
+
+definePageMeta({
+  layout: 'homepage'
+})
 
 // Import your slices
 import Accordion from '@/slices/Accordion'
@@ -41,8 +45,5 @@ const { data } = await useAsyncData("[home]", () =>
 );
 
 const homeData = data.value?.data;
-
-onMounted(() => {
-  store.value = homeData.header_color_scheme.toLowerCase();
-});
+headerStore.value = homeData.header_color_scheme.toLowerCase();
 </script>
