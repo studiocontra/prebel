@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     '@/assets/scss/base/scroll.scss',
   ],
 
-  modules: ['@nuxtjs/i18n', '@nuxtjs/prismic'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/prismic', '@pinia/nuxt'],
 
   components: [
     { path: '~/components/slices' },

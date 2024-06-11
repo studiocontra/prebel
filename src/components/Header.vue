@@ -1,5 +1,5 @@
 <template>
-  <header :class="store" ref="mainHeader">
+  <header :class="headerStore.theme" ref="mainHeader">
     <div class="container">
       <div class="header__logo">
         <NuxtLink to="/">
@@ -11,7 +11,7 @@
 
       <transition name="fade">
         <Menu
-          :class="[isMenuOpen && 'active', store]"
+          :class="[isMenuOpen && 'active', headerStore.theme]"
           @close-menu="toggleMenu" />
       </transition>
 
@@ -30,7 +30,9 @@
 
 <script setup>
 import { ref } from 'vue';
-const store = useHeaderStore();
+import { useHeaderStore } from '@/stores/header';
+
+const headerStore = useHeaderStore();
 
 const isMenuOpen = ref(false);
 const mainHeader = ref(null);
