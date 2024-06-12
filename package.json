@@ -23,6 +23,5 @@
     "@slicemachine/adapter-nuxt": "^0.3.41",
     "nuxt": "^3.11.2",
     "slice-machine-ui": "^2.2.0"
-  },
-  "packageManager": "yarn@4.2.2"
+  }
 }
