@@ -4,7 +4,6 @@
       :slices="singleServiceData.slices"
       :components="{
         page_hero: PageHero,
-        image_text_box: ImageTextBox,
         text_images_shapes: TextImagesShape,
         our_clients: Logosgrid,
       }" />
@@ -19,7 +18,6 @@ const { value: { iso, code } } = localeProperties;
 
 // Import your slices
 import Logosgrid from '@/slices/LogosGrid'
-import ImageTextBox from '@/slices/ImageTextBox'
 import PageHero from '@/slices/PageHero'
 import TextImagesShape from '@/slices/TextImagesShape'
 
