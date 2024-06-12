@@ -26,8 +26,6 @@ const props = defineProps({
   textAlign: String,
 });
 
-// console.log(props.content[0].text);
-
 // gsap.to('.mask', {
 //   duration: 1,
 //   text: {
