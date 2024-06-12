@@ -22,6 +22,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@slicemachine/adapter-nuxt": "^0.3.41",
     "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
     "slice-machine-ui": "^2.2.0"
   }
 }

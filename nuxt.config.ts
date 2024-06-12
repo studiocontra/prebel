@@ -7,10 +7,6 @@ export default defineNuxtConfig({
     "@scss": "/assets/scss",
   },
 
-  build: {
-    transpile: [/vue-i18n/]
-  },
-
   css: [
     '@/assets/scss/base/reset.scss',
     '@/assets/scss/base/grid.scss',
