@@ -5,17 +5,17 @@
   color: $white;
 
   @include m768 {
-    padding: 25vh 0 20vh;
+    padding: 25vh 0 100px;
   }
 
   .title {
     :deep(strong) {
       display: inline-block;
+      margin-right: 0.5ch;
       padding: 4px 4px 4px;
       border-radius: 4px;
       font-weight: 100;
       line-height: 1;
-      margin-right: 0.5ch;
     }
   }
 }

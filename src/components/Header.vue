@@ -1,18 +1,31 @@
 <template>
-  <header :class="headerStore.theme" ref="mainHeader">
+  <header :class="[
+    headerStore.theme,
+    {
+      'scrolled': isScrolled
+    }]" ref="mainHeader">
     <div class="container">
       <div class="header__logo">
         <NuxtLink to="/">
-          <img
-            src="/logo-prebel-blue.svg"
-            alt="Prebel Logo">
+          <PrismicImage :field="headerData.logo" />
         </NuxtLink>
       </div>
 
       <transition name="fade">
-        <Menu
+        <div
+          class="main-menu"
           :class="[isMenuOpen && 'active', headerStore.theme]"
-          @close-menu="toggleMenu" />
+          @close-menu="toggleMenu">
+          <nav v-if="headerData.slices">
+            <ul>
+              <SliceZone
+                :slices="headerData.slices"
+                :components="{
+                  menu_item: MenuItem,
+                }" />
+            </ul>
+          </nav>
+        </div>
       </transition>
 
       <div
@@ -29,13 +42,33 @@
 </template>
 
 <script setup>
+const { client } = usePrismic();
+const { localeProperties } = useI18n();
+const { value: { iso, code } } = localeProperties;
+
 import { ref } from 'vue';
 import { useHeaderStore } from '@/stores/header';
 
 const headerStore = useHeaderStore();
-
-const isMenuOpen = ref(false);
 const mainHeader = ref(null);
+
+/**
+ * Get menu items
+ */
+ const { data } = await useAsyncData("[mainNav]", () =>
+  client.getSingle("main_nav", {lang: iso})
+);
+
+const headerData = data.value.data;
+
+// Import your slices
+import MenuItem from '@/slices/MenuItem'
+console.log(headerData);
+
+/**
+ * Toggle mobile menu
+ */
+const isMenuOpen = ref(false);
 
 function toggleMenu() {
   if(window.innerWidth <= 768) {
@@ -43,14 +76,24 @@ function toggleMenu() {
   }
 }
 
+const headerHeight = ref(90);
 function setHeight() {
-  const headerHeight = mainHeader.value.offsetHeight;
-  document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+  headerHeight.value = mainHeader.value.offsetHeight;
+  document.documentElement.style.setProperty('--header-height', `${headerHeight.value}px`);
+}
+
+/**
+ * Toggle Active onScroll
+ */
+const isScrolled = ref(false);
+function watchScroll() {
+  (window.scrollY > headerHeight.value * 2) ? isScrolled.value = true : isScrolled.value = false;
 }
 
 onMounted(() => {
   setHeight();
   window.addEventListener('resize', setHeight);
+  window.addEventListener('scroll', watchScroll);
 });
 
 </script>

@@ -3,6 +3,7 @@ header {
   z-index: 5;
   width: 100%;
   padding-top: 20px;
+  transition: background-color 0.2s ease-out;
 
   @include m768 {
     padding-top: 32px;
@@ -21,7 +22,7 @@ header {
 
   .container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   }
 
@@ -85,4 +86,58 @@ header.light {
       background-color: $blue;
     }
   }
+
+  :deep(.menu-item) {
+    color: $beige;
+  }
+}
+
+header.scrolled {
+  background-color: $white;
+
+  :deep(.menu-item) {
+    color: $black;
+  }
+}
+
+.main-menu {
+  display: none;
+
+  @include m1400 {
+    display: block;
+  }
+
+  ul,
+  :deep(ul) {
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    column-gap: clamp(16px, 2vw, 40px);
+  }
+}
+
+.main-menu.active {
+  display: block;
+}
+
+:deep(.menu-item) {
+  color: $gray;
+}
+
+
+
+// Transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, translate 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-enter-to {
+  opacity: 0;
+}
+
+.fade-enter-from {
+  translate: 0 -25px;
 }

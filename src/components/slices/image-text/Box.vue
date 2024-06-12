@@ -1,8 +1,8 @@
 <template>
-  <div class="section wrap-news">
+  <div class="section wrap-img-text-box">
     <div class="container">
-      <div class="news__box">
-        <div class="box__headline">
+      <div class="img-text-box__box">
+        <div class="box__headline" v-if="eyebrow || headline">
           <span class="eyebrow">
             {{ eyebrow }}
           </span>
@@ -13,7 +13,7 @@
         </div>
 
         <swiper
-          class="swiper news__slider"
+          class="swiper img-text-box__slider"
           :modules="[Pagination, EffectFade]"
           effect="fade"
           :fadeEffect="{
@@ -36,9 +36,15 @@
               </div>
               <div class="col-lg-6">
                 <div class="content">
-                  <h3 class="title title--sm">
-                    {{ item.headline }}
-                  </h3>
+                  <div class="headline">
+                    <span v-if="item.eyebrow" class="eyebrow">
+                      {{ item.eyebrow }}
+                    </span>
+
+                    <h3 v-if="item.headline" class="title title--sm">
+                      {{ item.headline }}
+                    </h3>
+                  </div>
 
                   <PrismicRichText
                     :field="item.content"

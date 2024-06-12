@@ -22,4 +22,11 @@ defineProps(
     v-if="slice.variation == 'imageWide'"
     :id="slice.id"
     :slides="slice.items" />
+
+  <ImageTextBox
+    v-if="slice.variation == 'imageTextBox'"
+    :id="slice.id"
+    :eyebrow="slice.primary.eyebrow"
+    :headline="slice.primary.headline"
+    :slides="slice.items" />
 </template>

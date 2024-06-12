@@ -144,7 +144,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
@@ -162,6 +161,106 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "imageTextBox",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "extra",
+				"type": "Text"
+			},
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"value": "land",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"eyebrow",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "might",
+							"type": "Text"
+						}
+					],
+					[
+						"headline",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "next",
+							"type": "Text"
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Do dolor eu ex dolor tempor duis. Exercitation aute proident anim voluptate minim Lorem elit nostrud. Anim elit sunt aute veniam nisi dolore cillum amet magna dolore amet ad magna sint."
+									}
+								}
+							]
+						}
+					],
+					[
+						"button_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "captain",
+							"type": "Text"
+						}
+					],
+					[
+						"button_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://slicemachine.dev"
+							}
+						}
+					],
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+								"width": 3424,
+								"height": 3424
+							},
+							"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+							"width": 3424,
+							"height": 3424,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]

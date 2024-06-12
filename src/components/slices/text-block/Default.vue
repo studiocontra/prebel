@@ -47,5 +47,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/slices/text-block";
+  @import "@scss/components/slices/text-block/default";
 </style>

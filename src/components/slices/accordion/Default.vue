@@ -1,12 +1,22 @@
 <template>
-  <div class="section services__accordion" :id="props.id">
+  <div class="section accordion" :id="props.id">
     <div class="container">
       <div class="accordion-group">
-        <span class="eyebrow">
-          {{ headline }}
-        </span>
+        <div class="accordion-group__headline">
+          <span v-if="eyebrow" class="eyebrow">
+            {{ eyebrow }}
+          </span>
+          <h2 v-if="headline" class="title">
+            {{ headline }}
+          </h2>
 
-        <div class="services-accordion__content">
+          <PrismicRichText
+            v-if="introduction"
+            :field="introduction"
+            class="text" />
+        </div>
+
+        <div class="accordion__content">
           <template v-for="(item, idx) in items" :key="idx">
             <div
               class="accordion-item"
@@ -15,7 +25,7 @@
               <div
                 class="accordion-item__headline"
                 @click="toggleAccordionItem(props.id, idx)">
-                <h3 class="title">
+                <h3 class="title title--sm">
                   {{ item.name }}
                 </h3>
 
@@ -29,9 +39,13 @@
               </div>
 
               <div class="accordion-item__content">
-                <PrismicRichText
-                  :field="item.content"
-                  class="text" />
+                <div class="content">
+                  <prismic-image :field="item.image" class="img" />
+
+                  <PrismicRichText
+                    :field="item.content"
+                    class="text" />
+                </div>
               </div>
             </div>
           </template>
@@ -46,7 +60,9 @@ import { ref, onMounted } from 'vue';
 
 const props = defineProps({
   id: String,
+  eyebrow: String,
   headline: String,
+  introduction: Object,
   items: [Array, Boolean],
 });
 
@@ -74,5 +90,5 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/services/accordion";
+  @import "@scss/components/slices/accordion/default";
 </style>

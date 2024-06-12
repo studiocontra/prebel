@@ -23,6 +23,8 @@ defineProps(
   <AccordionDefault
     v-if="slice.variation == 'default'"
     :id="slice.id"
+    :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
+    :introduction="slice.primary.introduction"
     :items="slice.items" />
 </template>

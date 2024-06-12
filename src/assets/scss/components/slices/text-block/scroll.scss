@@ -1,0 +1,16 @@
+.text-block--scroll {
+  color: $white;
+  background-color: $blue;
+
+  .text.center {
+    text-align: center;
+  }
+
+  .wrap-btn {
+    text-align: center;
+
+    .btn {
+      display: inline-block;
+    }
+  }
+}

@@ -10,21 +10,23 @@ export const components = defineSliceZoneComponents({
   ),
   cards: defineAsyncComponent(() => import("./Cards/index.vue")),
   image_text: defineAsyncComponent(() => import("./ImageText/index.vue")),
-  image_text_box: defineAsyncComponent(
-    () => import("./ImageTextBox/index.vue"),
-  ),
   image_text_carousel: defineAsyncComponent(
     () => import("./ImageTextCarousel/index.vue"),
   ),
   images_grid: defineAsyncComponent(() => import("./ImagesGrid/index.vue")),
+  items_image: defineAsyncComponent(() => import("./ItemsImage/index.vue")),
   locations_map: defineAsyncComponent(() => import("./LocationsMap/index.vue")),
   logos_carousel: defineAsyncComponent(
     () => import("./LogosCarousel/index.vue"),
   ),
+  menu_item: defineAsyncComponent(() => import("./MenuItem/index.vue")),
   our_clients: defineAsyncComponent(() => import("./LogosGrid/index.vue")),
   page_hero: defineAsyncComponent(() => import("./PageHero/index.vue")),
   services_slider: defineAsyncComponent(
     () => import("./ServicesSlider/index.vue"),
+  ),
+  tabs_image_data: defineAsyncComponent(
+    () => import("./TabsImageData/index.vue"),
   ),
   testimonials: defineAsyncComponent(() => import("./Testimonials/index.vue")),
   text_block: defineAsyncComponent(() => import("./TextBlock/index.vue")),

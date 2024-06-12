@@ -36,6 +36,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/hero";
+  @import "@scss/components/slices/hero/base";
   @import "@scss/components/slices/hero/text-cta";
 </style>

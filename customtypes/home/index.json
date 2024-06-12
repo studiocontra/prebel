@@ -20,6 +20,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "text_block": {
+              "type": "SharedSlice"
+            },
+            "tabs_image_data": {
+              "type": "SharedSlice"
+            },
             "cards": {
               "type": "SharedSlice"
             },
@@ -42,9 +48,6 @@
               "type": "SharedSlice"
             },
             "services_slider": {
-              "type": "SharedSlice"
-            },
-            "image_text_box": {
               "type": "SharedSlice"
             },
             "page_hero": {

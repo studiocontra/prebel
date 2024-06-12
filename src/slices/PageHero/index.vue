@@ -38,6 +38,14 @@ defineProps(
     :buttonLabel="slice.primary.button_label"
     :buttonLink="slice.primary.button_link" />
 
+  <HeroBigImage
+    v-if="slice.variation == 'imageBig'"
+    :data-slice-type="slice.slice_type"
+    :data-slice-variation="slice.variation"
+    :headline="slice.primary.headline"
+    :content="slice.primary.content"
+    :mainImage="slice.primary.main_image"/>
+
   <HeroImageText
     v-if="slice.variation == 'default'"
     :data-slice-type="slice.slice_type"

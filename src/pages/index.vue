@@ -9,7 +9,6 @@
         logos_carousel: LogosCarousel,
         images_grid: ImagesGrid,
         image_text: ImageText,
-        image_text_box: ImageTextBox,
         locations_map: LocationsMap,
         page_hero: PageHero,
         services_slider: ServicesSlider,
@@ -37,7 +36,6 @@ import LogosGrid from '@/slices/LogosGrid'
 import LogosCarousel from '@/slices/LogosCarousel'
 import ImagesGrid from '@/slices/ImagesGrid'
 import ImageText from '@/slices/ImageText'
-import ImageTextBox from '@/slices/ImageTextBox'
 import LocationsMap from '@/slices/LocationsMap'
 import PageHero from '@/slices/PageHero'
 import ServicesSlider from '@/slices/ServicesSlider'

@@ -32,9 +32,6 @@
             "our_clients": {
               "type": "SharedSlice"
             },
-            "image_text_box": {
-              "type": "SharedSlice"
-            },
             "page_hero": {
               "type": "SharedSlice"
             }

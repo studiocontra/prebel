@@ -6,10 +6,11 @@
         accordion: Accordion,
         images_grid: ImagesGrid,
         image_text: ImageText,
-        image_text_box: ImageTextBox,
         image_text_carousel: ImageTextCarousel,
+        items_image: ItemsImage,
         locations_map: LocationsMap,
         page_hero: PageHero,
+        tabs_image_data: TabsImageData,
         text_block: TextBlock,
         text_cards: TextCards,
         text_images_shapes: TextImagesShape,
@@ -27,10 +28,11 @@ const headerStore = useHeaderStore();
 import Accordion from '@/slices/Accordion'
 import ImagesGrid from '@/slices/ImagesGrid'
 import ImageText from '@/slices/ImageText'
-import ImageTextBox from '@/slices/ImageTextBox'
 import ImageTextCarousel from '@/slices/ImageTextCarousel'
+import ItemsImage from '@/slices/ItemsImage'
 import LocationsMap from '@/slices/LocationsMap'
 import PageHero from '@/slices/PageHero'
+import TabsImageData from '@/slices/TabsImageData'
 import TextBlock from '@/slices/TextBlock'
 import TextCards from '@/slices/TextCards'
 import TextImagesShape from '@/slices/TextImagesShape'

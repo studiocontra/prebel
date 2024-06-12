@@ -6,6 +6,12 @@
   line-height: 1.25;
 }
 
+.title--xs {
+  margin-bottom: 0.5em;
+  font-size: clamp(20px, 2.5vw, 24px);
+  line-height: 1.25;
+}
+
 .title--sm {
   margin-bottom: 0.5em;
   font-size: clamp(28px, 3vw, 32px);

@@ -13,11 +13,17 @@ defineProps(
 </script>
 
 <template>
-  <TextBlock
+  <TextBlockDefault
+    v-if="slice.variation == 'default'"
     :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
     :content="slice.primary.content"
     :textAlign="slice.primary.text_align"
     :buttonLink="slice.primary.button_link"
     :buttonLabel="slice.primary.button_label" />
+
+  <TextBlockScroll
+    v-if="slice.variation == 'scrollEffect'"
+    :eyebrow="slice.primary.eyebrow"
+    :content="slice.primary.content"/>
 </template>
