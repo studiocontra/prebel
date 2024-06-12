@@ -22,6 +22,8 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
+
+import { useHeaderStore } from '@/stores/header';
 const headerStore = useHeaderStore();
 
 // Import your slices
@@ -43,7 +45,7 @@ const { data } = await useAsyncData("[about]", () =>
 
 const aboutData = data.value.data;
 
-headerStore.value = aboutData.header_color_scheme.toLowerCase();
+onMounted(() => headerStore.setTheme(aboutData.header_color_scheme.toLowerCase()));
 </script>
 
 <style lang="scss" scoped>
