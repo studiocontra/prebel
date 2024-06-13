@@ -6,11 +6,30 @@
     text-align: center;
   }
 
-  .wrap-btn {
-    text-align: center;
+  .wrap-effect {
+    position: relative;
 
-    .btn {
-      display: inline-block;
+    .title--base {
+      position: absolute;
+      top: 0;
+      opacity: 0.3;
+
+      :deep(p) {
+        margin-top: 0;
+      }
+    }
+
+    .hidden {
+      opacity: 0;
+    }
+
+
+    .mask-0 {
+      margin: 0;
+
+      &:not(:empty) {
+        margin-bottom: 1em;
+      }
     }
   }
 }

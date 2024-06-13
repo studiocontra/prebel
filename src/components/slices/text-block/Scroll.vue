@@ -8,32 +8,70 @@
         {{ eyebrow }}
       </h3>
 
-      <PrismicRichText
-        v-if="content"
-        :field="content"
-        class="title"
-        :class="textAlign" />
+      <div class="wrap-effect" ref="divWrapper">
+        <!-- <PrismicRichText
+          v-if="content"
+          :field="content"
+          class="title hidden"
+          :class="textAlign" /> -->
 
-      <div class="mask"></div>
+        <PrismicRichText
+          v-if="content"
+          :field="content"
+          ref="divContent"
+          class="title title--base"
+          :class="textAlign" />
+
+        <div class="title mask mask-0"></div>
+        <div class="title mask mask-1"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted  } from 'vue';
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(ScrollTrigger,TextPlugin);
+
 const props = defineProps({
   eyebrow: String,
   content: Object,
   textAlign: String,
 });
 
-// gsap.to('.mask', {
-//   duration: 1,
-//   text: {
-//     value: props.content[0].text,
-//     newClass: "class2",
-//     delimiter: " ",
-//   },
-// });
+const divWrapper = ref(null);
+const divContent = ref(null);
+
+onMounted(() => {
+  const contentHeight = divContent.value.$el.scrollHeight;
+  divWrapper.value.style.height = `${contentHeight}px`;
+
+
+  const scrollTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.text-block--scroll',
+      start: 'top 70%',
+      end: '+=120%',
+      scrub: 1,
+    }
+  });
+
+  for (let index = 0; index < props.content.length; index++) {
+    const element = props.content[index];
+
+    scrollTl.to(`.mask-${index}`, {
+      text: {
+        value: element.text,
+        delimiter: " ",
+      },
+    });
+  }
+})
 </script>
 
 <style lang="scss" scoped>

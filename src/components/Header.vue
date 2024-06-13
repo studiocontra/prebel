@@ -63,7 +63,6 @@ const headerData = data.value.data;
 
 // Import your slices
 import MenuItem from '@/slices/MenuItem'
-console.log(headerData);
 
 /**
  * Toggle mobile menu
