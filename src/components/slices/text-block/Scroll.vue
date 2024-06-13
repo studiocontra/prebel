@@ -56,7 +56,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '.text-block--scroll',
       start: 'top 70%',
-      end: '+=120%',
+      end: 'bottom 50%',
       scrub: 1,
     }
   });
