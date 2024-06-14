@@ -49,7 +49,9 @@
   }
 
   ul {
-    justify-content: center;
+    @include m1200 {
+      justify-content: center !important;
+    }
   }
 }
 
