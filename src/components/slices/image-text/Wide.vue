@@ -18,7 +18,7 @@
         }"
         :slidesPerView="1"
         :watchOverflow="true"
-        @init="movePagination"
+        @init="init"
         @slideChangeTransitionStart="movePagination">
         <swiper-slide v-for="(item, id) in props.slides" :key="id">
           <div class="row align-center">
@@ -102,6 +102,12 @@ function movePagination({slides, activeIndex}) {
   const paginationTop = contentTop + contentHeight + 32;
 
   pagination.value.style.top = `${paginationTop}px`
+}
+
+function init(e) {
+  setTimeout(() => {
+    movePagination(e);
+  }, 100);
 }
 </script>
 

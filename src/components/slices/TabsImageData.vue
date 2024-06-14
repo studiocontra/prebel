@@ -18,9 +18,9 @@
 
       <div class="tabs__image">
         <template v-for="(item, idx) in items" :key="idx">
-          <transition>
+          <Transition name="fade">
             <prismic-image v-if="activeItem === idx" :field="item.image" />
-          </transition>
+          </Transition>
         </template>
       </div>
 
