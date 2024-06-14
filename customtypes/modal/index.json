@@ -1,0 +1,77 @@
+{
+  "format": "custom",
+  "id": "modal",
+  "label": "Modal",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "headline": {
+        "type": "Text",
+        "config": {
+          "label": "Headline",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "button_label": {
+        "type": "Text",
+        "config": {
+          "label": "Button label",
+          "placeholder": ""
+        }
+      },
+      "inputs": {
+        "type": "Group",
+        "config": {
+          "label": "Inputs",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "email": {
+              "type": "Text",
+              "config": {
+                "label": "Email",
+                "placeholder": ""
+              }
+            },
+            "phone": {
+              "type": "Text",
+              "config": {
+                "label": "Phone",
+                "placeholder": ""
+              }
+            },
+            "message": {
+              "type": "Text",
+              "config": {
+                "label": "Message",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

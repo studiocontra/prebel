@@ -596,6 +596,123 @@ export type MainNavDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Modal → Inputs*
+ */
+export interface ModalDocumentDataInputsItem {
+  /**
+   * Name field in *Modal → Inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.inputs[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Email field in *Modal → Inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.inputs[].email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Phone field in *Modal → Inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.inputs[].phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Message field in *Modal → Inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.inputs[].message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  message: prismic.KeyTextField;
+}
+
+/**
+ * Content for Modal documents
+ */
+interface ModalDocumentData {
+  /**
+   * Image field in *Modal*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Headline field in *Modal*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.headline
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Description field in *Modal*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button label field in *Modal*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.button_label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Inputs field in *Modal*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.inputs[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  inputs: prismic.GroupField<Simplify<ModalDocumentDataInputsItem>>;
+}
+
+/**
+ * Modal document from Prismic
+ *
+ * - **API ID**: `modal`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ModalDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<ModalDocumentData>, "modal", Lang>;
+
 type ServicesDocumentDataSlicesSlice =
   | ImageTextCarouselSlice
   | CardsSlice
@@ -1001,6 +1118,7 @@ export type AllDocumentTypes =
   | LegalesDocument
   | LineaEticaDocument
   | MainNavDocument
+  | ModalDocument
   | ServicesDocument
   | SingleServiceDocument
   | SingleWorkDocument
@@ -3803,6 +3921,9 @@ declare module "@prismicio/client" {
       MainNavDocument,
       MainNavDocumentData,
       MainNavDocumentDataSlicesSlice,
+      ModalDocument,
+      ModalDocumentData,
+      ModalDocumentDataInputsItem,
       ServicesDocument,
       ServicesDocumentData,
       ServicesDocumentDataSlicesSlice,
