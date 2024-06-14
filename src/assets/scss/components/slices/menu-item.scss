@@ -14,7 +14,7 @@
   }
 
   .router-link-active,
-  &:hover >a {
+  &:hover > a {
     color: $blue;
   }
 
@@ -38,7 +38,7 @@
   transition-property: opacity translate;
   pointer-events: none;
   opacity: 0;
-  background-color: #E7E5DF;
+  background-color: #e7e5df;
   translate: 0 -5px;
 
   ul {
@@ -47,8 +47,12 @@
 }
 
 .menu-item--sub {
-  padding: 27px 0;
+  padding: 5px 0;
   color: $gray !important;
+
+  @include m1400 {
+    padding: 27px 0;
+  }
 
   &:hover {
     a {

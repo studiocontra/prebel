@@ -1,3 +1,10 @@
+.accordion {
+  padding: 20px 0;
+
+  @include m768 {
+    padding: 40px 0;
+  }
+}
 
 .accordion-group {
   padding: 48px 24px;
@@ -43,6 +50,7 @@
     cursor: pointer;
     align-items: center;
     justify-content: space-between;
+    gap: 0 16px;
 
     @include m768 {
       padding-bottom: 36px;
@@ -71,7 +79,6 @@
     }
   }
 
-
   .accordion-item__content {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
@@ -79,11 +86,16 @@
     .content {
       display: flex;
       padding-bottom: 32px;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 32px;
+      gap: 16px 32px;
+
+      @include m768 {
+        gap: 32px;
+      }
     }
 
-    .img  {
+    .img {
       max-width: 135px;
     }
 
@@ -92,6 +104,7 @@
       max-width: 900px;
       margin: 0;
       color: $black;
+      flex: 1;
 
       p {
         position: relative;

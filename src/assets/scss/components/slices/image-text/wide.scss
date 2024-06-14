@@ -47,7 +47,6 @@
     @include m768 {
       left: calc(58.333% + 2em);
       translate: 0 0;
-
     }
     @include m992 {
       left: calc(66% + 2em);
@@ -58,7 +57,7 @@
       width: 44px;
       height: 44px;
       margin: 0;
-      padding: 8px;
+      padding: 6px 8px 8px;
       cursor: pointer;
       transition: background-color 0.2s ease-in;
       text-align: center;

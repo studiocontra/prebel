@@ -5,12 +5,27 @@
 
 .hero__img {
   position: relative;
-  aspect-ratio: 20 / 7;
+  aspect-ratio: 4 / 3;
+
+  @include m768 {
+    aspect-ratio: 16 / 9;
+  }
+  @include m992 {
+    aspect-ratio: 20 / 7;
+  }
 
   img {
     border-radius: 18px;
     @include fullAbs();
     @include fit();
+  }
+
+  .drop {
+    display: none;
+
+    @include m992 {
+      display: block;
+    }
   }
 
   :deep(.drop--1) {
