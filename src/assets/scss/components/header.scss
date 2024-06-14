@@ -52,7 +52,7 @@ header {
     flex-wrap: wrap;
     gap: 2px 5px;
 
-    @include m1400 {
+    @include m1200 {
       display: none;
     }
 
@@ -98,8 +98,10 @@ header.scrolled {
   padding: 32px 20px;
   background-color: $beige;
 
-  @include m1400 {
+  @include m1200 {
+    position: static;
     padding: 0;
+    background: none;
   }
 
   ul,
@@ -110,9 +112,10 @@ header.scrolled {
     padding-left: 0;
     list-style: none;
 
-    @include m992 {
+    @include m1200 {
       flex-direction: row;
       column-gap: clamp(16px, 2vw, 40px);
+      justify-content: flex-end;
     }
   }
 }
@@ -126,18 +129,17 @@ header.scrolled {
 }
 
 // Transition
-.fade-enter-active,
-.fade-leave-active {
-  transition:
-    opacity 0.3s ease,
-    translate 0.3s ease;
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity 0.3s ease-out, translate 0.3s ease-out;
 }
 
-.fade-enter-from,
-.fade-enter-to {
+.slide-fade-enter-from,
+.slide-fade-leave-to {
   opacity: 0;
 }
 
-.fade-enter-from {
+.slide-fade-enter-from {
   translate: 0 -25px;
 }
+

@@ -5,7 +5,7 @@
       {{ label }}
     </NuxtLink>
 
-    <div v-if="children" class="submenu">
+    <div v-if="children.length" class="submenu">
       <div class="container">
         <ul>
           <li

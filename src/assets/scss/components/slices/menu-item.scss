@@ -1,6 +1,7 @@
 .menu-item {
   display: block;
-  padding-bottom: 24px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
   transition: color 0.3s ease-out;
   white-space: nowrap;
   letter-spacing: 2px;
@@ -9,7 +10,8 @@
   font-weight: 400;
   line-height: 1;
 
-  @include m768 {
+  @include m1200 {
+    margin-bottom: 0;
     padding: 6px 0 38px;
   }
 
@@ -28,18 +30,23 @@
 }
 
 .submenu {
-  position: absolute;
-  z-index: 1;
-  top: 100%;
   left: 0;
   width: 100%;
-  transition-timing-function: ease-in;
-  transition-duration: 0.2s;
-  transition-property: opacity translate;
-  pointer-events: none;
-  opacity: 0;
-  background-color: #e7e5df;
-  translate: 0 -5px;
+  padding-top: 20px;
+
+  @include m1200 {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    padding-top: 0;
+    transition-timing-function: ease-in;
+    transition-duration: 0.2s;
+    transition-property: opacity translate;
+    pointer-events: none;
+    opacity: 0;
+    background-color: #e7e5df;
+    translate: 0 -5px;
+  }
 
   ul {
     justify-content: center;
@@ -50,7 +57,7 @@
   padding: 5px 0;
   color: $gray !important;
 
-  @include m1400 {
+  @include m1200 {
     padding: 27px 0;
   }
 

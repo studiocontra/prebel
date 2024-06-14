@@ -15,9 +15,9 @@
         </NuxtLink>
       </div>
 
-      <transition name="fade">
+      <Transition name="slide-fade">
         <div
-          v-show="isMenuOpen"
+          v-if="isMenuOpen"
           class="main-menu"
           :class="headerStore.theme"
           @close-menu="toggleMenu"
@@ -33,7 +33,7 @@
             </ul>
           </nav>
         </div>
-      </transition>
+      </Transition>
 
       <div
         class="header__hamburger"
@@ -80,15 +80,26 @@ import MenuItem from "@/slices/MenuItem";
 const isMenuOpen = ref(false);
 
 function toggleMenu() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1200) {
     isMenuOpen.value = !isMenuOpen.value;
   }
 }
 
+function showDesktop() {
+  if (window.innerWidth < 1200) {
+    isMenuOpen.value = false;
+  } else {
+    isMenuOpen.value = true;
+  }
+}
+
+
+/**
+ * Set Menu height as css var
+ */
 const headerHeight = ref(90);
 function setHeight() {
-  headerHeight.value = mainHeader.value.scrollHeight;
-  console.log(mainHeader.value);
+  headerHeight.value = mainHeader.value.offsetHeight;
   document.documentElement.style.setProperty(
     "--header-height",
     `${headerHeight.value}px`
@@ -107,7 +118,11 @@ function watchScroll() {
 
 onMounted(() => {
   setHeight();
+  showDesktop();
+  window.addEventListener("resize", showDesktop);
   window.addEventListener("resize", setHeight);
+
+  watchScroll();
   window.addEventListener("scroll", watchScroll);
 });
 </script>
