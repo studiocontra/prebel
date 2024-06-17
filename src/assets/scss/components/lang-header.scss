@@ -1,6 +1,20 @@
 .locale {
-  display: flex;
+  display: none;
+  justify-content: end;
   gap: .4rem;
+  margin-right: 1rem;
+  width: 70%;
+
+  @include m576 {
+    display: flex;
+  }
+
+  @include m1400 {
+    width: auto;
+    margin-right: 0;
+    justify-content: center;
+  }
+
 
   a {
     text-transform: uppercase;

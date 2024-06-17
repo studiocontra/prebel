@@ -1,13 +1,10 @@
 <template>
-  <header
-    :class="[
-      headerStore.theme,
-      {
-        scrolled: isScrolled,
-      },
-    ]"
-    ref="mainHeader"
-  >
+  <header :class="[
+    headerStore.theme,
+    {
+      scrolled: isScrolled,
+    },
+  ]" ref="mainHeader">
     <div class="container">
       <div class="header__logo">
         <NuxtLink to="/">
@@ -16,32 +13,20 @@
       </div>
 
       <Transition name="slide-fade">
-        <div
-          v-if="isMenuOpen"
-          class="main-menu"
-          :class="headerStore.theme"
-          @close-menu="toggleMenu"
-        >
+        <div v-if="isMenuOpen" class="main-menu" :class="headerStore.theme" @close-menu="toggleMenu">
           <nav v-if="headerData.slices">
             <ul>
-              <SliceZone
-                :slices="headerData.slices"
-                :components="{
-                  menu_item: MenuItem,
-                }"
-              />
+              <SliceZone :slices="headerData.slices" :components="{
+    menu_item: MenuItem,
+  }" />
             </ul>
           </nav>
         </div>
       </Transition>
 
-      <LangHeader />
+      <LangHeader class='lang-header' />
 
-      <div
-        class="header__hamburger"
-        :class="{ 'header__hamburger--active': isMenuOpen }"
-        @click="toggleMenu"
-      >
+      <div class="header__hamburger" :class="{ 'header__hamburger--active': isMenuOpen }" @click="toggleMenu">
         <div class="dot dot--circle"></div>
         <div class="dot"></div>
         <div class="dot"></div>
