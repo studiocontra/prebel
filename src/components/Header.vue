@@ -35,6 +35,8 @@
         </div>
       </Transition>
 
+      <LangHeader />
+
       <div
         class="header__hamburger"
         :class="{ 'header__hamburger--active': isMenuOpen }"
@@ -80,13 +82,13 @@ import MenuItem from "@/slices/MenuItem";
 const isMenuOpen = ref(false);
 
 function toggleMenu() {
-  if (window.innerWidth <= 1200) {
+  if (window.innerWidth <= 1400) {
     isMenuOpen.value = !isMenuOpen.value;
   }
 }
 
 function showDesktop() {
-  if (window.innerWidth < 1200) {
+  if (window.innerWidth < 1400) {
     isMenuOpen.value = false;
   } else {
     isMenuOpen.value = true;

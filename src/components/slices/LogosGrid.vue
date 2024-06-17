@@ -42,7 +42,7 @@
             class="text" />
         </div>
 
-        <div class="row justify-between align-center">
+        <div class="row justify-center align-center">
           <template v-for="(logo, id) in items" :key="id">
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xt-1">
               <div class="single-logo">
