@@ -108,7 +108,6 @@ const { data } = await useAsyncData("[modal]", () =>
 );
 
 const modalData = data.value.data;
-console.log(modalData)
 
 const showModal = ref(false)
 const name = ref(null)
