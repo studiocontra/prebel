@@ -129,7 +129,7 @@ function submitForm(e) {
     message: message.value
   };
   axios
-    .post("https://getform.io/f/paqgqpea", data, {
+    .post("https://getform.io/f/rbeqwkxb", data, {
       headers: {
         Accept: "application/json"
       }
