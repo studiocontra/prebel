@@ -66,13 +66,17 @@
                 <h3>{{ modalData.headline }}</h3>
                 <p>{{ modalData.description }}</p>
               </div>
-              <form @submit.prevent="handleSubmit" class="modal-form-inputs">
+              <form @submit.prevent="submitForm" class="modal-form-inputs">
                 <input v-model="name" type="text" name="name" :placeholder="modalData.inputs[0].name" required></input>
-                <input v-model="phone" type="text" name="phone" :placeholder="modalData.inputs[0].phone" required></input>
-                <input v-model="email" type="email" name="email" :placeholder="modalData.inputs[0].email" required></input>
-                <textarea v-model="message" :placeholder="modalData.inputs[0].message" name="message" required></textarea>
-                <button type="submit">{{ modalData.button_label }} <svg width="11" height="14" viewBox="0 0 14 12" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                <input v-model="phone" type="text" name="phone" :placeholder="modalData.inputs[0].phone"
+                  required></input>
+                <input v-model="email" type="email" name="email" :placeholder="modalData.inputs[0].email"
+                  required></input>
+                <textarea v-model="message" :placeholder="modalData.inputs[0].message" name="message"
+                  required></textarea>
+                <p v-if="messageSuccess">{{ messageSuccess }}</p>
+                <button type="submit">{{ modalData.button_label }} <svg width="11" height="14" viewBox="0 0 14 12"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M11.7491 5.90347L12.9413 5.90347L12.1058 5.05307L8.54658 1.43009C8.50773 1.39055 8.50772 1.32718 8.54655 1.28763C8.58639 1.24704 8.65179 1.24704 8.69164 1.28763L13.2343 5.91503C13.2776 5.96398 13.2772 6.03736 13.2351 6.08535L8.69285 10.7123C8.65298 10.7529 8.58754 10.7529 8.54767 10.7123L8.19087 11.0626L8.54767 10.7123C8.50883 10.6727 8.50883 10.6094 8.54768 10.5698L12.1053 6.94685L12.9403 6.09653L11.7486 6.09653L0.596139 6.09653C0.542828 6.09653 0.49961 6.05331 0.49961 6C0.49961 5.94669 0.542827 5.90347 0.596138 5.90347L11.7491 5.90347Z"
                       fill="#4278FA" stroke="#EDEBE3" />
@@ -99,12 +103,13 @@ const props = defineProps({
   showForm: Boolean
 });
 
+import axios from "axios";
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
 
 const { data } = await useAsyncData("[modal]", () =>
-  client.getSingle("modal", {lang: iso})
+  client.getSingle("modal", { lang: iso })
 );
 
 const modalData = data.value.data;
@@ -114,6 +119,30 @@ const name = ref(null)
 const email = ref(null)
 const phone = ref(null)
 const message = ref(null)
+const messageSuccess = ref(null)
+
+function submitForm(e) {
+  e.preventDefault();
+  let data = {
+    name: name.value,
+    email: email.value,
+    message: message.value
+  };
+  axios
+    .post("https://getform.io/f/paqgqpea", data, {
+      headers: {
+        Accept: "application/json"
+      }
+    })
+    .then(
+      response => {
+        if (response.status === 200) {
+          messageSuccess.value = 'Se ha enviado tu información correctamente'
+          e.target.reset()
+        }
+      },
+    );
+}
 
 function toggleModal() {
   showModal.value = !showModal.value
