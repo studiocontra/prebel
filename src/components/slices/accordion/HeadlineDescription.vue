@@ -24,10 +24,6 @@
                   class="accordion-item__headline"
                   @click="toggleAccordionItem(idx)">
                   <h3 class="title">
-                    <span>
-                      {{ pad(idx + 1) }}
-                    </span>
-
                     {{ item.name }}
                   </h3>
 
@@ -77,16 +73,6 @@ function toggleAccordionItem(idx) {
 
   contentWrapper.style.maxHeight = `${contentHeight}px`;
 };
-
-// onMounted(() => {
-//   toggleAccordionItem(0)
-// });
-
-function pad(num) {
-  var s = "000" + num;
-  return s.substr(s.length - 2);
-}
-
 </script>
 
 <style lang="scss" scoped>

@@ -52,8 +52,8 @@
         </button>
       </template>
 
-      <template v-if="showModal">
-        <div class="modal">
+      <Transition>
+        <div v-if="showModal" class="modal">
           <div class="modal-content">
             <button @click="toggleModal" class="modal-close">
               <span class="close">&times;</span>
@@ -82,7 +82,7 @@
             </div>
           </div>
         </div>
-      </template>
+      </Transition>
     </div>
   </div>
 </template>
