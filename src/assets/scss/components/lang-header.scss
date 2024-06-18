@@ -1,0 +1,34 @@
+.locale {
+  display: none;
+  justify-content: end;
+  gap: .4rem;
+  margin-right: 1rem;
+  width: 70%;
+
+  @include m576 {
+    display: flex;
+  }
+
+  @include m1400 {
+    width: auto;
+    margin-right: 0;
+    justify-content: center;
+  }
+
+
+  a {
+    text-transform: uppercase;
+    padding: .5rem .7rem .4rem .7rem;
+    border-radius: 100px;
+    color: $white;
+    background-color: rgba(140, 150, 161, 0.6);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: .06rem;
+
+    &:hover,
+    &.active {
+      background-color: $blue;
+    }
+  }
+}

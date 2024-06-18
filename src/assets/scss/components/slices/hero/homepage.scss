@@ -142,6 +142,8 @@
 
         input,
         textarea {
+          resize: none;
+          letter-spacing: .02rem;
           letter-spacing: .02rem;
           text-transform: uppercase;
           border: none;

@@ -10,7 +10,7 @@
   font-weight: 400;
   line-height: 1;
 
-  @include m1200 {
+  @include m1400 {
     margin-bottom: 0;
     padding: 6px 0 38px;
   }
@@ -34,7 +34,7 @@
   width: 100%;
   padding-top: 20px;
 
-  @include m1200 {
+  @include m1400 {
     position: absolute;
     z-index: 1;
     top: 100%;
@@ -49,7 +49,7 @@
   }
 
   ul {
-    @include m1200 {
+    @include m1400 {
       justify-content: center !important;
     }
   }
@@ -59,7 +59,7 @@
   padding: 5px 0;
   color: $gray !important;
 
-  @include m1200 {
+  @include m1400 {
     padding: 27px 0;
   }
 

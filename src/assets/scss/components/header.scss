@@ -52,7 +52,7 @@ header {
     flex-wrap: wrap;
     gap: 2px 5px;
 
-    @include m1200 {
+    @include m1400 {
       display: none;
     }
 
@@ -93,13 +93,14 @@ header.scrolled {
   position: fixed;
   top: var(--header-height);
   left: 0;
-  display: block;
   width: 100%;
+  display: block;
   padding: 32px 20px;
   background-color: $beige;
 
-  @include m1200 {
+  @include m1400{
     position: static;
+    width: auto;
     padding: 0;
     background: none;
   }
@@ -112,7 +113,7 @@ header.scrolled {
     padding-left: 0;
     list-style: none;
 
-    @include m1200 {
+    @include m1400{
       flex-direction: row;
       column-gap: clamp(16px, 2vw, 40px);
       justify-content: flex-end;
@@ -142,4 +143,3 @@ header.scrolled {
 .slide-fade-enter-from {
   translate: 0 -25px;
 }
-
