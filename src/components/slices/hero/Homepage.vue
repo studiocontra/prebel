@@ -93,6 +93,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import axios from "axios";
+
 const props = defineProps({
   headline: String,
   content: Object,
@@ -103,7 +105,6 @@ const props = defineProps({
   showForm: Boolean
 });
 
-import axios from "axios";
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;

@@ -33,20 +33,16 @@
   }
 
   .toggle-form {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     right: 24px;
-    bottom: 0;
+    bottom: 24px;
     cursor: pointer;
     transition: filter 0.2s ease-out;
     border: none;
     border-radius: 1000px;
     outline: none;
     background-color: transparent;
-
-    @include m768 {
-      right: 32px;
-    }
 
     &:hover {
       filter: drop-shadow(0 0 5px $blue);

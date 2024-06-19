@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        },
         "eyebrow": {
           "type": "Text",
           "config": {
@@ -61,6 +68,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        },
         "eyebrow": {
           "type": "Text",
           "config": {
@@ -110,6 +124,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        },
         "eyebrow": {
           "type": "Text",
           "config": {

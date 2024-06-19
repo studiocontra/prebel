@@ -1,5 +1,5 @@
 <template>
-  <div class="section accordion" :id="props.id">
+  <div class="section accordion" :id="dataId">
     <div class="container">
       <div class="accordion-group">
         <div class="accordion-group__headline">
@@ -24,7 +24,7 @@
               :data-item="idx">
               <div
                 class="accordion-item__headline"
-                @click="toggleAccordionItem(props.id, idx)">
+                @click="toggleAccordionItem(idx)">
                 <h3 class="title title--sm">
                   {{ item.name }}
                 </h3>
@@ -57,9 +57,14 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+const uniqueId = useId();
 
 const props = defineProps({
   id: String,
+  dataId: {
+    type: String,
+    default: ''
+  },
   eyebrow: String,
   headline: String,
   introduction: Object,
@@ -68,7 +73,7 @@ const props = defineProps({
 
 const activeAccordion = ref(null);
 
-function toggleAccordionItem(sectionId, itemId) {
+function toggleAccordionItem(itemId) {
   if(activeAccordion.value === itemId) {
     activeAccordion.value = null;
     return true;
@@ -76,18 +81,17 @@ function toggleAccordionItem(sectionId, itemId) {
 
   activeAccordion.value = itemId;
 
-  const parentItem = document.getElementById(props.id);
-  const contentWrapper = parentItem.querySelector(`.accordion-item[data-item="${itemId}"] .accordion-item__content`);
+  const contentWrapper = document.querySelector(`.accordion-item[data-item="${itemId}"] .accordion-item__content`);
   const contentHeight = contentWrapper.scrollHeight;
 
   contentWrapper.style.maxHeight = `${contentHeight}px`;
 }
 
 onMounted(() => {
-  toggleAccordionItem(props.id, 0)
+  toggleAccordionItem(0)
 });
-
 </script>
+
 
 <style lang="scss" scoped>
   @import "@scss/components/slices/accordion/default";

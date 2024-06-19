@@ -102,7 +102,7 @@
           </template>
         </ul>
 
-        <Lang class="footer__locale" />
+        <Lang type="footer" class="footer__locale" />
       </div>
     </div>
   </div>

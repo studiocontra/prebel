@@ -1,9 +1,9 @@
 <template>
   <li class="menu-item">
-    <NuxtLink
-      :to="link.uid">
+    <NuxtLinkLocale
+      :to="printHref(link)">
       {{ label }}
-    </NuxtLink>
+    </NuxtLinkLocale>
 
     <div v-if="children.length" class="submenu">
       <div class="container">
@@ -12,10 +12,10 @@
             v-for="(subItem, subId) in children"
             :key="subId"
             class="menu-item menu-item--sub">
-            <NuxtLink
+            <NuxtLinkLocale
               :to="subItem.link.uid">
               {{ subItem.label }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </li>
         </ul>
       </div>
@@ -24,13 +24,27 @@
 </template>
 
 <script setup>
+const { localeProperties } = useI18n();
+
 const props = defineProps({
   label: String,
   link: Object,
+  scroll: {
+    type: String,
+    default: ''
+  },
   children: {
     type: [Array, Boolean],
     default: () => [],
   }
+});
+
+const printHref = ((link) => {
+  if (link['link_type'] === 'web') return link.url;
+
+  const isHome = (link.type === 'home') ? '' : link.uid;
+  const targetSection = (props.scroll) ? `#${props.scroll}` : '';
+  return `/${isHome}${targetSection}`;
 });
 </script>
 

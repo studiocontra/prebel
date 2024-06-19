@@ -11,7 +11,15 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {},
+      "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {
         "eyebrow": {
           "type": "Text",
@@ -69,7 +77,15 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {},
+      "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {
         "eyebrow": {
           "type": "Text",
@@ -128,6 +144,93 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "headline": {
+          "type": "Text",
+          "config": {
+            "label": "Headline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "headline": {
+          "type": "Text",
+          "config": {
+            "label": "Headline",
+            "placeholder": ""
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button label",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    },
+    {
+      "id": "imageTextTabs",
+      "name": "Image Text with Tabs",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        },
         "eyebrow": {
           "type": "Text",
           "config": {

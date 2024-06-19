@@ -19,5 +19,6 @@ defineProps(
     :data-slice-variation="slice.variation"
     :label="slice.primary.label"
     :link="slice.primary.link"
+    :scroll="slice.primary.target_scroll"
     :children="slice.primary.sub_items" />
 </template>

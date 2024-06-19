@@ -14,19 +14,19 @@ defineProps(
 <template>
   <CardsDefault
     v-if="slice.variation == 'default'"
-    :id="slice.id"
+    :id="slice.primary.data_id || slice.id"
     :headline="slice.primary.headline"
     :cards="slice.items" />
 
   <CardsLargeImage
     v-if="slice.variation == 'largeImage'"
-    :id="slice.id"
+    :id="slice.primary.data_id || slice.id"
     :headline="slice.primary.headline"
     :cards="slice.items" />
 
   <CardsRounded
     v-if="slice.variation == 'rounded'"
-    :id="slice.id"
+    :id="slice.primary.data_id || slice.id"
     :headline="slice.primary.headline"
     :allLink="slice.primary.see_all_link"
     :allLabel="slice.primary.see_all_label"

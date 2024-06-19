@@ -1,5 +1,5 @@
 <template>
-  <div class="section work-cards">
+  <div class="section work-cards" :id="dataId">
     <div class="container">
       <h2 v-if="headline" class="eyebrow">
         {{ headline }}
@@ -55,6 +55,10 @@
 
 <script setup>
 const props = defineProps({
+  dataId: {
+    type: String,
+    default: ''
+  },
   headline: String,
   cards: [Array, Boolean],
 });

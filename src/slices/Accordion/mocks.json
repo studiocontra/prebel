@@ -23,6 +23,11 @@
 						}
 					}
 				]
+			},
+			"data_id": {
+				"__TYPE__": "FieldContent",
+				"value": "notice",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -123,6 +128,11 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"data_id": {
+				"__TYPE__": "FieldContent",
+				"value": "steam",
+				"type": "Text"
 			}
 		},
 		"items": [

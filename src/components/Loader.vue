@@ -18,15 +18,15 @@
   const loaderBg = ref(false);
 
   const colors = {
-    'index': '#4278FA',
-    'nosotros': '#4D5461',
-    'servicios': '#4D5445',
-    'servicios-slug': '#4D5445',
-    'trabaja-con-nosotros': '#4D5445',
-    'trabaja-con-nosotros-slug': '#4D5445',
-    'linea-etica': '#4D5461',
-    'sostenibilidad': '#4D5445',
-    'legales-slug': '#4D5461',
+    'index': '#4D5461',
+    'nosotros': '#EDEBE3',
+    'servicios': '#EDEBE3',
+    'servicios-slug': '#EDEBE3',
+    'trabaja-con-nosotros': '#EDEBE3',
+    'trabaja-con-nosotros-slug': '#EDEBE3',
+    'linea-etica': '#EDEBE3',
+    'sostenibilidad': '#EDEBE3',
+    'legales-slug': '#EDEBE3',
   };
 
   function hide() {
@@ -40,9 +40,18 @@
   });
 
   router.beforeResolve((to, from) => {
-    const pageName = to.name.split('__')[0];
-    loaderBg.value = colors[pageName];
+    const fromPageName = from.name.split('__')[0];
+    const toPageName = to.name.split('__')[0];
+
+    if(toPageName === 'index' && fromPageName === 'index') {
+      hide();
+      window.location.hash = to.hash;
+      return true;
+    }
+
+    loaderBg.value = colors[toPageName];
     isLoading.value = true;
+
   });
 
   router.afterEach((_to, _from, failure) => {

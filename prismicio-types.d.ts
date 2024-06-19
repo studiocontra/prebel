@@ -138,6 +138,16 @@ export interface FooterDocumentDataFooterMenuItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * Target Scroll field in *Footer → Footer Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_menu[].target_scroll
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  target_scroll: prismic.KeyTextField;
 }
 
 /**
@@ -1130,6 +1140,16 @@ export type AllDocumentTypes =
  */
 export interface AccordionSliceDefaultPrimary {
   /**
+   * Data ID field in *Accordion → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion.default.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
+  /**
    * Eyebrow field in *Accordion → Default → Primary*
    *
    * - **Field Type**: Text
@@ -1212,6 +1232,16 @@ export type AccordionSliceDefault = prismic.SharedSliceVariation<
  * Primary content in *Accordion → Headline and description → Primary*
  */
 export interface AccordionSliceHeadlineAndDescriptionPrimary {
+  /**
+   * Data ID field in *Accordion → Headline and description → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion.headlineAndDescription.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
   /**
    * Headline field in *Accordion → Headline and description → Primary*
    *
@@ -1385,6 +1415,16 @@ export type CalloutTextContentSlice = prismic.SharedSlice<
  */
 export interface CardsSliceDefaultPrimary {
   /**
+   * Data ID field in *Cards → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.default.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
+  /**
    * Eyebrow field in *Cards → Default → Primary*
    *
    * - **Field Type**: Text
@@ -1458,6 +1498,16 @@ export type CardsSliceDefault = prismic.SharedSliceVariation<
  */
 export interface CardsSliceLargeImagePrimary {
   /**
+   * Data ID field in *Cards → Large Image → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.largeImage.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
+  /**
    * Eyebrow field in *Cards → Large Image → Primary*
    *
    * - **Field Type**: Text
@@ -1530,6 +1580,16 @@ export type CardsSliceLargeImage = prismic.SharedSliceVariation<
  * Primary content in *Cards → Rounded → Primary*
  */
 export interface CardsSliceRoundedPrimary {
+  /**
+   * Data ID field in *Cards → Rounded → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.rounded.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
   /**
    * Eyebrow field in *Cards → Rounded → Primary*
    *
@@ -1637,6 +1697,21 @@ type CardsSliceVariation =
 export type CardsSlice = prismic.SharedSlice<"cards", CardsSliceVariation>;
 
 /**
+ * Primary content in *ImageText → Default → Primary*
+ */
+export interface ImageTextSliceDefaultPrimary {
+  /**
+   * Data ID field in *ImageText → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.default.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *ImageText → Items*
  */
 export interface ImageTextSliceDefaultItem {
@@ -1710,9 +1785,24 @@ export interface ImageTextSliceDefaultItem {
  */
 export type ImageTextSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ImageTextSliceDefaultPrimary>,
   Simplify<ImageTextSliceDefaultItem>
 >;
+
+/**
+ * Primary content in *ImageText → Image Wide → Primary*
+ */
+export interface ImageTextSliceImageWidePrimary {
+  /**
+   * Data ID field in *ImageText → Image Wide → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.imageWide.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+}
 
 /**
  * Primary content in *ImageText → Items*
@@ -1788,7 +1878,7 @@ export interface ImageTextSliceImageWideItem {
  */
 export type ImageTextSliceImageWide = prismic.SharedSliceVariation<
   "imageWide",
-  Record<string, never>,
+  Simplify<ImageTextSliceImageWidePrimary>,
   Simplify<ImageTextSliceImageWideItem>
 >;
 
@@ -1796,6 +1886,16 @@ export type ImageTextSliceImageWide = prismic.SharedSliceVariation<
  * Primary content in *ImageText → Image Text Box → Primary*
  */
 export interface ImageTextSliceImageTextBoxPrimary {
+  /**
+   * Data ID field in *ImageText → Image Text Box → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.imageTextBox.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
   /**
    * Eyebrow field in *ImageText → Image Text Box → Primary*
    *
@@ -1896,12 +1996,126 @@ export type ImageTextSliceImageTextBox = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ImageText → Image Text with Tabs → Primary*
+ */
+export interface ImageTextSliceImageTextTabsPrimary {
+  /**
+   * Data ID field in *ImageText → Image Text with Tabs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.imageTextTabs.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
+  /**
+   * Eyebrow field in *ImageText → Image Text with Tabs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.imageTextTabs.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *ImageText → Image Text with Tabs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.imageTextTabs.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ImageText → Items*
+ */
+export interface ImageTextSliceImageTextTabsItem {
+  /**
+   * Eyebrow field in *ImageText → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.items[].eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *ImageText → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.items[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *ImageText → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Button label field in *ImageText → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *ImageText → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Image field in *ImageText → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Image Text with Tabs variation for ImageText Slice
+ *
+ * - **API ID**: `imageTextTabs`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageTextSliceImageTextTabs = prismic.SharedSliceVariation<
+  "imageTextTabs",
+  Simplify<ImageTextSliceImageTextTabsPrimary>,
+  Simplify<ImageTextSliceImageTextTabsItem>
+>;
+
+/**
  * Slice variation for *ImageText*
  */
 type ImageTextSliceVariation =
   | ImageTextSliceDefault
   | ImageTextSliceImageWide
-  | ImageTextSliceImageTextBox;
+  | ImageTextSliceImageTextBox
+  | ImageTextSliceImageTextTabs;
 
 /**
  * ImageText Shared Slice
@@ -2394,6 +2608,16 @@ export interface MenuItemSliceDefaultPrimarySubItemsItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * Target Scroll field in *MenuItem → Default → Primary → Sub Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.default.primary.sub_items[].target_scroll
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  target_scroll: prismic.KeyTextField;
 }
 
 /**
@@ -2419,6 +2643,16 @@ export interface MenuItemSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * Target Scroll field in *MenuItem → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.default.primary.target_scroll
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  target_scroll: prismic.KeyTextField;
 
   /**
    * Sub Items field in *MenuItem → Default → Primary*
@@ -3965,14 +4199,19 @@ declare module "@prismicio/client" {
       CardsSliceLargeImage,
       CardsSliceRounded,
       ImageTextSlice,
+      ImageTextSliceDefaultPrimary,
       ImageTextSliceDefaultItem,
+      ImageTextSliceImageWidePrimary,
       ImageTextSliceImageWideItem,
       ImageTextSliceImageTextBoxPrimary,
       ImageTextSliceImageTextBoxItem,
+      ImageTextSliceImageTextTabsPrimary,
+      ImageTextSliceImageTextTabsItem,
       ImageTextSliceVariation,
       ImageTextSliceDefault,
       ImageTextSliceImageWide,
       ImageTextSliceImageTextBox,
+      ImageTextSliceImageTextTabs,
       ImageTextCarouselSlice,
       ImageTextCarouselSliceDefaultPrimary,
       ImageTextCarouselSliceDefaultItem,

@@ -7,36 +7,21 @@
         </h3>
       </div>
 
-      <Swiper
-        class="logos-carousel__slider"
-        :modules="[Autoplay]"
-        :loop="true"
-        :slidesPerView="'auto'"
-        :freemode="true"
-        :speed="3000"
-        :autoplay="{
-          delay: 1
-        }">
-        <template v-for="(logo, id) in items" :key="id">
-          <SwiperSlide class="single-logo">
-            <prismic-image :field="logo.logo" />
-          </SwiperSlide>
-        </template>
-      </Swiper>
+      <div class="wrap-marquee">
+        <div class="marquee__content">
+          <template v-for="(logo, id) in items" :key="id">
+            <prismic-image :field="logo.logo" class="single-logo" />
+          </template>
+          <template v-for="(logo, id) in items" :key="id">
+            <prismic-image :field="logo.logo" class="single-logo" />
+          </template>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// import Swiper core and required modules
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// import required modules
-import { Autoplay } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-
 const props = defineProps({
   dataSliceVariation: String,
   headline: String,

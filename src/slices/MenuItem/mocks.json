@@ -38,10 +38,23 @@
 									"value": "afternoon",
 									"type": "Text"
 								}
+							],
+							[
+								"target_scroll",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "short",
+									"type": "Text"
+								}
 							]
 						]
 					}
 				]
+			},
+			"target_scroll": {
+				"__TYPE__": "FieldContent",
+				"value": "natural",
+				"type": "Text"
 			}
 		},
 		"items": []

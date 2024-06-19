@@ -1,5 +1,5 @@
 <template>
-  <div class="locale">
+  <div class="locale" :class="{'locale--footer': props.type === 'footer'}">
     <NuxtLink
       :to="switchLocalePath('es')"
       activeClass="active">
@@ -14,6 +14,12 @@
 </template>
 
 <script setup>
+  const props = defineProps({
+    type: {
+      type: String,
+      default: 'header'
+    }
+  })
   const switchLocalePath = useSwitchLocalePath();
 </script>
 

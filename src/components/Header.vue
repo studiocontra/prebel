@@ -7,24 +7,28 @@
   ]" ref="mainHeader">
     <div class="container">
       <div class="header__logo">
-        <NuxtLink to="/">
-          <PrismicImage :field="headerData.logo" />
-        </NuxtLink>
+        <NuxtLinkLocale  to="/">
+          <img src="/logo-prebel.svg" class="logo--white" />
+          <img src="/logo-prebel-blue.svg" class="logo--blue" />
+        </NuxtLinkLocale >
       </div>
 
       <Transition name="slide-fade">
-        <div v-if="isMenuOpen" class="main-menu" :class="headerStore.theme" @close-menu="toggleMenu">
+        <div v-if="isMenuOpen" class="main-menu" :class="[headerStore.theme, {
+          'active': isMenuOpen && !isMenuDesktop
+        }]" @close-menu="toggleMenu">
           <nav v-if="headerData.slices">
             <ul>
               <SliceZone :slices="headerData.slices" :components="{
-    menu_item: MenuItem,
-  }" />
+                  menu_item: MenuItem,
+                }" />
             </ul>
           </nav>
+          <Lang class="lang-header--mobile" />
         </div>
       </Transition>
 
-      <LangHeader class='lang-header' />
+      <Lang class="lang-header" />
 
       <div class="header__hamburger" :class="{ 'header__hamburger--active': isMenuOpen }" @click="toggleMenu">
         <div class="dot dot--circle"></div>
@@ -39,9 +43,7 @@
 <script setup>
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
-const {
-  value: { iso, code },
-} = localeProperties;
+const { value: { iso, code } } = localeProperties;
 
 import { ref } from "vue";
 import { useHeaderStore } from "@/stores/header";
@@ -65,6 +67,7 @@ import MenuItem from "@/slices/MenuItem";
  * Toggle mobile menu
  */
 const isMenuOpen = ref(false);
+const isMenuDesktop = ref(false);
 
 function toggleMenu() {
   if (window.innerWidth <= 1400) {
@@ -75,8 +78,10 @@ function toggleMenu() {
 function showDesktop() {
   if (window.innerWidth < 1400) {
     isMenuOpen.value = false;
+    isMenuDesktop.value = false;
   } else {
     isMenuOpen.value = true;
+    isMenuDesktop.value = true;
   }
 }
 

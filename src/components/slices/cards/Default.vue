@@ -1,5 +1,5 @@
 <template>
-  <div class="services-cards">
+  <div class="services-cards" :id="dataId">
     <div class="container">
       <h2 class="eyebrow">
         {{ headline }}
@@ -38,6 +38,10 @@
 
 <script setup>
 const props = defineProps({
+  dataId: {
+    type: String,
+    default: ''
+  },
   headline: String,
   cards: [Array, Boolean],
 });

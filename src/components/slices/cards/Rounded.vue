@@ -48,6 +48,10 @@
 
 <script setup>
 const props = defineProps({
+  dataId: {
+    type: String,
+    default: ''
+  },
   allLabel: String,
   allLink: Object,
   cards: [Array, Boolean],

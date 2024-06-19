@@ -4,7 +4,32 @@
   }
 }
 
+.wrap-marquee {
+  overflow: hidden;
+}
+
+.marquee__content {
+  display: flex;
+  animation: scrolling 20s linear infinite;
+  align-items: center;
+  flex: 0;
+  gap: 0 30px;
+
+  .single-logo {
+    margin: 0;
+  }
+}
+
 .single-logo {
   width: 180px;
   margin: 0 30px;
+}
+
+@keyframes scrolling {
+  0% {
+    translate: 0;
+  }
+  100% {
+    translate: -92% 0;
+  }
 }

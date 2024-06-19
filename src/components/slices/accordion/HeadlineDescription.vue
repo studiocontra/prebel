@@ -1,5 +1,5 @@
 <template>
-  <div class="section accordion--headline-desc">
+  <div class="section accordion--headline-desc" :id="dataId">
     <div class="container">
       <div class="row justify-between">
         <div class="col-lg-5">
@@ -54,6 +54,10 @@
 import { ref, onMounted } from 'vue';
 
 const props = defineProps({
+  dataId: {
+    type: String,
+    default: ''
+  },
   data: Object,
   headline: String,
   description: Object,
@@ -73,6 +77,11 @@ function toggleAccordionItem(idx) {
 
   contentWrapper.style.maxHeight = `${contentHeight}px`;
 };
+
+
+onMounted(() => {
+  toggleAccordionItem(0)
+});
 </script>
 
 <style lang="scss" scoped>

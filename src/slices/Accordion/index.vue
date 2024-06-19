@@ -14,7 +14,7 @@ defineProps(
 <template>
   <AccordionHeadlineDescription
     v-if="slice.variation == 'headlineAndDescription'"
-    :id="slice.id"
+    :id="slice.primary.data_id || slice.id"
     :headline="slice.primary.headline"
     :description="slice.primary.description"
     :image="slice.primary.main_image"
@@ -22,7 +22,7 @@ defineProps(
 
   <AccordionDefault
     v-if="slice.variation == 'default'"
-    :id="slice.id"
+    :id="slice.primary.data_id || slice.id"
     :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
     :introduction="slice.primary.introduction"

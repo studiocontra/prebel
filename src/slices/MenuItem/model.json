@@ -27,6 +27,13 @@
             "select": null
           }
         },
+        "target_scroll": {
+          "type": "Text",
+          "config": {
+            "label": "Target Scroll",
+            "placeholder": ""
+          }
+        },
         "sub_items": {
           "type": "Group",
           "config": {
@@ -46,6 +53,13 @@
                   "label": "Link",
                   "placeholder": "",
                   "select": null
+                }
+              },
+              "target_scroll": {
+                "type": "Text",
+                "config": {
+                  "label": "Target Scroll",
+                  "placeholder": ""
                 }
               }
             }

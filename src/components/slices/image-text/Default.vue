@@ -62,6 +62,10 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const props = defineProps({
+  dataId: {
+    type: String,
+    default: ''
+  },
   button_label: String,
   button_link: Object,
   content: Array,

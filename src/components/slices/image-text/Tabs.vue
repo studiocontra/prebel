@@ -21,26 +21,23 @@
           }"
           :loop="true"
           :pagination="{
+            el: '.custom-pagination',
             renderBullet: function (index, className) {
-              return `<span class='${className}'>${pad(index + 1)}</span>`;
+              return `<span class='${className}'>${props.slides[index].eyebrow}</span>`;
             },
             clickable: true
           }"
           :slidesPerView="1">
+
+          <template v-slot:container-start>
+            <div class="custom-pagination"></div>
+          </template>
+
           <swiper-slide v-for="(item, id) in props.slides" :key="id">
             <div class="row align-center">
               <div class="col-lg-6">
-                <div class="img">
-                  <prismic-image :field="item.image" />
-                </div>
-              </div>
-              <div class="col-lg-6">
                 <div class="content">
                   <div class="headline">
-                    <span v-if="item.eyebrow" class="eyebrow">
-                      {{ item.eyebrow }}
-                    </span>
-
                     <h3 v-if="item.headline" class="title title--sm">
                       {{ item.headline }}
                     </h3>
@@ -49,6 +46,11 @@
                   <PrismicRichText
                     :field="item.content"
                     class="text" />
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="img">
+                  <prismic-image :field="item.image" />
                 </div>
               </div>
             </div>
@@ -88,5 +90,5 @@ function pad(num) {
 
 
 <style lang="scss" scoped>
-  @import "@scss/components/slices/image-text-box";
+  @import "@scss/components/slices/image-text/tabs";
 </style>
