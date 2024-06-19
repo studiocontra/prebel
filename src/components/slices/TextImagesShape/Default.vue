@@ -5,7 +5,7 @@
   >
     <Drop
       :class="dropClass"
-      :maxW="variation == 'default' ? '290px' : '150px'"
+      :maxW="variation == 'default' || 'withLogos' ? '290px' : '150px'"
       :parallax="3"
       data-scroll-show
     />
@@ -29,7 +29,7 @@
           <div
             class="images"
             :class="{
-              'images--double': variation == 'default',
+              'images--double': variation == 'default' || 'withLogos',
               'images--circle': variation == 'circleImage',
               'images--square': variation == 'squareImage',
             }"
@@ -38,7 +38,7 @@
               <prismic-image :field="data.image_1" />
             </div>
             <div
-              v-if="variation == 'default' && data.image_2"
+              v-if="variation == 'default' || 'withLogos' && data.image_2"
               class="img img--square img--2"
               data-scroll-show
             >
@@ -66,6 +66,7 @@ const orientation = computed(() => {
 const dropClass = computed(() => {
   const obj = {
     default: "l",
+    withLogos: "l",
     circleImage: "drop--circle",
     squareImage: "drop--square",
   };
@@ -76,6 +77,7 @@ const dropClass = computed(() => {
 const imageShapeClass = computed(() => {
   const obj = {
     default: "img--pill",
+    withLogos: "img--pill",
     circleImage: "img--circle",
     squareImage: "img--square",
   };
