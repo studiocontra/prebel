@@ -88,6 +88,71 @@ interface AboutDocumentData {
 export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AboutDocumentData>, "about", Lang>;
 
+type CategoriasDocumentDataSlicesSlice = TextImagesShapesSlice;
+
+/**
+ * Content for Categorias documents
+ */
+interface CategoriasDocumentData {
+  /**
+   * Slice Zone field in *Categorias*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: categorias.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CategoriasDocumentDataSlicesSlice> /**
+   * Meta Description field in *Categorias*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: categorias.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Categorias*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: categorias.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Categorias*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: categorias.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Categorias document from Prismic
+ *
+ * - **API ID**: `categorias`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CategoriasDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CategoriasDocumentData>,
+    "categorias",
+    Lang
+  >;
+
 /**
  * Item in *Footer → Footer Social*
  */
@@ -1123,6 +1188,7 @@ export type WorkDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AboutDocument
+  | CategoriasDocument
   | FooterDocument
   | HomeDocument
   | LegalesDocument
@@ -4243,6 +4309,9 @@ declare module "@prismicio/client" {
       AboutDocument,
       AboutDocumentData,
       AboutDocumentDataSlicesSlice,
+      CategoriasDocument,
+      CategoriasDocumentData,
+      CategoriasDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataFooterSocialItem,
