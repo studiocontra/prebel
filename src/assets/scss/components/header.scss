@@ -27,10 +27,11 @@ header {
   }
 
   .header__logo {
-    width: 200px;
-    padding-bottom: 20px;
+    width: 180px;
+    padding-bottom: 10px;
 
     @include m768 {
+      width: 200px;
       padding-bottom: 32px;
     }
 
@@ -130,9 +131,10 @@ header.scrolled {
   padding: 32px 20px;
   background-color: $beige;
 
-  @include m1400{
+  @include m1400 {
     position: static;
     width: auto;
+    margin: 0 auto;
     padding: 0;
     background: none;
   }
@@ -159,6 +161,19 @@ header.scrolled {
     @include m576 {
       display: none;
     }
+  }
+}
+
+.lang-header {
+  display: none;
+
+  @include m576 {
+    display: flex;
+    margin-right: 16px;
+    margin-left: auto;
+  }
+  @include m1400 {
+    margin-right: 0;
   }
 }
 
