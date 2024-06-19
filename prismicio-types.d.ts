@@ -3822,6 +3822,21 @@ export type TextImageFullSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *TextImagesShape → WIth Logos → Primary → Logos*
+ */
+export interface TextImagesShapesSliceWIthLogosPrimaryLogosItem {
+  /**
+   * Logo field in *TextImagesShape → WIth Logos → Primary → Logos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.logos[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *TextImagesShape → Default → Primary*
  */
 export interface TextImagesShapesSliceDefaultPrimary {
@@ -4039,12 +4054,104 @@ export type TextImagesShapesSliceSquareImage = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextImagesShape → WIth Logos → Primary*
+ */
+export interface TextImagesShapesSliceWIthLogosPrimary {
+  /**
+   * Orientation field in *TextImagesShape → WIth Logos → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.orientation
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  orientation: prismic.SelectField<"left" | "right", "filled">;
+
+  /**
+   * Headline field in *TextImagesShape → WIth Logos → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Content field in *TextImagesShape → WIth Logos → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Image 1 field in *TextImagesShape → WIth Logos → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *TextImagesShape → WIth Logos → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Logos Headline field in *TextImagesShape → WIth Logos → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.logos_headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  logos_headline: prismic.KeyTextField;
+
+  /**
+   * Logos field in *TextImagesShape → WIth Logos → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.logos[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  logos: prismic.GroupField<
+    Simplify<TextImagesShapesSliceWIthLogosPrimaryLogosItem>
+  >;
+}
+
+/**
+ * WIth Logos variation for TextImagesShape Slice
+ *
+ * - **API ID**: `wIthLogos`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImagesShapesSliceWIthLogos = prismic.SharedSliceVariation<
+  "wIthLogos",
+  Simplify<TextImagesShapesSliceWIthLogosPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextImagesShape*
  */
 type TextImagesShapesSliceVariation =
   | TextImagesShapesSliceDefault
   | TextImagesShapesSliceCircleImage
-  | TextImagesShapesSliceSquareImage;
+  | TextImagesShapesSliceSquareImage
+  | TextImagesShapesSliceWIthLogos;
 
 /**
  * TextImagesShape Shared Slice
@@ -4299,10 +4406,13 @@ declare module "@prismicio/client" {
       TextImagesShapesSliceDefaultPrimary,
       TextImagesShapesSliceCircleImagePrimary,
       TextImagesShapesSliceSquareImagePrimary,
+      TextImagesShapesSliceWIthLogosPrimaryLogosItem,
+      TextImagesShapesSliceWIthLogosPrimary,
       TextImagesShapesSliceVariation,
       TextImagesShapesSliceDefault,
       TextImagesShapesSliceCircleImage,
       TextImagesShapesSliceSquareImage,
+      TextImagesShapesSliceWIthLogos,
       WorkFormSlice,
       WorkFormSliceDefaultPrimary,
       WorkFormSliceVariation,
