@@ -1,7 +1,7 @@
 <template>
   <Header :key="localeProperties.code" />
+  <ContactModal />
   <slot />
-  <PreFooter />
   <Footer />
   <Loader />
 </template>
