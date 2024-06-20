@@ -30,11 +30,23 @@
     }
 
     .logos {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 20px 32px;
       justify-content: space-between;
+    }
+
+    @include m600 {
+      .logos {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    @include m1600 {
+      .logos {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
     }
   }
 
