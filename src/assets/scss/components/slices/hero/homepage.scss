@@ -46,13 +46,9 @@
 
     &:hover {
       filter: drop-shadow(0 0 5px $blue);
-
-      circle {
-        fill: $black;
-      }
     }
 
-    circle {
+    /*circle {
       transition: fill 0.2s ease-out;
       fill: $blue;
     }
@@ -60,11 +56,11 @@
     g {
       transform-origin: center;
       animation: rotateCta 25s infinite linear;
-    }
+    }*/
   }
 }
 
-@keyframes rotateCta {
+/*@keyframes rotateCta {
   from {
     rotate: 0deg;
   }
@@ -72,7 +68,7 @@
   to {
     rotate: 359deg;
   }
-}
+}*/
 
 .button-modal {
   background-color: transparent;
