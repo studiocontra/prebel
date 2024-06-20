@@ -11,9 +11,9 @@
         <template v-for="(item, id) in cards" :key="id">
           <div class="col-sm-6 col-lg-4 col-xt-3">
             <div class="card card--rounded">
-              <NuxtLink
+              <NuxtLinkLocale
                 v-if="item.button_link"
-                :to="`${route.path}/${item.button_link.uid}`">
+                :to="`/${item.button_link?.slug}`">
                 <div class="card__image">
                   <prismic-image :field="item.image" />
                 </div>
@@ -23,7 +23,7 @@
                     {{ item.headline }}
                   </h3>
                 </div>
-              </NuxtLink>
+              </NuxtLinkLocale>
             </div>
           </div>
         </template>
@@ -31,13 +31,13 @@
         <template v-if="allLabel && allLink">
           <div class="col-sm-6 col-lg-4 col-xt-3">
             <div class="see-all">
-              <NuxtLink :to="`${route.path}/${allLink.uid}`">
+              <NuxtLinkLocale :to="`${route.path}/${allLink.uid}`">
                 <h3 class="title title--sm">
                   {{ allLabel }}
                 </h3>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 36" fill="none"><path  stroke-linecap="round" stroke-width="2.5" d="M2 18.063h53.333M39.333 34.063l16.531-14.991a1 1 0 0 0 .013-1.47L39.333 2.063"></path></svg>
-              </NuxtLink>
+              </NuxtLinkLocale>
             </div>
           </div>
         </template>

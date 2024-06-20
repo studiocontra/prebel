@@ -1,5 +1,7 @@
 .text-images-shape {
   position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid $gray;
 
   .drop {
     z-index: 2;
@@ -25,6 +27,14 @@
       display: flex;
       gap: 24px;
       flex-wrap: wrap;
+    }
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px 32px;
+      justify-content: space-between;
     }
   }
 

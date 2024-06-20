@@ -42,7 +42,7 @@ const props = defineProps({
 const printHref = ((link) => {
   if (link['link_type'] === 'web') return link.url;
 
-  const isHome = (link.type === 'home') ? '' : link.uid;
+  const isHome = (link.type === 'home') ? '' : link.uid ?? link.slug;
   const targetSection = (props.scroll) ? `#${props.scroll}` : '';
   return `/${isHome}${targetSection}`;
 });

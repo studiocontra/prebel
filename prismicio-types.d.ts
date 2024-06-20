@@ -95,6 +95,18 @@ type CategoriasDocumentDataSlicesSlice = TextImagesShapesSlice;
  */
 interface CategoriasDocumentData {
   /**
+   * Header color scheme field in *Categorias*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Light
+   * - **API ID Path**: categorias.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"Light" | "Dark", "filled">;
+
+  /**
    * Slice Zone field in *Categorias*
    *
    * - **Field Type**: Slice Zone
@@ -1730,6 +1742,16 @@ export interface CardsSliceRoundedItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
+
+  /**
+   * Target Scroll field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].target_scroll
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  target_scroll: prismic.KeyTextField;
 }
 
 /**
@@ -3888,11 +3910,11 @@ export type TextImageFullSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *TextImagesShape → WIth Logos → Primary → Logos*
+ * Item in *TextImagesShape → With Logos → Primary → Logos*
  */
 export interface TextImagesShapesSliceWIthLogosPrimaryLogosItem {
   /**
-   * Logo field in *TextImagesShape → WIth Logos → Primary → Logos*
+   * Logo field in *TextImagesShape → With Logos → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -4120,11 +4142,11 @@ export type TextImagesShapesSliceSquareImage = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *TextImagesShape → WIth Logos → Primary*
+ * Primary content in *TextImagesShape → With Logos → Primary*
  */
 export interface TextImagesShapesSliceWIthLogosPrimary {
   /**
-   * Orientation field in *TextImagesShape → WIth Logos → Primary*
+   * Orientation field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -4135,7 +4157,7 @@ export interface TextImagesShapesSliceWIthLogosPrimary {
   orientation: prismic.SelectField<"left" | "right", "filled">;
 
   /**
-   * Headline field in *TextImagesShape → WIth Logos → Primary*
+   * Headline field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -4145,7 +4167,7 @@ export interface TextImagesShapesSliceWIthLogosPrimary {
   headline: prismic.KeyTextField;
 
   /**
-   * Content field in *TextImagesShape → WIth Logos → Primary*
+   * Content field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -4155,7 +4177,7 @@ export interface TextImagesShapesSliceWIthLogosPrimary {
   content: prismic.RichTextField;
 
   /**
-   * Image 1 field in *TextImagesShape → WIth Logos → Primary*
+   * Image 1 field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -4165,7 +4187,7 @@ export interface TextImagesShapesSliceWIthLogosPrimary {
   image_1: prismic.ImageField<never>;
 
   /**
-   * Image 2 field in *TextImagesShape → WIth Logos → Primary*
+   * Image 2 field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -4175,7 +4197,7 @@ export interface TextImagesShapesSliceWIthLogosPrimary {
   image_2: prismic.ImageField<never>;
 
   /**
-   * Logos Headline field in *TextImagesShape → WIth Logos → Primary*
+   * Logos Headline field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -4185,7 +4207,7 @@ export interface TextImagesShapesSliceWIthLogosPrimary {
   logos_headline: prismic.KeyTextField;
 
   /**
-   * Logos field in *TextImagesShape → WIth Logos → Primary*
+   * Logos field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -4198,7 +4220,7 @@ export interface TextImagesShapesSliceWIthLogosPrimary {
 }
 
 /**
- * WIth Logos variation for TextImagesShape Slice
+ * With Logos variation for TextImagesShape Slice
  *
  * - **API ID**: `wIthLogos`
  * - **Description**: Default

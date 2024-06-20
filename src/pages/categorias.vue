@@ -1,5 +1,5 @@
 <template>
-  <main v-if="data">
+  <main v-if="data" class="main-categorias">
     <SliceZone
       :slices="categoriasData.slices"
       :components="{
@@ -25,9 +25,9 @@ const { data } = await useAsyncData("[categorias]", () =>
 
 const categoriasData = data.value.data;
 
-onMounted(() => headerStore.setTheme(categoriasData.header_color_scheme.toLowerCase()));
+onMounted(() => headerStore.setTheme('dark'));
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/pages/about";
+  @import "@scss/pages/categorias";
 </style>

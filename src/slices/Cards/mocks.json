@@ -228,6 +228,14 @@
 								"url": "https://prismic.io"
 							}
 						}
+					],
+					[
+						"target_scroll",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "surface",
+							"type": "Text"
+						}
 					]
 				]
 			}

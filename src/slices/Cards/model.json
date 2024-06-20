@@ -184,6 +184,13 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "target_scroll": {
+          "type": "Text",
+          "config": {
+            "label": "Target Scroll",
+            "placeholder": ""
+          }
         }
       }
     }

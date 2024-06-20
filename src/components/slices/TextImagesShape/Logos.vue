@@ -21,7 +21,20 @@
               {{ data.headline }}
             </h2>
 
-            <PrismicRichText :field="data.content" class="text" />
+            <PrismicRichText :field="data.content" class="title title--sm" />
+
+            <div class="wrap-logos">
+              <h3 v-if="data.logos_headline" class="eyebrow">
+                {{ data.logos_headline }}
+              </h3>
+
+              <div v-if="data.logos" class="logos">
+                <prismic-image
+                  v-for="(logo, id) in data.logos"
+                  :key="id"
+                  :field="logo.logo" />
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-5">

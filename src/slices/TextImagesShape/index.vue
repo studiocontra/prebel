@@ -6,7 +6,7 @@ defineProps(getSliceComponentProps(["slice", "index", "slices", "context"]));
 
 <template>
   <TextImagesShapeLogos
-    v-if="slice.variation === 'withLogos'"
+    v-if="slice.variation === 'wIthLogos'"
     :variation="slice.variation"
     :data="slice.primary"
   />
