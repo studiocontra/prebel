@@ -7,9 +7,7 @@
             {{ headline }}
           </span>
 
-          <PrismicRichText
-            :field="description"
-            class="title" />
+          <PrismicRichText :field="description" class="title" />
 
           <prismic-image :field="image" class="img" />
         </div>
@@ -18,28 +16,40 @@
             <template v-for="(item, idx) in items" :key="idx">
               <div
                 class="accordion-item"
-                :class="{'closed': activeAccordion !== idx}"
-                :data-idx="idx">
+                :class="{ closed: activeAccordion !== idx }"
+                :data-idx="idx"
+              >
                 <div
                   class="accordion-item__headline"
-                  @click="toggleAccordionItem(idx)">
+                  @click="toggleAccordionItem(idx)"
+                >
                   <h3 class="title">
                     {{ item.name }}
                   </h3>
 
                   <div class="icon">
-                    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path v-if="activeAccordion !== idx" d="M25 1V49" stroke-width="2" stroke-linecap="round"/>
-                      <path d="M49 25L1 25" stroke-width="2" stroke-linecap="round"/>
+                    <svg
+                      viewBox="0 0 50 50"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        v-if="activeAccordion !== idx"
+                        d="M25 1V49"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M49 25L1 25"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
                     </svg>
-
                   </div>
                 </div>
 
                 <div class="accordion-item__content">
-                  <PrismicRichText
-                    :field="item.content"
-                    class="text" />
+                  <PrismicRichText :field="item.content" class="text" />
                 </div>
               </div>
             </template>
@@ -51,39 +61,40 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
 const props = defineProps({
   dataId: {
     type: String,
-    default: ''
+    default: "",
   },
   data: Object,
   headline: String,
   description: Object,
   image: [Object, Boolean],
-  items: [Array, Boolean]
+  items: [Array, Boolean],
 });
 
 const activeAccordion = ref(null);
 
 function toggleAccordionItem(idx) {
-  if(activeAccordion.value === idx) return activeAccordion.value = null;
+  if (activeAccordion.value === idx) return (activeAccordion.value = null);
 
   activeAccordion.value = idx;
 
-  const contentWrapper = document.querySelector(`.accordion-item[data-idx="${idx}"] .accordion-item__content`);
+  const contentWrapper = document.querySelector(
+    `.accordion-item[data-idx="${idx}"] .accordion-item__content`
+  );
   const contentHeight = contentWrapper.scrollHeight;
 
   contentWrapper.style.maxHeight = `${contentHeight}px`;
-};
-
+}
 
 onMounted(() => {
-  toggleAccordionItem(0)
+  toggleAccordionItem(0);
 });
 </script>
 
 <style lang="scss" scoped>
-  @import "@scss/components/slices/accordion/headline-description";
+@import "@scss/components/slices/accordion/headline-description";
 </style>

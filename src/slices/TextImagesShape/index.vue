@@ -8,6 +8,7 @@ defineProps(getSliceComponentProps(["slice", "index", "slices", "context"]));
   <TextImagesShapeLogos
     v-if="slice.variation === 'wIthLogos'"
     :variation="slice.variation"
+    :id="slice.primary.data_id || slice.id"
     :data="slice.primary"
   />
   <TextImagesShapeDefault
