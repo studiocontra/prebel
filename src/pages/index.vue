@@ -47,4 +47,13 @@ const homeData = data.value?.data;
 onMounted(() =>
   headerStore.setTheme(homeData.header_color_scheme.toLowerCase())
 );
+
+console.log(homeData);
+
+/** SEO */
+useSeoMeta({
+  title: homeData["meta_title"],
+  description: homeData["meta_description"],
+  ogImage: homeData["meta_image"],
+});
 </script>
