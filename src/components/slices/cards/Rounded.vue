@@ -70,7 +70,6 @@ const props = defineProps({
 const route = useRoute();
 
 const printHref = (link, scroll = "") => {
-  console.log(scroll);
   if (link["link_type"] === "web") return link.url;
 
   const isHome = link.type === "home" ? "" : link.uid ?? link.slug;
