@@ -32,9 +32,9 @@ onMounted(() => headerStore.setTheme("dark"));
 
 /** SEO */
 useSeoMeta({
-  title: homeData["meta_title"],
-  description: homeData["meta_description"],
-  ogImage: homeData["meta_image"],
+  title: categoriasData["meta_title"],
+  description: categoriasData["meta_description"],
+  ogImage: categoriasData["meta_image"],
 });
 </script>
 
