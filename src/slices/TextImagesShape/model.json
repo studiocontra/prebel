@@ -182,6 +182,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "data_id": {
+          "type": "Text",
+          "config": {
+            "label": "Data ID",
+            "placeholder": ""
+          }
+        },
         "orientation": {
           "type": "Select",
           "config": {

@@ -311,6 +311,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "sing",
 				"type": "Text"
+			},
+			"data_id": {
+				"__TYPE__": "FieldContent",
+				"value": "blood",
+				"type": "Text"
 			}
 		},
 		"items": [

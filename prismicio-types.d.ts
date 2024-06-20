@@ -4146,6 +4146,16 @@ export type TextImagesShapesSliceSquareImage = prismic.SharedSliceVariation<
  */
 export interface TextImagesShapesSliceWIthLogosPrimary {
   /**
+   * Data ID field in *TextImagesShape → With Logos → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_images_shapes.wIthLogos.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
+  /**
    * Orientation field in *TextImagesShape → With Logos → Primary*
    *
    * - **Field Type**: Select
