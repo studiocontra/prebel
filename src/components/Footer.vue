@@ -46,9 +46,10 @@
             <ul>
               <template v-for="(menuItem, id) in footerData.footer_menu" :key="id">
                 <li>
-                  <NuxtLink :to="menuItem.link.uid">
+                  <NuxtLinkLocale
+                    :to="printHref(menuItem.link, menuItem.target_scroll)">
                     {{ menuItem.label }}
-                  </NuxtLink>
+                  </NuxtLinkLocale>
                 </li>
               </template>
             </ul>
@@ -119,6 +120,15 @@ const { data } = await useAsyncData("[footer]", () =>
 );
 
 const footerData = data.value?.data;
+
+
+const printHref = ((link, scroll = null) => {
+  if (link['link_type'] === 'web') return link.url;
+
+  const isHome = (link.type === 'home') ? '' : link.uid ?? link.slug;
+  const targetSection = (scroll) ? `#${scroll}` : '';
+  return `/${isHome}${targetSection}`;
+});
 </script>
 
 <style lang="scss" scoped>

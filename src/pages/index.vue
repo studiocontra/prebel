@@ -48,8 +48,6 @@ onMounted(() =>
   headerStore.setTheme(homeData.header_color_scheme.toLowerCase())
 );
 
-console.log(homeData);
-
 /** SEO */
 useSeoMeta({
   title: homeData["meta_title"],
