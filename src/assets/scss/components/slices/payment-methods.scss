@@ -1,0 +1,22 @@
+.payment-methods {
+  padding: calc(var(--header-height) * 2) 0;
+  text-align: center;
+
+  .title {
+    color: $blue;
+  }
+
+  .text {
+    margin-bottom: 5em;
+  }
+
+  .single-logo {
+    margin-bottom: 3em;
+    text-align: center;
+
+    img {
+      display: inline-block;
+      width: 90%;
+    }
+  }
+}

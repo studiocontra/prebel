@@ -103,7 +103,7 @@ function setHeight() {
  */
 const isScrolled = ref(false);
 function watchScroll() {
-  window.scrollY > headerHeight.value * 2
+  window.scrollY > headerHeight.value * 1.5
     ? (isScrolled.value = true)
     : (isScrolled.value = false);
 }

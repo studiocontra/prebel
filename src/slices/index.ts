@@ -22,6 +22,9 @@ export const components = defineSliceZoneComponents({
   menu_item: defineAsyncComponent(() => import("./MenuItem/index.vue")),
   our_clients: defineAsyncComponent(() => import("./LogosGrid/index.vue")),
   page_hero: defineAsyncComponent(() => import("./PageHero/index.vue")),
+  payment_methods: defineAsyncComponent(
+    () => import("./PaymentMethods/index.vue"),
+  ),
   services_slider: defineAsyncComponent(
     () => import("./ServicesSlider/index.vue"),
   ),

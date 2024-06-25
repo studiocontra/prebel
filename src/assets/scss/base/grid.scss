@@ -30,6 +30,14 @@ $medias:
     }
   }
 
+  &.justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  &.justify-around {
+    justify-content: space-around;
+  }
+
   &.justify-between {
     justify-content: space-between;
   }

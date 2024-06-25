@@ -800,6 +800,86 @@ interface ModalDocumentData {
 export type ModalDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<ModalDocumentData>, "modal", Lang>;
 
+type PaymentMethodsDocumentDataSlicesSlice =
+  | TextBlockSlice
+  | PaymentMethodsSlice
+  | PageHeroSlice;
+
+/**
+ * Content for Metodos de Pago documents
+ */
+interface PaymentMethodsDocumentData {
+  /**
+   * Header color scheme field in *Metodos de Pago*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Light
+   * - **API ID Path**: payment_methods.header_color_scheme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_color_scheme: prismic.SelectField<"Light" | "Dark", "filled">;
+
+  /**
+   * Slice Zone field in *Metodos de Pago*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_methods.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PaymentMethodsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Metodos de Pago*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: payment_methods.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Metodos de Pago*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_methods.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Metodos de Pago*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: payment_methods.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Metodos de Pago document from Prismic
+ *
+ * - **API ID**: `payment_methods`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PaymentMethodsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PaymentMethodsDocumentData>,
+    "payment_methods",
+    Lang
+  >;
+
 type ServicesDocumentDataSlicesSlice =
   | ImageTextCarouselSlice
   | CardsSlice
@@ -1207,6 +1287,7 @@ export type AllDocumentTypes =
   | LineaEticaDocument
   | MainNavDocument
   | ModalDocument
+  | PaymentMethodsDocument
   | ServicesDocument
   | SingleServiceDocument
   | SingleWorkDocument
@@ -3216,6 +3297,98 @@ export type PageHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *PaymentMethods → Default → Primary → Methods*
+ */
+export interface PaymentMethodsSliceDefaultPrimaryMethodsItem {
+  /**
+   * Logo field in *PaymentMethods → Default → Primary → Methods*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_methods.default.primary.methods[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Link field in *PaymentMethods → Default → Primary → Methods*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_methods.default.primary.methods[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *PaymentMethods → Default → Primary*
+ */
+export interface PaymentMethodsSliceDefaultPrimary {
+  /**
+   * Headline field in *PaymentMethods → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_methods.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Description field in *PaymentMethods → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_methods.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Methods field in *PaymentMethods → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_methods.default.primary.methods[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  methods: prismic.GroupField<
+    Simplify<PaymentMethodsSliceDefaultPrimaryMethodsItem>
+  >;
+}
+
+/**
+ * Default variation for PaymentMethods Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PaymentMethodsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PaymentMethodsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PaymentMethods*
+ */
+type PaymentMethodsSliceVariation = PaymentMethodsSliceDefault;
+
+/**
+ * PaymentMethods Shared Slice
+ *
+ * - **API ID**: `payment_methods`
+ * - **Description**: PaymentMethods
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PaymentMethodsSlice = prismic.SharedSlice<
+  "payment_methods",
+  PaymentMethodsSliceVariation
+>;
+
+/**
  * Primary content in *ServicesSlider → Items*
  */
 export interface ServicesSliderSliceDefaultItem {
@@ -4366,6 +4539,9 @@ declare module "@prismicio/client" {
       ModalDocument,
       ModalDocumentData,
       ModalDocumentDataInputsItem,
+      PaymentMethodsDocument,
+      PaymentMethodsDocumentData,
+      PaymentMethodsDocumentDataSlicesSlice,
       ServicesDocument,
       ServicesDocumentData,
       ServicesDocumentDataSlicesSlice,
@@ -4471,6 +4647,11 @@ declare module "@prismicio/client" {
       PageHeroSliceText,
       PageHeroSliceTextCta,
       PageHeroSliceImageBig,
+      PaymentMethodsSlice,
+      PaymentMethodsSliceDefaultPrimaryMethodsItem,
+      PaymentMethodsSliceDefaultPrimary,
+      PaymentMethodsSliceVariation,
+      PaymentMethodsSliceDefault,
       ServicesSliderSlice,
       ServicesSliderSliceDefaultItem,
       ServicesSliderSliceVariation,
