@@ -15,6 +15,10 @@ const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
 
+import { useHeaderStore } from "@/stores/header";
+
+const headerStore = useHeaderStore();
+
 // Import your slices
 import PageHero from '@/slices/PageHero'
 import PaymentMethods from '@/slices/PaymentMethods'
@@ -28,14 +32,15 @@ const paymentMethodsData = data.value.data;
 
 console.log(paymentMethodsData.slices);
 
-useHead({
-  title: data.value?.data.meta_title,
-  meta: [
-    {
-      name: "description",
-      content: data.value?.data.meta_description,
-    },
-  ],
+onMounted(() =>
+  headerStore.setTheme(paymentMethodsData.header_color_scheme.toLowerCase())
+);
+
+
+useSeoMeta({
+  title: paymentMethodsData["meta_title"],
+  description: paymentMethodsData["meta_description"],
+  ogImage: paymentMethodsData["meta_image"],
 });
 </script>
 
