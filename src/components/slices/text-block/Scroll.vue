@@ -1,5 +1,5 @@
 <template>
-  <div class="section text-block text-block--scroll">
+  <div class="section text-block text-block--scroll" :class="bgColor">
     <div class="container">
       <h3
         role="heading"
@@ -42,6 +42,7 @@ const props = defineProps({
   eyebrow: String,
   content: Object,
   textAlign: String,
+  bgColor: String,
 });
 
 const divWrapper = ref(null);

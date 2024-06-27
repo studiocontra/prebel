@@ -17,5 +17,6 @@ defineProps(
     :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
     :content="slice.primary.content"
-    :image="slice.primary.image" />
+    :image="slice.primary.image" 
+    :imageFit="slice.primary.image_fit" />
 </template>

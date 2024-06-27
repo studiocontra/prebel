@@ -100,6 +100,18 @@
             ],
             "default_value": "left"
           }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background color",
+            "placeholder": "",
+            "options": [
+              "Blue",
+              "Green"
+            ],
+            "default_value": "Blue"
+          }
         }
       },
       "items": {}

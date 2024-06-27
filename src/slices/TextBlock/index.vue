@@ -25,5 +25,6 @@ defineProps(
   <TextBlockScroll
     v-if="slice.variation == 'scrollEffect'"
     :eyebrow="slice.primary.eyebrow"
-    :content="slice.primary.content"/>
+    :content="slice.primary.content"
+    :bgColor="slice.primary.background_color" />
 </template>

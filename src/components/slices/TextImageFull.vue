@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="img">
+      <div class="img" :class="imageFit">
         <prismic-image :field="image" />
       </div>
     </div>
@@ -39,6 +39,7 @@ const props = defineProps({
   eyebrow: String,
   headline: String,
   image: Object,
+  imageFit: String
 });
 </script>
 

@@ -54,4 +54,11 @@ defineProps(
     :imageStyle="slice.primary.image_style"
     :imageSize="slice.primary.image_size"
     :content="slice.primary.content" />
+
+  <HeroTextImageVertical
+    v-if="slice.variation == 'textImageVertical'"
+    :data-slice-type="slice.slice_type"
+    :data-slice-variation="slice.variation"
+    :image="slice.primary.image"
+    :content="slice.primary.content" />
 </template>

@@ -7,9 +7,19 @@
     aspect-ratio: 2 / 1;
 
     img {
-
       @include fullAbs;
-      @include fit;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+    }
+
+  }
+  .img.contain {
+    img {
+      @include fullAbs;
+      object-fit: contain;
+      object-position: center;
+      height: 100%;
     }
   }
 }

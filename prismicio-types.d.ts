@@ -3275,6 +3275,44 @@ export type PageHeroSliceImageBig = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *PageHero → Text Image Vertical → Primary*
+ */
+export interface PageHeroSliceTextImageVerticalPrimary {
+  /**
+   * Content field in *PageHero → Text Image Vertical → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.textImageVertical.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Image field in *PageHero → Text Image Vertical → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.textImageVertical.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Text Image Vertical variation for PageHero Slice
+ *
+ * - **API ID**: `textImageVertical`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeroSliceTextImageVertical = prismic.SharedSliceVariation<
+  "textImageVertical",
+  Simplify<PageHeroSliceTextImageVerticalPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *PageHero*
  */
 type PageHeroSliceVariation =
@@ -3282,7 +3320,8 @@ type PageHeroSliceVariation =
   | PageHeroSliceHome
   | PageHeroSliceText
   | PageHeroSliceTextCta
-  | PageHeroSliceImageBig;
+  | PageHeroSliceImageBig
+  | PageHeroSliceTextImageVertical;
 
 /**
  * PageHero Shared Slice
@@ -3863,6 +3902,17 @@ export interface TextBlockSliceScrollEffectPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   text_align: prismic.SelectField<"left" | "center", "filled">;
+
+  /**
+   * Background color field in *TextBlock → Scroll Effect → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Blue
+   * - **API ID Path**: text_block.scrollEffect.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<"Blue" | "Green", "filled">;
 }
 
 /**
@@ -4050,6 +4100,17 @@ export interface TextImageFullSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image fit field in *TextImageFull → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: cover
+   * - **API ID Path**: text_image_full.default.primary.image_fit
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  image_fit: prismic.SelectField<"cover" | "contain", "filled">;
 }
 
 /**
@@ -4641,12 +4702,14 @@ declare module "@prismicio/client" {
       PageHeroSliceTextPrimary,
       PageHeroSliceTextCtaPrimary,
       PageHeroSliceImageBigPrimary,
+      PageHeroSliceTextImageVerticalPrimary,
       PageHeroSliceVariation,
       PageHeroSliceDefault,
       PageHeroSliceHome,
       PageHeroSliceText,
       PageHeroSliceTextCta,
       PageHeroSliceImageBig,
+      PageHeroSliceTextImageVertical,
       PaymentMethodsSlice,
       PaymentMethodsSliceDefaultPrimaryMethodsItem,
       PaymentMethodsSliceDefaultPrimary,

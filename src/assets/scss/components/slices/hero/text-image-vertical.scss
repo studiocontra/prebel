@@ -1,0 +1,79 @@
+.hero {
+  padding-top: 4rem;
+  background: linear-gradient(180deg, #4D5445 10.42%, #9EA18A 74.34%, #EDEBE3 100%);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+  color: $white;
+
+  h1 {
+    max-width: 700px;
+    text-wrap: balance;
+  }
+
+  picture {
+    position: relative;
+    align-self: flex-end;
+
+    :deep(.drop) {
+      width: 100px;
+    }
+
+    :deep(.drop:first-child) {
+      right: -4rem;
+      top: .5rem;
+      z-index: 1;
+    }
+
+    :deep(.drop:last-child) {
+      left: 1rem;
+      bottom: -4.5rem;
+      z-index: 1;
+    }
+
+    @include m576 {
+      :deep(.drop) {
+        width: 160px;
+      }
+
+      :deep(.drop:first-child) {
+        right: -8rem;
+        z-index: 1;
+      }
+    }
+
+    @include m768 {
+      padding-right: 4rem;
+      :deep(.drop) {
+        width: 160px;
+      }
+
+      :deep(.drop:first-child) {
+        right: -4rem;
+        top: 2rem;
+        z-index: 0;
+      }
+
+      :deep(.drop:last-child) {
+        left: 0rem;
+        bottom: -5rem;
+        z-index: 2;
+      }
+    }
+
+    img {
+      position: relative;
+      border-radius: .6rem;
+      z-index: 1;
+
+      @include m768 {
+        width: 700px;
+      }
+    }
+  }
+
+  
+}

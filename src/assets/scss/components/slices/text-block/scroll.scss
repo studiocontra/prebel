@@ -1,6 +1,13 @@
 .text-block--scroll {
   color: $white;
-  background-color: $blue;
+
+  &.Green {
+    background-color: $green;
+  }
+
+  &.Blue {
+    background-color: $blue;
+  }
 
   .text.center {
     text-align: center;
