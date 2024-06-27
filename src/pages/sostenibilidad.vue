@@ -8,6 +8,7 @@
         text_block: TextBlock,
         text_images_shapes: TextImagesShape,
         image_text: ImageText,
+        banner_cta: BannerCta,
       }" />
   </main>
 </template>
@@ -23,6 +24,7 @@ import PageHero from '@/slices/PageHero'
 import TextBlock from '@/slices/TextBlock'
 import TextImageFull from '@/slices/TextImageFull'
 import TextImagesShape from '@/slices/TextImagesShape'
+import BannerCta from '@/slices/BannerCta'
 
 const { data } = await useAsyncData("[sustainability]", () =>
   client.getSingle("sustainability", {lang: iso})

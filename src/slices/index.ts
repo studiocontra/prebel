@@ -5,6 +5,7 @@ import { defineSliceZoneComponents } from "@prismicio/vue";
 
 export const components = defineSliceZoneComponents({
   accordion: defineAsyncComponent(() => import("./Accordion/index.vue")),
+  banner_cta: defineAsyncComponent(() => import("./BannerCta/index.vue")),
   callout_text_content: defineAsyncComponent(
     () => import("./CalloutTextContent/index.vue"),
   ),

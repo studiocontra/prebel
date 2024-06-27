@@ -1,0 +1,60 @@
+.banner {
+  padding-bottom: 5rem;
+
+  .b-content {
+    position: relative;
+    color: $white;
+    background-color: $blue;
+    padding: 3rem 2rem;
+    border-radius: 18px;
+    text-align: center;
+
+    :deep(.drop) {
+      width: 120px;
+    }
+
+    :deep(.drop:first-child) {
+      z-index: 0;
+      top: 2rem;
+      right: -5rem;
+    }
+
+    :deep(.drop:last-child) {
+      bottom: -2rem;
+      left: 1rem;
+      z-index: 2;
+    }
+
+    @include m992 {
+      :deep(.drop:first-child) {
+        z-index: 0;
+        top: 4rem;
+        right: -6rem;
+      }
+  
+      :deep(.drop:last-child) {
+        bottom: -2rem;
+        left: 1rem;
+        z-index: 2;
+      }
+    }
+  
+    .wrapper {
+      max-width: 724px;
+      margin: 0 auto;
+  
+      .eyebrow {
+        margin-bottom: 1.4rem;
+      }
+  
+      .title {
+        margin-bottom: 1.4rem;
+      }
+  
+      .text {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+}
+

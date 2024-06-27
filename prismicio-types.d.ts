@@ -1121,6 +1121,7 @@ export type SingleWorkDocument<Lang extends string = string> =
   >;
 
 type SustainabilityDocumentDataSlicesSlice =
+  | BannerCtaSlice
   | TextImageFullSlice
   | TextBlockSlice
   | ImageTextSlice
@@ -1487,6 +1488,91 @@ type AccordionSliceVariation =
 export type AccordionSlice = prismic.SharedSlice<
   "accordion",
   AccordionSliceVariation
+>;
+
+/**
+ * Primary content in *BannerCta → Default → Primary*
+ */
+export interface BannerCtaSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *BannerCta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_cta.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *BannerCta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_cta.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Description field in *BannerCta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_cta.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *BannerCta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_cta.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *BannerCta → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_cta.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for BannerCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerCtaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BannerCtaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BannerCta*
+ */
+type BannerCtaSliceVariation = BannerCtaSliceDefault;
+
+/**
+ * BannerCta Shared Slice
+ *
+ * - **API ID**: `banner_cta`
+ * - **Description**: BannerCta
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerCtaSlice = prismic.SharedSlice<
+  "banner_cta",
+  BannerCtaSliceVariation
 >;
 
 /**
@@ -4627,6 +4713,10 @@ declare module "@prismicio/client" {
       AccordionSliceVariation,
       AccordionSliceDefault,
       AccordionSliceHeadlineAndDescription,
+      BannerCtaSlice,
+      BannerCtaSliceDefaultPrimary,
+      BannerCtaSliceVariation,
+      BannerCtaSliceDefault,
       CalloutTextContentSlice,
       CalloutTextContentSliceDefaultPrimary,
       CalloutTextContentSliceDefaultItem,
