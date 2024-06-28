@@ -9,6 +9,7 @@
         text_images_shapes: TextImagesShape,
         image_text: ImageText,
         banner_cta: BannerCta,
+        video: Video,
       }" />
   </main>
 </template>
@@ -25,6 +26,7 @@ import TextBlock from '@/slices/TextBlock'
 import TextImageFull from '@/slices/TextImageFull'
 import TextImagesShape from '@/slices/TextImagesShape'
 import BannerCta from '@/slices/BannerCta'
+import Video from '@/slices/Video'
 
 const { data } = await useAsyncData("[sustainability]", () =>
   client.getSingle("sustainability", {lang: iso})

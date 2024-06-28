@@ -20,6 +20,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "video": {
+              "type": "SharedSlice"
+            },
             "banner_cta": {
               "type": "SharedSlice"
             },

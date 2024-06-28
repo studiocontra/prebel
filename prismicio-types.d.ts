@@ -1121,6 +1121,7 @@ export type SingleWorkDocument<Lang extends string = string> =
   >;
 
 type SustainabilityDocumentDataSlicesSlice =
+  | VideoSlice
   | BannerCtaSlice
   | TextImageFullSlice
   | TextBlockSlice
@@ -4584,6 +4585,68 @@ export type TextImagesShapesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Video → Default → Primary*
+ */
+export interface VideoSliceDefaultPrimary {
+  /**
+   * Headline field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * YouTube ID field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.youtube_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  youtube_id: prismic.KeyTextField;
+
+  /**
+   * YouTube Video Title field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.youtube_video_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  youtube_video_title: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Video Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Video*
+ */
+type VideoSliceVariation = VideoSliceDefault;
+
+/**
+ * Video Shared Slice
+ *
+ * - **API ID**: `video`
+ * - **Description**: Video
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSlice = prismic.SharedSlice<"video", VideoSliceVariation>;
+
+/**
  * Primary content in *WorkForm → Default → Primary*
  */
 export interface WorkFormSliceDefaultPrimary {
@@ -4848,6 +4911,10 @@ declare module "@prismicio/client" {
       TextImagesShapesSliceCircleImage,
       TextImagesShapesSliceSquareImage,
       TextImagesShapesSliceWIthLogos,
+      VideoSlice,
+      VideoSliceDefaultPrimary,
+      VideoSliceVariation,
+      VideoSliceDefault,
       WorkFormSlice,
       WorkFormSliceDefaultPrimary,
       WorkFormSliceVariation,

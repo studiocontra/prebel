@@ -41,5 +41,6 @@ export const components = defineSliceZoneComponents({
   text_images_shapes: defineAsyncComponent(
     () => import("./TextImagesShape/index.vue"),
   ),
+  video: defineAsyncComponent(() => import("./Video/index.vue")),
   work_form: defineAsyncComponent(() => import("./WorkForm/index.vue")),
 });
