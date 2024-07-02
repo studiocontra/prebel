@@ -60,5 +60,6 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
     :image="slice.primary.image"
-    :content="slice.primary.content" />
+    :content="slice.primary.content" 
+    :bgColor="slice.primary.background_color" />
 </template>

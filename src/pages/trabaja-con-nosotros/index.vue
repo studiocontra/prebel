@@ -6,6 +6,7 @@
         page_hero: PageHero,
         cards: Cards,
         testimonials: Testimonials,
+        text_block: TextBlock,
       }" />
   </main>
 </template>
@@ -19,6 +20,7 @@ const { value: { iso, code } } = localeProperties;
 import Cards from '@/slices/Cards'
 import PageHero from '@/slices/PageHero'
 import Testimonials from '@/slices/Testimonials'
+import TextBlock from '@/slices/TextBlock'
 
 const { data } = await useAsyncData("[work]", () =>
   client.getSingle("work", {lang: iso})

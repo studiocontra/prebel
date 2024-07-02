@@ -1205,6 +1205,7 @@ export type SustainabilityDocument<Lang extends string = string> =
   >;
 
 type WorkDocumentDataSlicesSlice =
+  | TextBlockSlice
   | TestimonialsSlice
   | PageHeroSlice
   | CardsSlice;
@@ -1936,12 +1937,106 @@ export type CardsSliceRounded = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Cards → Square → Primary*
+ */
+export interface CardsSliceSquarePrimary {
+  /**
+   * Data ID field in *Cards → Square → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.square.primary.data_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data_id: prismic.KeyTextField;
+
+  /**
+   * Eyebrow field in *Cards → Square → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.square.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Cards → Items*
+ */
+export interface CardsSliceSquareItem {
+  /**
+   * Image field in *Cards → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Headline field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].headline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Description field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *Cards → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Cards → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Square variation for Cards Slice
+ *
+ * - **API ID**: `square`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardsSliceSquare = prismic.SharedSliceVariation<
+  "square",
+  Simplify<CardsSliceSquarePrimary>,
+  Simplify<CardsSliceSquareItem>
+>;
+
+/**
  * Slice variation for *Cards*
  */
 type CardsSliceVariation =
   | CardsSliceDefault
   | CardsSliceLargeImage
-  | CardsSliceRounded;
+  | CardsSliceRounded
+  | CardsSliceSquare;
 
 /**
  * Cards Shared Slice
@@ -3384,6 +3479,17 @@ export interface PageHeroSliceTextImageVerticalPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Background color field in *PageHero → Text Image Vertical → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Green
+   * - **API ID Path**: page_hero.textImageVertical.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<"Green" | "Gray", "filled">;
 }
 
 /**
@@ -3999,7 +4105,7 @@ export interface TextBlockSliceScrollEffectPrimary {
    * - **API ID Path**: text_block.scrollEffect.primary.background_color
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_color: prismic.SelectField<"Blue" | "Green", "filled">;
+  background_color: prismic.SelectField<"Blue" | "Green" | "Gray", "filled">;
 }
 
 /**
@@ -4792,10 +4898,13 @@ declare module "@prismicio/client" {
       CardsSliceLargeImageItem,
       CardsSliceRoundedPrimary,
       CardsSliceRoundedItem,
+      CardsSliceSquarePrimary,
+      CardsSliceSquareItem,
       CardsSliceVariation,
       CardsSliceDefault,
       CardsSliceLargeImage,
       CardsSliceRounded,
+      CardsSliceSquare,
       ImageTextSlice,
       ImageTextSliceDefaultPrimary,
       ImageTextSliceDefaultItem,

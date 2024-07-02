@@ -108,7 +108,8 @@
             "placeholder": "",
             "options": [
               "Blue",
-              "Green"
+              "Green",
+              "Gray"
             ],
             "default_value": "Blue"
           }

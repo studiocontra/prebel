@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div class="hero" :class="bgColor">
     <div class="container">
       <div class="hero-content">
         <h1>
@@ -19,6 +19,7 @@
 const props = defineProps({
   content: Object,
   image: Object,
+  bgColor: String,
 });
 </script>
 

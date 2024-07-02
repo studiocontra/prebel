@@ -227,6 +227,18 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background color",
+            "placeholder": "",
+            "options": [
+              "Green",
+              "Gray"
+            ],
+            "default_value": "Green"
+          }
         }
       },
       "items": {}

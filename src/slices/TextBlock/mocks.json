@@ -71,7 +71,7 @@
 			},
 			"background_color": {
 				"__TYPE__": "FieldContent",
-				"value": "Blue",
+				"value": "Gray",
 				"type": "Select"
 			}
 		},
