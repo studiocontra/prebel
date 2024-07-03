@@ -31,4 +31,10 @@ defineProps(
     :allLink="slice.primary.see_all_link"
     :allLabel="slice.primary.see_all_label"
     :cards="slice.items" />
+
+    <CardsSquare
+    v-if="slice.variation == 'square'"
+    :id="slice.primary.data_id || slice.id"
+    :headline="slice.primary.headline"
+    :cards="slice.items" />
 </template>

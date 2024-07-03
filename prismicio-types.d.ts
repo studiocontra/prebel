@@ -1204,11 +1204,7 @@ export type SustainabilityDocument<Lang extends string = string> =
     Lang
   >;
 
-type WorkDocumentDataSlicesSlice =
-  | TextBlockSlice
-  | TestimonialsSlice
-  | PageHeroSlice
-  | CardsSlice;
+type WorkDocumentDataSlicesSlice = TextBlockSlice | PageHeroSlice | CardsSlice;
 
 /**
  * Content for Work documents

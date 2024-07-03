@@ -8,6 +8,7 @@
         testimonials: Testimonials,
         text_block: TextBlock,
       }" />
+      <PreFooter />
   </main>
 </template>
 

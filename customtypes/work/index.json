@@ -23,9 +23,6 @@
             "text_block": {
               "type": "SharedSlice"
             },
-            "testimonials": {
-              "type": "SharedSlice"
-            },
             "page_hero": {
               "type": "SharedSlice"
             },
