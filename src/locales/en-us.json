@@ -17,6 +17,14 @@
       "label": "¿What model are you interested in?",
       "error": "This value is required."
     },
+    "occupation": {
+      "label": "¿What model are you interested in?",
+      "error": "This value is required."
+    },
+    "attach_file": {
+      "label": "¿What model are you interested in?",
+      "error": "This value is required."
+    },
     "submit": "Submit"
   },
   "work form": {

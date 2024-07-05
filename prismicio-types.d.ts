@@ -397,6 +397,111 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Form Trabaja con nosotros → inputs*
+ */
+export interface FormDocumentDataInputsItem {
+  /**
+   * Name field in *Form Trabaja con nosotros → inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.inputs[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Mail field in *Form Trabaja con nosotros → inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.inputs[].mail
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  mail: prismic.KeyTextField;
+
+  /**
+   * Phone field in *Form Trabaja con nosotros → inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.inputs[].phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Occupation field in *Form Trabaja con nosotros → inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.inputs[].occupation
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  occupation: prismic.KeyTextField;
+
+  /**
+   * Attach file field in *Form Trabaja con nosotros → inputs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.inputs[].attach_file
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  attach_file: prismic.KeyTextField;
+}
+
+/**
+ * Content for Form Trabaja con nosotros documents
+ */
+interface FormDocumentData {
+  /**
+   * Headline field in *Form Trabaja con nosotros*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.headline
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headline: prismic.KeyTextField;
+
+  /**
+   * Description field in *Form Trabaja con nosotros*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * inputs field in *Form Trabaja con nosotros*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.inputs[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  inputs: prismic.GroupField<Simplify<FormDocumentDataInputsItem>>;
+}
+
+/**
+ * Form Trabaja con nosotros document from Prismic
+ *
+ * - **API ID**: `form`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FormDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<FormDocumentData>, "form", Lang>;
+
 type HomeDocumentDataSlicesSlice =
   | TextBlockSlice
   | TabsImageDataSlice
@@ -1281,6 +1386,7 @@ export type AllDocumentTypes =
   | AboutDocument
   | CategoriasDocument
   | FooterDocument
+  | FormDocument
   | HomeDocument
   | LegalesDocument
   | LineaEticaDocument
@@ -4836,6 +4942,9 @@ declare module "@prismicio/client" {
       FooterDocumentDataFooterContactItem,
       FooterDocumentDataFooterLocationsItem,
       FooterDocumentDataFooterCopyrightItem,
+      FormDocument,
+      FormDocumentData,
+      FormDocumentDataInputsItem,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,

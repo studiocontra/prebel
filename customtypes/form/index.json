@@ -1,0 +1,69 @@
+{
+  "format": "custom",
+  "id": "form",
+  "label": "Form Trabaja con nosotros",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "headline": {
+        "type": "Text",
+        "config": {
+          "label": "Headline",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "inputs": {
+        "type": "Group",
+        "config": {
+          "label": "inputs",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "mail": {
+              "type": "Text",
+              "config": {
+                "label": "Mail",
+                "placeholder": ""
+              }
+            },
+            "phone": {
+              "type": "Text",
+              "config": {
+                "label": "Phone",
+                "placeholder": ""
+              }
+            },
+            "occupation": {
+              "type": "Text",
+              "config": {
+                "label": "Occupation",
+                "placeholder": ""
+              }
+            },
+            "attach_file": {
+              "type": "Text",
+              "config": {
+                "label": "Attach file",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

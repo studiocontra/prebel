@@ -11,12 +11,12 @@
         <div class="col-md-6">
           <div class="pre-footer__content">
             <h3 class="title title--lg">
-              Trabaja con nosotros
+              {{ formData.headline }}
             </h3>
 
             <div class="text">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisi neque, feugiat sit amet dolor id, sagittis aliquam eros. Aenean.
+                {{ formData.description }}
               </p>
             </div>
           </div>
@@ -28,13 +28,13 @@
                 <label
                   class="eyebrow"
                   for="">
-                  {{ $t('footer form.name.label') }}
+                  {{ formData.inputs[0].name }}
                 </label>
 
                 <input
                   class="form-input"
                   type="text"
-                  :placeholder="$t('footer form.name.label')"
+                  :placeholder="formData.inputs[0].name"
                   v-model="state.name">
 
                   <span class="error" v-if="showError('name')">
@@ -46,13 +46,13 @@
                 <label
                   class="eyebrow"
                   for="">
-                  {{ $t('footer form.email.label') }}
+                  {{ formData.inputs[0].mail }}
                 </label>
 
                 <input
                   class="form-input"
                   type="email"
-                  :placeholder="$t('footer form.phone.label')"
+                  :placeholder="formData.inputs[0].mail"
                   v-model="state.email">
 
                 <span class="error" v-if="showError('email')">
@@ -69,13 +69,13 @@
                 <label
                   class="eyebrow"
                   for="">
-                  {{ $t('footer form.phone.label') }}
+                  {{ formData.inputs[0].phone }}
                 </label>
 
                 <input
                   class="form-input"
                   type="number"
-                  :placeholder="$t('footer form.phone.label')"
+                  :placeholder="formData.inputs[0].phone"
                   v-model="state.phone">
 
                 <span class="error" v-if="showError('phone')">
@@ -87,17 +87,33 @@
                 <label
                   class="eyebrow"
                   for="">
-                  {{ $t('footer form.message.label') }}
+                  {{ formData.inputs[0].occupation }}
                 </label>
 
-                <textarea
+                <input
                   class="form-input"
-                  :placeholder="$t('footer form.message.label')"
-                  v-model="state.message">
-                </textarea>
+                  type="text"
+                  :placeholder="formData.inputs[0].occupation"
+                  v-model="state.occupation">
 
-                <span class="error" v-if="showError('message')">
-                  {{ $t('footer form.message.error') }}
+                <span class="error" v-if="showError('occupation')">
+                </span>
+              </div>
+
+              <div class="form-field">
+                <label
+                  class="eyebrow"
+                  for="">
+                  {{ formData.inputs[0].attach_file }}
+                </label>
+
+                <input
+                  class="form-input"
+                  type="file"
+                  :placeholder="formData.inputs[0].attach_file"
+                  v-on="state.attach_file">
+
+                <span class="error" v-if="showError('attach_file')">
                 </span>
               </div>
 
@@ -124,19 +140,31 @@ import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 
+const { client } = usePrismic();
+const { localeProperties } = useI18n();
+const { value: { iso, code } } = localeProperties;
+
+const { data } = await useAsyncData("[form]", () =>
+  client.getSingle("form", { lang: iso })
+);
+
+const formData = data.value.data
+
 // Form validations
 const state = reactive({
   name: '',
   email: '',
   phone: '',
-  message: '',
+  occupation: '',
+  attach_file: [],
 });
 
 const rules = {
   name: { required },
   email: { required, email },
   phone: { required },
-  message: { required }
+  occupation: { required },
+  attach_file: { required }
 };
 
 const v$ = useVuelidate(rules, state, { $autoDirty: true });
