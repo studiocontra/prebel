@@ -20,7 +20,9 @@ defineProps(
     :content="slice.primary.content"
     :textAlign="slice.primary.text_align"
     :buttonLink="slice.primary.button_link"
-    :buttonLabel="slice.primary.button_label" />
+    :buttonLinkTwo="slice.primary.button_link_two"
+    :buttonLabel="slice.primary.button_label"
+    :buttonLabelTwo="slice.primary.button_label_two" />
 
   <TextBlockScroll
     v-if="slice.variation == 'scrollEffect'"

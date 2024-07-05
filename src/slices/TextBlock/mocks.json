@@ -40,6 +40,18 @@
 				"__TYPE__": "FieldContent",
 				"value": "left",
 				"type": "Select"
+			},
+			"button_label_two": {
+				"__TYPE__": "FieldContent",
+				"value": "brother",
+				"type": "Text"
+			},
+			"button_link_two": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
 			}
 		},
 		"items": []

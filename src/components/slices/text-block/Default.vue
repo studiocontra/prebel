@@ -25,9 +25,16 @@
           <div
             v-if="buttonLabel"
             class="wrap-btn">
-            <Button :href="buttonLink || '#'" theme="dark">
+            <a class="btn btn--blue" style="margin-bottom: 1rem;" :href="buttonLink.url || '#'">
               {{ buttonLabel }}
-            </Button>
+            </a>
+          </div>
+          <div
+            v-if="buttonLabelTwo"
+            class="wrap-btn">
+            <a class="btn btn--blue" :href="buttonLinkTwo.url || '#'">
+              {{ buttonLabelTwo }}
+            </a>
           </div>
         </div>
       </div>
@@ -41,11 +48,15 @@ const props = defineProps({
   eyebrow: String,
   headline: String,
   buttonLabel: String,
+  buttonLabelTwo: String,
   buttonLink: Object,
+  buttonLinkTwo: Object,
   textAlign: String,
 });
+
 </script>
 
 <style lang="scss" scoped>
   @import "@scss/components/slices/text-block/default";
+  @import "@scss/components/button.scss"
 </style>

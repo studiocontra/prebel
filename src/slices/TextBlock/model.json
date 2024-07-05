@@ -61,6 +61,21 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "button_label_two": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label two",
+            "placeholder": ""
+          }
+        },
+        "button_link_two": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link two",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {}

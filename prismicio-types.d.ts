@@ -4148,6 +4148,26 @@ export interface TextBlockSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
+
+  /**
+   * Button Label two field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.default.primary.button_label_two
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label_two: prismic.KeyTextField;
+
+  /**
+   * Button Link two field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.default.primary.button_link_two
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link_two: prismic.LinkField;
 }
 
 /**
