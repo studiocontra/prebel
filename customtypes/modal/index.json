@@ -72,6 +72,253 @@
           }
         }
       }
+    },
+    "PQRS": {
+      "pqrs_labels": {
+        "type": "Group",
+        "config": {
+          "label": "PQRS Labels",
+          "repeat": false,
+          "fields": {
+            "headline": {
+              "type": "Text",
+              "config": {
+                "label": "Headline",
+                "placeholder": ""
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Description",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "pqrs_inputs": {
+        "type": "Group",
+        "config": {
+          "label": "PQRS Inputs",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "email": {
+              "type": "Text",
+              "config": {
+                "label": "Email",
+                "placeholder": ""
+              }
+            },
+            "city": {
+              "type": "Text",
+              "config": {
+                "label": "City",
+                "placeholder": ""
+              }
+            },
+            "sales_point": {
+              "type": "Text",
+              "config": {
+                "label": "Sales point",
+                "placeholder": ""
+              }
+            },
+            "address": {
+              "type": "Text",
+              "config": {
+                "label": "Address",
+                "placeholder": ""
+              }
+            },
+            "phone": {
+              "type": "Text",
+              "config": {
+                "label": "Phone",
+                "placeholder": ""
+              }
+            },
+            "brand": {
+              "type": "Text",
+              "config": {
+                "label": "Brand",
+                "placeholder": ""
+              }
+            },
+            "product": {
+              "type": "Text",
+              "config": {
+                "label": "Product",
+                "placeholder": ""
+              }
+            },
+            "problem": {
+              "type": "Text",
+              "config": {
+                "label": "Problem",
+                "placeholder": ""
+              }
+            },
+            "lote": {
+              "type": "Text",
+              "config": {
+                "label": "Lote",
+                "placeholder": ""
+              }
+            },
+            "product_condition": {
+              "type": "Text",
+              "config": {
+                "label": "Product condition",
+                "placeholder": ""
+              }
+            },
+            "remain": {
+              "type": "Text",
+              "config": {
+                "label": "Remain",
+                "placeholder": ""
+              }
+            },
+            "consultor": {
+              "type": "Text",
+              "config": {
+                "label": "Consultor",
+                "placeholder": ""
+              }
+            },
+            "consultor_phone": {
+              "type": "Text",
+              "config": {
+                "label": "Consultor phone",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Support": {
+      "support_labels": {
+        "type": "Group",
+        "config": {
+          "label": "Support labels",
+          "repeat": false,
+          "fields": {
+            "headline": {
+              "type": "Text",
+              "config": {
+                "label": "Headline",
+                "placeholder": ""
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Description",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "support_inputs": {
+        "type": "Group",
+        "config": {
+          "label": "Support inputs",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "phone": {
+              "type": "Text",
+              "config": {
+                "label": "Phone",
+                "placeholder": ""
+              }
+            },
+            "subject": {
+              "type": "Text",
+              "config": {
+                "label": "Subject",
+                "placeholder": ""
+              }
+            },
+            "mensaje": {
+              "type": "Text",
+              "config": {
+                "label": "Mensaje",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Services": {
+      "services_labels": {
+        "type": "Group",
+        "config": {
+          "label": "Services labels",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "email": {
+              "type": "Text",
+              "config": {
+                "label": "Email",
+                "placeholder": ""
+              }
+            },
+            "phone": {
+              "type": "Text",
+              "config": {
+                "label": "Phone",
+                "placeholder": ""
+              }
+            },
+            "city": {
+              "type": "Text",
+              "config": {
+                "label": "City",
+                "placeholder": ""
+              }
+            },
+            "subject": {
+              "type": "Text",
+              "config": {
+                "label": "Subject",
+                "placeholder": ""
+              }
+            },
+            "message": {
+              "type": "Text",
+              "config": {
+                "label": "Message",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
