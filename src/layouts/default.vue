@@ -2,7 +2,7 @@
   <Header :key="localeProperties.code" />
   <ContactModal />
   <slot />
-  <Footer />
+  <Footer :key="localeProperties.code" />
   <Loader />
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <Header :key="localeProperties.code" />
   <slot />
-  <Footer />
+  <Footer :key="localeProperties.code" />
   <Loader />
 </template>
 
