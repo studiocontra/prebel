@@ -10,17 +10,18 @@
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 1rem 0;
   color: $white;
 
   h1 {
     max-width: 700px;
     text-wrap: balance;
+    padding-top: 3rem;
   }
 
   picture {
     position: relative;
     align-self: flex-end;
+    margin-top: -3.5rem;
 
     :deep(.drop) {
       width: 100px;

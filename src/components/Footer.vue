@@ -119,7 +119,7 @@ const { data } = await useAsyncData("[footer]", () =>
   client.getSingle("footer", {lang: iso})
 );
 
-const footerData = data.value?.data;
+const footerData = data.value.data;
 
 
 const printHref = ((link, scroll = null) => {

@@ -7,7 +7,7 @@
 
       <div v-if="cards" class="row">
         <template v-for="(item, id) in cards" :key="id">
-          <div class="col-sm-6 col-lg-4 col-xt-3">
+          <div class="col-6 col-lg-4 col-xt-3">
             <div class="card card--rounded">
               <NuxtLinkLocale
                 v-if="item.button_link"

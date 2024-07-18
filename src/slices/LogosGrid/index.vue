@@ -16,6 +16,7 @@ defineProps(
   <LogosGrid
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
+    :data-id="slice.primary.data_id || slice.id"
     :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
     :content="slice.primary.content"
