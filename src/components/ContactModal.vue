@@ -7,15 +7,13 @@
           fill="#4278FA" />
         <path
           d="M30.667 35.3327C30.667 30.666 33.3337 28.666 37.3337 28.666H50.667C54.667 28.666 57.3337 30.666 57.3337 35.3327V44.666C57.3337 49.3327 54.667 51.3327 50.667 51.3327H37.3337"
-          stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+          stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M50.6663 36L46.493 39.3333C45.1197 40.4267 42.8663 40.4267 41.493 39.3333L37.333 36" stroke="white"
+          stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M30.667 46H38.667" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
           stroke-linejoin="round" />
-        <path d="M50.6663 36L46.493 39.3333C45.1197 40.4267 42.8663 40.4267 41.493 39.3333L37.333 36"
-          stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+        <path d="M30.667 40.666H34.667" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
           stroke-linejoin="round" />
-        <path d="M30.667 46H38.667" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
-          stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M30.667 40.666H34.667" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
-          stroke-linecap="round" stroke-linejoin="round" />
         <path
           d="M43.2061 71.8739C45.2494 71.8739 46.6378 73.2855 46.6378 75.4467C46.6378 77.5397 45.3472 79 43.2061 79C41.2214 79 40.1264 77.7442 39.97 76.2352H41.1236C41.2019 77.199 41.9253 78.046 43.2061 78.046C44.614 78.046 45.4841 76.9654 45.4841 75.4467C45.4841 73.8404 44.4869 72.828 43.2061 72.828C41.9449 72.828 41.2312 73.7528 41.1236 74.5121H39.97C40.1655 73.1103 41.2801 71.8739 43.2061 71.8739Z"
           fill="white" />
@@ -73,8 +71,7 @@
         <path
           d="M72.9737 38.6767L74.5507 37.739L74.0167 35.0655L72.1993 34.8002L71.9704 33.6544L79.19 34.8647L79.4074 35.9532L73.2025 39.8224L72.9737 38.6767ZM75.0634 35.2156L75.4601 37.2015L78.0713 35.6521L75.0634 35.2156Z"
           fill="white" />
-        <path
-          d="M80 44.3182V45.428H73.1562V43.9288L78.5335 40.6773H73.1562V39.5772H80V41.0667L74.6228 44.3182H80Z"
+        <path d="M80 44.3182V45.428H73.1562V43.9288L78.5335 40.6773H73.1562V39.5772H80V41.0667L74.6228 44.3182H80Z"
           fill="white" />
         <path
           d="M72.4003 48.3945C72.7722 46.5327 74.3221 45.3607 76.566 45.8051C78.8098 46.2495 79.7913 47.9229 79.4194 49.7848C79.0493 51.6371 77.4994 52.809 75.2556 52.3646C73.0118 51.9202 72.0302 50.2468 72.4003 48.3945ZM73.34 48.5806C73.1131 49.7665 73.7738 50.8999 75.4807 51.2379C77.1971 51.5779 78.2048 50.775 78.4605 49.5948C78.7181 48.4051 78.0573 47.2717 76.3409 46.9318C74.6341 46.5937 73.5688 47.3852 73.34 48.5806Z"
@@ -102,27 +99,180 @@
           <prismic-image :field="modalData.image" />
         </picture>
         <div class="modal-form">
-          <div class="modal-form-content">
-            <h3>{{ modalData.headline }}</h3>
-            <p>{{ modalData.description }}</p>
+          <div class="modal-select-wrapper">
+            <svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5.63985 11.769L5.63985 12.9611L6.49025 12.1257L10.1132 8.56649C10.1528 8.52765 10.2161 8.52764 10.2557 8.56647C10.2963 8.60631 10.2963 8.67171 10.2557 8.71156L5.62829 13.2542C5.57934 13.2975 5.50596 13.2971 5.45797 13.255L0.83102 8.71277C0.79042 8.6729 0.79042 8.60746 0.83102 8.56759C0.87062 8.52874 0.93392 8.52875 0.97352 8.5676L4.59647 12.1252L5.44679 12.9602L5.44679 11.7684L5.44679 0.61606C5.44679 0.56275 5.49001 0.519531 5.54332 0.519531C5.59663 0.519531 5.63985 0.562749 5.63985 0.616059L5.63985 11.769Z"
+                fill="#4278FA" />
+              <path
+                d="M0.83102 8.56759C0.79042 8.60746 0.79042 8.6729 0.83102 8.71277L5.45797 13.255C5.50596 13.2971 5.57934 13.2975 5.62829 13.2542L10.2557 8.71156C10.2963 8.67171 10.2963 8.60631 10.2557 8.56647C10.2161 8.52764 10.1528 8.52765 10.1132 8.56649L6.49025 12.1257L5.63985 12.9611L5.63985 11.769L5.63985 0.616059C5.63985 0.562749 5.59663 0.519531 5.54332 0.519531C5.49001 0.519531 5.44679 0.56275 5.44679 0.61606L5.44679 11.7684L5.44679 12.9602L4.59647 12.1252L0.97352 8.5676C0.93392 8.52875 0.87062 8.52874 0.83102 8.56759ZM0.83102 8.56759L0.48072 8.21079"
+                stroke="#EDEBE3" />
+            </svg>
+
+            <select v-model="selectedForm" value="default" class="modal-select btn btn--dark">
+              <option value="default" :selected="selectedForm === 'default'">Contact</option>
+              <option value="pqrs">PQRS</option>
+              <option value="support">Support</option>
+              <option value="services">Services</option>
+            </select>
           </div>
-          <form @submit.prevent="submitForm" class="modal-form-inputs">
-            <input v-model="name" type="text" name="name" :placeholder="modalData.inputs[0].name" required></input>
-            <input v-model="phone" type="text" name="phone" :placeholder="modalData.inputs[0].phone"
-              required></input>
-            <input v-model="email" type="email" name="email" :placeholder="modalData.inputs[0].email"
-              required></input>
-            <textarea v-model="message" :placeholder="modalData.inputs[0].message" name="message"
-              required></textarea>
-            <p v-if="messageSuccess">{{ messageSuccess }}</p>
-            <button type="submit">{{ modalData.button_label }} <svg width="11" height="14" viewBox="0 0 14 12"
-                fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11.7491 5.90347L12.9413 5.90347L12.1058 5.05307L8.54658 1.43009C8.50773 1.39055 8.50772 1.32718 8.54655 1.28763C8.58639 1.24704 8.65179 1.24704 8.69164 1.28763L13.2343 5.91503C13.2776 5.96398 13.2772 6.03736 13.2351 6.08535L8.69285 10.7123C8.65298 10.7529 8.58754 10.7529 8.54767 10.7123L8.19087 11.0626L8.54767 10.7123C8.50883 10.6727 8.50883 10.6094 8.54768 10.5698L12.1053 6.94685L12.9403 6.09653L11.7486 6.09653L0.596139 6.09653C0.542828 6.09653 0.49961 6.05331 0.49961 6C0.49961 5.94669 0.542827 5.90347 0.596138 5.90347L11.7491 5.90347Z"
-                  fill="#4278FA" stroke="#EDEBE3" />
-              </svg>
-            </button>
-          </form>
+
+
+          <div v-if="selectedForm === 'default'" class="modal-default">
+            <div class="modal-form-content">
+              <h3>{{ modalData.headline }}</h3>
+              <p>{{ modalData.description }}</p>
+            </div>
+            <form @submit.prevent="submitForm" class="modal-form-inputs">
+              <input v-model="name" type="text" name="name" :placeholder="modalData.inputs[0].name" required></input>
+              <input v-model="phone" type="text" name="phone" :placeholder="modalData.inputs[0].phone" required></input>
+              <input v-model="email" type="email" name="email" :placeholder="modalData.inputs[0].email"
+                required></input>
+              <textarea v-model="message" :placeholder="modalData.inputs[0].message" name="message" required></textarea>
+              <p v-if="messageSuccess">{{ messageSuccess }}</p>
+              <button type="submit">{{ modalData.button_label }} <svg width="11" height="14" viewBox="0 0 14 12"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.7491 5.90347L12.9413 5.90347L12.1058 5.05307L8.54658 1.43009C8.50773 1.39055 8.50772 1.32718 8.54655 1.28763C8.58639 1.24704 8.65179 1.24704 8.69164 1.28763L13.2343 5.91503C13.2776 5.96398 13.2772 6.03736 13.2351 6.08535L8.69285 10.7123C8.65298 10.7529 8.58754 10.7529 8.54767 10.7123L8.19087 11.0626L8.54767 10.7123C8.50883 10.6727 8.50883 10.6094 8.54768 10.5698L12.1053 6.94685L12.9403 6.09653L11.7486 6.09653L0.596139 6.09653C0.542828 6.09653 0.49961 6.05331 0.49961 6C0.49961 5.94669 0.542827 5.90347 0.596138 5.90347L11.7491 5.90347Z"
+                    fill="#4278FA" stroke="#EDEBE3" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div v-if="selectedForm === 'pqrs'" class="modal-default">
+            <div class="modal-form-content">
+              <h3>{{ modalData.headline }}</h3>
+              <p>{{ modalData.description }}</p>
+            </div>
+            <form @submit.prevent="pqrsSubmitForm" class="modal-form-inputs">
+              <input v-model="pqrsName" type="text" name="name" :placeholder="modalData.pqrs_inputs[0].name"
+                required></input>
+              <input v-model="pqrsEmail" type="email" name="email" :placeholder="modalData.pqrs_inputs[0].email"
+                required></input>
+              <input v-model="pqrsPhone" type="text" name="phone" :placeholder="modalData.pqrs_inputs[0].phone"
+                required></input>
+              <input v-model="pqrsIdCard" type="text" name="id_card" :placeholder="modalData.pqrs_inputs[0].id_card"
+                required></input>
+              <input v-model="pqrsAddress" type="text" name="city" :placeholder="modalData.pqrs_inputs[0].address"
+                required></input>
+              <input v-model="pqrsCity" type="text" name="city" :placeholder="modalData.pqrs_inputs[0].city"
+                required></input>
+              <input v-model="pqrsSalesPoint" type="text" name="sales_point"
+                :placeholder="modalData.pqrs_inputs[0].sales_point"></input>
+              <div class="input-select-wrapper">
+                <svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5.63985 11.769L5.63985 12.9611L6.49025 12.1257L10.1132 8.56649C10.1528 8.52765 10.2161 8.52764 10.2557 8.56647C10.2963 8.60631 10.2963 8.67171 10.2557 8.71156L5.62829 13.2542C5.57934 13.2975 5.50596 13.2971 5.45797 13.255L0.83102 8.71277C0.79042 8.6729 0.79042 8.60746 0.83102 8.56759C0.87062 8.52874 0.93392 8.52875 0.97352 8.5676L4.59647 12.1252L5.44679 12.9602L5.44679 11.7684L5.44679 0.61606C5.44679 0.56275 5.49001 0.519531 5.54332 0.519531C5.59663 0.519531 5.63985 0.562749 5.63985 0.616059L5.63985 11.769Z"
+                    fill="currentColor" />
+                  <path
+                    d="M0.83102 8.56759C0.79042 8.60746 0.79042 8.6729 0.83102 8.71277L5.45797 13.255C5.50596 13.2971 5.57934 13.2975 5.62829 13.2542L10.2557 8.71156C10.2963 8.67171 10.2963 8.60631 10.2557 8.56647C10.2161 8.52764 10.1528 8.52765 10.1132 8.56649L6.49025 12.1257L5.63985 12.9611L5.63985 11.769L5.63985 0.616059C5.63985 0.562749 5.59663 0.519531 5.54332 0.519531C5.49001 0.519531 5.44679 0.56275 5.44679 0.61606L5.44679 11.7684L5.44679 12.9602L4.59647 12.1252L0.97352 8.5676C0.93392 8.52875 0.87062 8.52874 0.83102 8.56759ZM0.83102 8.56759L0.48072 8.21079"
+                    stroke="currentColor" />
+                </svg>
+                <select v-model="pqrsBrand">
+                  <option disabled hidden>{{ modalData.pqrs_inputs[0].brand }}</option>
+                  <option v-for="(brand, index) in modalData.pqrs_brands" :value="brand.brand">
+                    {{ brand.brand }}
+                  </option>
+                </select>
+              </div>
+
+
+              <input v-model="pqrsProduct" type="text" name="product" :placeholder="modalData.pqrs_inputs[0].product"
+                required></input>
+              <input v-model="pqrsProblem" type="text" name="problem" :placeholder="modalData.pqrs_inputs[0].problem"
+                required></input>
+              <label for="lote">{{ modalData.pqrs_inputs[0].lote }}</label>
+              <input @change="handleSubmitFile" type="file" id="lote" name="lote"
+                :placeholder="modalData.pqrs_inputs[0].lote" required></input>
+              <input v-model="pqrsProductCondition" type="text" name="product_condition"
+                :placeholder="modalData.pqrs_inputs[0].product_condition" required></input>
+              <div class="input-select-wrapper">
+                <svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5.63985 11.769L5.63985 12.9611L6.49025 12.1257L10.1132 8.56649C10.1528 8.52765 10.2161 8.52764 10.2557 8.56647C10.2963 8.60631 10.2963 8.67171 10.2557 8.71156L5.62829 13.2542C5.57934 13.2975 5.50596 13.2971 5.45797 13.255L0.83102 8.71277C0.79042 8.6729 0.79042 8.60746 0.83102 8.56759C0.87062 8.52874 0.93392 8.52875 0.97352 8.5676L4.59647 12.1252L5.44679 12.9602L5.44679 11.7684L5.44679 0.61606C5.44679 0.56275 5.49001 0.519531 5.54332 0.519531C5.59663 0.519531 5.63985 0.562749 5.63985 0.616059L5.63985 11.769Z"
+                    fill="currentColor" />
+                  <path
+                    d="M0.83102 8.56759C0.79042 8.60746 0.79042 8.6729 0.83102 8.71277L5.45797 13.255C5.50596 13.2971 5.57934 13.2975 5.62829 13.2542L10.2557 8.71156C10.2963 8.67171 10.2963 8.60631 10.2557 8.56647C10.2161 8.52764 10.1528 8.52765 10.1132 8.56649L6.49025 12.1257L5.63985 12.9611L5.63985 11.769L5.63985 0.616059C5.63985 0.562749 5.59663 0.519531 5.54332 0.519531C5.49001 0.519531 5.44679 0.56275 5.44679 0.61606L5.44679 11.7684L5.44679 12.9602L4.59647 12.1252L0.97352 8.5676C0.93392 8.52875 0.87062 8.52874 0.83102 8.56759ZM0.83102 8.56759L0.48072 8.21079"
+                    stroke="currentColor" />
+                </svg>
+                <select v-model="pqrsRemain">
+                  <option disabled hidden selected>{{ modalData.pqrs_inputs[0].remain }}</option>
+                  <option value="yes">Sí</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+
+              <input v-model="pqrsConsultor" type="text" name="consultor"
+                :placeholder="modalData.pqrs_inputs[0].consultor"></input>
+              <input v-model="pqrsConsultorPhone" type="text" name="consultor_phone"
+                :placeholder="modalData.pqrs_inputs[0].consultor_phone"></input>
+              <p v-if="messageSuccess">{{ messageSuccess }}</p>
+              <button type="submit">{{ modalData.button_label }} <svg width="11" height="14" viewBox="0 0 14 12"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.7491 5.90347L12.9413 5.90347L12.1058 5.05307L8.54658 1.43009C8.50773 1.39055 8.50772 1.32718 8.54655 1.28763C8.58639 1.24704 8.65179 1.24704 8.69164 1.28763L13.2343 5.91503C13.2776 5.96398 13.2772 6.03736 13.2351 6.08535L8.69285 10.7123C8.65298 10.7529 8.58754 10.7529 8.54767 10.7123L8.19087 11.0626L8.54767 10.7123C8.50883 10.6727 8.50883 10.6094 8.54768 10.5698L12.1053 6.94685L12.9403 6.09653L11.7486 6.09653L0.596139 6.09653C0.542828 6.09653 0.49961 6.05331 0.49961 6C0.49961 5.94669 0.542827 5.90347 0.596138 5.90347L11.7491 5.90347Z"
+                    fill="#4278FA" stroke="#EDEBE3" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div v-if="selectedForm === 'support'" class="modal-default">
+            <div class="modal-form-content">
+              <h3>{{ modalData.headline }}</h3>
+              <p>{{ modalData.description }}</p>
+            </div>
+            <form @submit.prevent="submitForm" class="modal-form-inputs">
+              <input v-model="supportName" type="text" name="name" :placeholder="modalData.support_inputs[0].name"
+                required></input>
+              <input v-model="supportPhone" type="text" name="phone" :placeholder="modalData.support_inputs[0].phone"
+                required></input>
+              <input v-model="supportEmail" type="email" name="email" :placeholder="modalData.support_inputs[0].email"
+                required></input>
+              <input v-model="supportSubject" type="text" name="subject"
+                :placeholder="modalData.support_inputs[0].subject" required></input>
+              <textarea v-model="supportMessage" :placeholder="modalData.support_inputs[0].mensaje" name="message"
+                required></textarea>
+              <p v-if="messageSuccess">{{ messageSuccess }}</p>
+              <button type="submit">{{ modalData.button_label }} <svg width="11" height="14" viewBox="0 0 14 12"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.7491 5.90347L12.9413 5.90347L12.1058 5.05307L8.54658 1.43009C8.50773 1.39055 8.50772 1.32718 8.54655 1.28763C8.58639 1.24704 8.65179 1.24704 8.69164 1.28763L13.2343 5.91503C13.2776 5.96398 13.2772 6.03736 13.2351 6.08535L8.69285 10.7123C8.65298 10.7529 8.58754 10.7529 8.54767 10.7123L8.19087 11.0626L8.54767 10.7123C8.50883 10.6727 8.50883 10.6094 8.54768 10.5698L12.1053 6.94685L12.9403 6.09653L11.7486 6.09653L0.596139 6.09653C0.542828 6.09653 0.49961 6.05331 0.49961 6C0.49961 5.94669 0.542827 5.90347 0.596138 5.90347L11.7491 5.90347Z"
+                    fill="#4278FA" stroke="#EDEBE3" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div v-if="selectedForm === 'services'" class="modal-default">
+            <div class="modal-form-content">
+              <h3>{{ modalData.headline }}</h3>
+              <p>{{ modalData.description }}</p>
+            </div>
+            <form @submit.prevent="submitForm" class="modal-form-inputs">
+              <input v-model="servicesName" type="text" name="name" :placeholder="modalData.services_inputs[0].name"
+                required></input>
+              <input v-model="servicesPhone" type="text" name="phone" :placeholder="modalData.services_inputs[0].phone"
+                required></input>
+              <input v-model="servicesEmail" type="email" name="email" :placeholder="modalData.services_inputs[0].email"
+                required></input>
+              <input v-model="servicesCity" type="text" name="city" :placeholder="modalData.services_inputs[0].city"
+                required></input>
+              <input v-model="servicesSubject" type="text" name="subject"
+                :placeholder="modalData.services_inputs[0].subject" required></input>
+              <textarea v-model="servicesMessage" :placeholder="modalData.services_inputs[0].message" name="message"
+                required></textarea>
+              <p v-if="messageSuccess">{{ messageSuccess }}</p>
+              <button type="submit">{{ modalData.button_label }} <svg width="11" height="14" viewBox="0 0 14 12"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.7491 5.90347L12.9413 5.90347L12.1058 5.05307L8.54658 1.43009C8.50773 1.39055 8.50772 1.32718 8.54655 1.28763C8.58639 1.24704 8.65179 1.24704 8.69164 1.28763L13.2343 5.91503C13.2776 5.96398 13.2772 6.03736 13.2351 6.08535L8.69285 10.7123C8.65298 10.7529 8.58754 10.7529 8.54767 10.7123L8.19087 11.0626L8.54767 10.7123C8.50883 10.6727 8.50883 10.6094 8.54768 10.5698L12.1053 6.94685L12.9403 6.09653L11.7486 6.09653L0.596139 6.09653C0.542828 6.09653 0.49961 6.05331 0.49961 6C0.49961 5.94669 0.542827 5.90347 0.596138 5.90347L11.7491 5.90347Z"
+                    fill="#4278FA" stroke="#EDEBE3" />
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -139,6 +289,7 @@ function toggleModal() {
   showModal.value = !showModal.value
 }
 
+const selectedForm = ref('default')
 
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
@@ -164,9 +315,9 @@ function submitForm(e) {
     message: message.value
   };
   axios
-    .post("https://getform.io/f/rbeqwkxb", data, {
+    .post("https://getform.io/f/anlexmea", data, {
       headers: {
-        Accept: "application/json"
+        Accept: "application/x-www-form-urlencoded",
       }
     })
     .then(
@@ -174,12 +325,146 @@ function submitForm(e) {
         if (response.status === 200) {
           messageSuccess.value = 'Se ha enviado tu información correctamente'
           e.target.reset()
+        } else {
+          console.error('No se pudo enviar tu formulario')
         }
       },
     );
 }
+
+const pqrsName = ref(null)
+const pqrsEmail = ref(null)
+const pqrsPhone = ref(null)
+const pqrsIdCard = ref(null)
+const pqrsCity = ref(null)
+const pqrsAddress = ref(null)
+const pqrsSalesPoint = ref(null)
+const pqrsBrand = modalData.pqrs_inputs[0].brand
+const pqrsProduct = ref(null)
+const pqrsProblem = ref(null)
+const pqrsLote = ref(null)
+const pqrsProductCondition = ref(null)
+const pqrsRemain = modalData.pqrs_inputs[0].remain
+const pqrsConsultor = ref(null)
+const pqrsConsultorPhone = ref(null)
+
+function handleSubmitFile(e) {
+  pqrsLote.value = e.target.files[0]
+}
+
+function pqrsSubmitForm(e) {
+  e.preventDefault();
+  let data = {
+    access_key: '68a397df-297d-4bf1-9fc6-51be330cc879',
+    name: pqrsName.value,
+    email: pqrsEmail.value,
+    phone: pqrsPhone.value,
+    id_card: pqrsIdCard.value,
+    city: pqrsCity.value,
+    address: pqrsAddress.value,
+    sales_point: pqrsSalesPoint.value,
+    brand: pqrsBrand.value,
+    product: pqrsProduct.value,
+    problem: pqrsProblem.value,
+    lote: pqrsLote.value,
+    product_condition: pqrsProductCondition.value,
+    remain: pqrsRemain.value,
+    consultor: pqrsConsultor.value,
+    consultor_phone: pqrsConsultorPhone.value
+  };
+
+  axios
+    .post("https://api.web3forms.com/submit", data, {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    })
+    .then(
+      response => {
+        console.log(response)
+        if (response.status === 200) {
+          messageSuccess.value = 'Se ha enviado tu información correctamente'
+          e.target.reset()
+        } else {
+          console.error(response)
+        }
+      },
+    );
+}
+
+const servicesName = ref(null)
+const servicesEmail = ref(null)
+const servicesPhone = ref(null)
+const servicesSubject = ref(null)
+const servicesMessage = ref(null)
+
+function servicesSubmitForm(e) {
+  e.preventDefault();
+  let data = {
+    name: servicesName.value,
+    email: servicesEmail.value,
+    phone: servicesPhone.value,
+    subject: servicesSubject.value,
+    message: servicesMessage.value
+  };
+
+  axios
+    .post("https://api.web3forms.com/submit", data, {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    })
+    .then(
+      response => {
+        console.log(response)
+        if (response.status === 200) {
+          messageSuccess.value = 'Se ha enviado tu información correctamente'
+          e.target.reset()
+        } else {
+          console.error(response)
+        }
+      },
+    );
+}
+
+const supportName = ref(null)
+const supportEmail = ref(null)
+const supportPhone = ref(null)
+const supportSubject = ref(null)
+const supportMessage = ref(null)
+
+function supportSubmitForm(e) {
+  e.preventDefault();
+  let data = {
+    name: supportName.value,
+    email: supportEmail.value,
+    phone: supportPhone.value,
+    subject: supportSubject.value,
+    message: supportMessage.value
+  };
+
+  axios
+    .post("https://api.web3forms.com/submit", data, {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    })
+    .then(
+      response => {
+        console.log(response)
+        if (response.status === 200) {
+          messageSuccess.value = 'Se ha enviado tu información correctamente'
+          e.target.reset()
+        } else {
+          console.error(response)
+        }
+      },
+    );
+}
+
 </script>
 
 <style lang="scss" scoped>
 @import "@scss/components/contact-modal";
+@import "@scss/components/button";
 </style>
