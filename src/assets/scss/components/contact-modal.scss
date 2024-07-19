@@ -65,12 +65,34 @@
     }
 
     .modal-form {
+      position: relative;
       padding: 2rem 1.4rem;
 
       .modal-select-wrapper {
-        position: relative;
+        position: absolute;
+        top: 250px;
         width: fit-content;
         margin-bottom: 1rem;
+
+        @media (min-width: 400px) {
+          top: 200px;
+        }
+
+        @media (min-width: 550px) {
+          top: 160px;
+        }
+
+        @media (min-width: 768px) {
+          top: 160px;
+        }
+
+        @media (min-width: 1000px) {
+          top: 230px;
+        }
+
+        @media (min-width: 1440px) {
+          top: 200px;
+        }
 
         svg {
           position: absolute;
@@ -112,6 +134,7 @@
         flex-direction: column;
         margin-top: 2rem;
         gap: 1rem;
+        padding-top: 2rem;
 
         input,
         textarea {
