@@ -314,7 +314,7 @@ function submitForm(e) {
     message: message.value
   };
   axios
-    .post("https://getform.io/f/anlexmea", data, {
+    .post("https://getform.io/f/rbeqwkxb", data, {
       headers: {
         Accept: "application/x-www-form-urlencoded",
       }
@@ -373,7 +373,7 @@ function pqrsSubmitForm(e) {
   };
 
   axios
-    .post("https://api.web3forms.com/submit", data, {
+    .post("https://getform.io/f/rbeqwkxb", data, {
       headers: {
         'content-type': 'multipart/form-data'
       }
@@ -408,7 +408,7 @@ function servicesSubmitForm(e) {
   };
 
   axios
-    .post("https://api.web3forms.com/submit", data, {
+    .post("https://getform.io/f/rbeqwkxb", data, {
       headers: {
         'content-type': 'multipart/form-data'
       }
@@ -443,7 +443,7 @@ function supportSubmitForm(e) {
   };
 
   axios
-    .post("https://api.web3forms.com/submit", data, {
+    .post("https://getform.io/f/rbeqwkxb", data, {
       headers: {
         'content-type': 'multipart/form-data'
       }
