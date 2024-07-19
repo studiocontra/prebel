@@ -141,7 +141,7 @@
 
           <div v-if="selectedForm === 'pqrs'" class="modal-default">
             <div class="modal-form-content">
-              <h3>{{ modalData.pqrs__labels[0].headline }}</h3>
+              <h3>{{ modalData.headline }}</h3>
               <p>{{ modalData.description }}</p>
             </div>
             <form @submit.prevent="pqrsSubmitForm" class="modal-form-inputs">
