@@ -303,6 +303,16 @@
 				"__TYPE__": "FieldContent",
 				"value": "bicycle",
 				"type": "Text"
+			},
+			"primary_services_label": {
+				"__TYPE__": "FieldContent",
+				"value": "mostly",
+				"type": "Text"
+			},
+			"complementary_services_label": {
+				"__TYPE__": "FieldContent",
+				"value": "bound",
+				"type": "Text"
 			}
 		},
 		"items": [

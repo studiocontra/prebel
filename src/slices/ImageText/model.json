@@ -244,6 +244,20 @@
             "label": "Headline",
             "placeholder": ""
           }
+        },
+        "primary_services_label": {
+          "type": "Text",
+          "config": {
+            "label": "Primary services label",
+            "placeholder": ""
+          }
+        },
+        "complementary_services_label": {
+          "type": "Text",
+          "config": {
+            "label": "Complementary services label",
+            "placeholder": ""
+          }
         }
       },
       "items": {

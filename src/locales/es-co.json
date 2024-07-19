@@ -46,5 +46,9 @@
       "button label": "Escoge un archivo"
     },
     "submit": "Enviar"
+  },
+  "tabs": {
+    "principal": "Servicios principales",
+    "complementarios": "Servicios complementarios"
   }
 }

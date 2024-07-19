@@ -2925,6 +2925,26 @@ export interface ImageTextSliceImageTextTabsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   headline: prismic.KeyTextField;
+
+  /**
+   * Primary services label field in *ImageText → Image Text with Tabs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.imageTextTabs.primary.primary_services_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  primary_services_label: prismic.KeyTextField;
+
+  /**
+   * Complementary services label field in *ImageText → Image Text with Tabs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_text.imageTextTabs.primary.complementary_services_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  complementary_services_label: prismic.KeyTextField;
 }
 
 /**

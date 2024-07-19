@@ -31,6 +31,8 @@ defineProps(
     :data-id="slice.primary.data_id"
     :eyebrow="slice.primary.eyebrow"
     :headline="slice.primary.headline"
+    :primary="slice.primary.primary_services_label"
+    :complementary="slice.primary.complementary_services_label"
     :slides="slice.items" />
 
   <ImageTextBox

@@ -10,6 +10,7 @@
   @include m768 {
     padding: 48px 0;
   }
+
   @include m1400 {
     padding: 80px 0;
   }
@@ -17,7 +18,7 @@
 
 .box__headline {
   max-width: 650px;
-  margin: 0 auto 3em;
+  margin: 0 auto 1em;
   text-align: center;
 
   .eyebrow {
@@ -31,6 +32,7 @@
   @include m768 {
     padding: 0 5%;
   }
+
   @include m1400 {
     padding: 0 58px;
   }
@@ -57,6 +59,7 @@
     }
 
     .text {
+
       &,
       :deep(p) {
         font-size: clamp(18px, 3.5vw, 24px);
@@ -76,10 +79,16 @@
     top: 0;
     display: flex;
     max-width: 850px;
-    margin: 0 auto 3em;
+    margin: 0 auto 4em;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 18px;
+    gap: 3.4rem 16px;
+    padding-top: 2rem;
+
+    @media (max-width: 800px) {
+      margin: 0 auto 1em;
+      gap: 0 16px;
+    }
 
     .swiper-pagination-bullet {
       display: inline-block;
@@ -102,6 +111,77 @@
       &-active {
         background-color: $black;
       }
+
+      @media (max-width: 800px) {
+        &:nth-child(3) {
+          margin: 16px 100% 3rem 100%;
+        }
+
+        &:nth-child(6) {
+          margin: 16px 100% 3rem 100%;
+        }
+      }
+
+      @media (max-width: 640px) {
+        &:nth-child(2) {
+          margin: 16px 100% 0 100%;
+        }
+
+        &:nth-child(3) {
+          margin: 16px 100% 3rem 100%;
+        }
+
+        &:nth-child(5) {
+          margin: 16px 100% 0 100%;
+        }
+
+        &:nth-child(6) {
+          margin: 16px 100% 3rem 100%;
+        }
+      }
+
+      @media (max-width: 400px) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.flex-servicios {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+
+  &-content {
+    position: absolute;
+    top: -.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem 0;
+    flex-direction: column;
+
+    @media (max-width: 800px) {
+      gap: 4.4rem 0;
+    }
+
+    @media (max-width: 640px) {
+      gap: 7rem 0;
+    }
+
+    @media (max-width: 474px) {
+      gap: 8rem 0;
+    }
+
+    @media (max-width: 400px) {
+      gap: 9rem 0;
+    }
+
+    p {
+      line-height: .7;
+      text-align: center;
     }
   }
 }

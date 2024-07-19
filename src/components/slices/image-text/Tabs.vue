@@ -12,25 +12,26 @@
           </h2>
         </div>
 
-        <swiper
-          class="swiper img-text-box__slider"
-          :modules="[Pagination, EffectFade]"
-          effect="fade"
-          :fadeEffect="{
-            crossFade: true
-          }"
-          :loop="true"
-          :pagination="{
-            el: '.custom-pagination',
-            renderBullet: function (index, className) {
-              return `<span class='${className}'>${props.slides[index].eyebrow}</span>`;
-            },
-            clickable: true
-          }"
-          :slidesPerView="1">
+        <swiper class="swiper img-text-box__slider" :modules="[Pagination, EffectFade]" effect="fade" :fadeEffect="{
+          crossFade: true
+        }" :loop="true" :pagination="{
+          el: '.custom-pagination',
+          renderBullet: function (index, className) {
+            return `
+              <span class='${className}'>${props.slides[index].eyebrow}</span>
+              `;
+          },
+          clickable: true
+        }" :slidesPerView="1">
 
           <template v-slot:container-start>
-            <div class="custom-pagination"></div>
+            <div class="flex-servicios">
+              <div class="flex-servicios-content">
+                <p>{{ primary }}</p>
+                <p>{{ complementary }}</p>
+              </div>
+              <div class="custom-pagination"></div>
+            </div>
           </template>
 
           <swiper-slide v-for="(item, id) in props.slides" :key="id">
@@ -43,9 +44,7 @@
                     </h3>
                   </div>
 
-                  <PrismicRichText
-                    :field="item.content"
-                    class="text" />
+                  <PrismicRichText :field="item.content" class="text" />
                 </div>
               </div>
               <div class="col-lg-6">
@@ -79,6 +78,8 @@ const props = defineProps({
   },
   eyebrow: String,
   headline: String,
+  primary: String,
+  complementary: String,
   slides: [Array, Boolean]
 });
 
@@ -90,5 +91,5 @@ function pad(num) {
 
 
 <style lang="scss" scoped>
-  @import "@scss/components/slices/image-text/tabs";
+@import "@scss/components/slices/image-text/tabs";
 </style>
