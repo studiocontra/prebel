@@ -16,6 +16,7 @@ defineProps(
   <CalloutText
     :headline="slice.primary.headline"
     :content="slice.primary.content"
-    :items="slice.items"
+    :buttonLabel="slice.primary.button_label"
+    :buttonLink="slice.primary.button_link"
    />
 </template>

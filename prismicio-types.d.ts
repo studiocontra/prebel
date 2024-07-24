@@ -2146,31 +2146,26 @@ export interface CalloutTextContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
-}
 
-/**
- * Primary content in *CalloutTextContent → Items*
- */
-export interface CalloutTextContentSliceDefaultItem {
   /**
-   * Buton label field in *CalloutTextContent → Items*
+   * Button label field in *CalloutTextContent → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: callout_text_content.items[].buton_label
+   * - **API ID Path**: callout_text_content.default.primary.button_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  buton_label: prismic.KeyTextField;
+  button_label: prismic.KeyTextField;
 
   /**
-   * Button field in *CalloutTextContent → Items*
+   * Button link field in *CalloutTextContent → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: callout_text_content.items[].button
+   * - **API ID Path**: callout_text_content.default.primary.button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  button: prismic.LinkField;
+  button_link: prismic.LinkField;
 }
 
 /**
@@ -2183,7 +2178,7 @@ export interface CalloutTextContentSliceDefaultItem {
 export type CalloutTextContentSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<CalloutTextContentSliceDefaultPrimary>,
-  Simplify<CalloutTextContentSliceDefaultItem>
+  never
 >;
 
 /**
@@ -5484,7 +5479,6 @@ declare module "@prismicio/client" {
       BannerCtaSliceDefault,
       CalloutTextContentSlice,
       CalloutTextContentSliceDefaultPrimary,
-      CalloutTextContentSliceDefaultItem,
       CalloutTextContentSliceVariation,
       CalloutTextContentSliceDefault,
       CardsSlice,

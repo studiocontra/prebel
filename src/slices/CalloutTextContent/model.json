@@ -27,20 +27,18 @@
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
-        }
-      },
-      "items": {
-        "buton_label": {
+        },
+        "button_label": {
           "type": "Text",
           "config": {
-            "label": "Buton label",
+            "label": "Button label",
             "placeholder": ""
           }
         },
-        "button": {
+        "button_link": {
           "type": "Link",
           "config": {
-            "label": "Button",
+            "label": "Button link",
             "placeholder": "",
             "select": null
           }
