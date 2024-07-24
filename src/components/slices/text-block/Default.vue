@@ -25,14 +25,14 @@
           <div
             v-if="buttonLabel"
             class="wrap-btn">
-            <a class="btn btn--blue" :href="buttonLink.url">
+            <a class="btn btn--blue" target="_blank" :href="buttonLink.url">
               {{ buttonLabel }}
             </a>
           </div>
           <div
             v-if="buttonLabelTwo"
             class="wrap-btn">
-            <a class="btn btn--blue" :href="buttonLinkTwo.url || '#'">
+            <a class="btn btn--blue" target="_blank" :href="buttonLinkTwo.url">
               {{ buttonLabelTwo }}
             </a>
           </div>

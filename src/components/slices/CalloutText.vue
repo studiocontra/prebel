@@ -14,7 +14,7 @@
 
             <div class="ctas">
               <div v-if="buttonLabel" class="wrap-btn">
-                <a class="btn btn--dark" :href="buttonLink.url">
+                <a class="btn btn--dark" target="_blank" :href="buttonLink.url">
                   {{ buttonLabel }}
                 </a>
               </div>
