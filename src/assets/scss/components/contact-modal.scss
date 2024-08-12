@@ -69,30 +69,8 @@
       padding: 2rem 1.4rem;
 
       .modal-select-wrapper {
-        position: absolute;
-        top: 250px;
+        position: relative;
         width: fit-content;
-        margin-bottom: 1rem;
-
-        @media (min-width: 400px) {
-          top: 200px;
-        }
-
-        @media (min-width: 550px) {
-          top: 160px;
-        }
-
-        @media (min-width: 768px) {
-          top: 160px;
-        }
-
-        @media (min-width: 1000px) {
-          top: 230px;
-        }
-
-        @media (min-width: 1440px) {
-          top: 200px;
-        }
 
         svg {
           position: absolute;
@@ -109,15 +87,8 @@
           padding-right: 2rem;
           color: #fff;
           background-color: $gray;
-
-          option {
-            margin-top: .4rem;
-            border-radius: 4px;
-          }
         }
       }
-
-
 
       h3 {
         margin: 0;
@@ -134,7 +105,6 @@
         flex-direction: column;
         margin-top: 2rem;
         gap: 1rem;
-        padding-top: 2rem;
 
         input,
         textarea {
@@ -267,6 +237,7 @@
       background-color: rgba(140, 150, 161, 0.6);
       font-size: 1rem;
       line-height: 0.9;
+      z-index: 10;
     }
 
     .modal-close:hover {

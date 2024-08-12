@@ -835,31 +835,6 @@ export interface ModalDocumentDataInputsItem {
 }
 
 /**
- * Item in *Modal → PQRS Labels*
- */
-export interface ModalDocumentDataPqrsLabelsItem {
-  /**
-   * Headline field in *Modal → PQRS Labels*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.pqrs_labels[].headline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  headline: prismic.KeyTextField;
-
-  /**
-   * Description field in *Modal → PQRS Labels*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.pqrs_labels[].description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
-}
-
-/**
  * Item in *Modal → PQRS Inputs*
  */
 export interface ModalDocumentDataPqrsInputsItem {
@@ -1030,31 +1005,6 @@ export interface ModalDocumentDataPqrsBrandsItem {
 }
 
 /**
- * Item in *Modal → Support labels*
- */
-export interface ModalDocumentDataSupportLabelsItem {
-  /**
-   * Headline field in *Modal → Support labels*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.support_labels[].headline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  headline: prismic.KeyTextField;
-
-  /**
-   * Description field in *Modal → Support labels*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.support_labels[].description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
-}
-
-/**
  * Item in *Modal → Support inputs*
  */
 export interface ModalDocumentDataSupportInputsItem {
@@ -1107,31 +1057,6 @@ export interface ModalDocumentDataSupportInputsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   mensaje: prismic.KeyTextField;
-}
-
-/**
- * Item in *Modal → Services labels*
- */
-export interface ModalDocumentDataServicesLabelsItem {
-  /**
-   * Headline field in *Modal → Services labels*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.services_labels[].headline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  headline: prismic.KeyTextField;
-
-  /**
-   * Description field in *Modal → Services labels*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.services_labels[].description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
 }
 
 /**
@@ -1257,17 +1182,6 @@ interface ModalDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   inputs: prismic.GroupField<Simplify<ModalDocumentDataInputsItem>> /**
-   * PQRS Labels field in *Modal*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.pqrs_labels[]
-   * - **Tab**: PQRS
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  pqrs_labels: prismic.GroupField<Simplify<ModalDocumentDataPqrsLabelsItem>>;
-
-  /**
    * PQRS Inputs field in *Modal*
    *
    * - **Field Type**: Group
@@ -1275,7 +1189,7 @@ interface ModalDocumentData {
    * - **API ID Path**: modal.pqrs_inputs[]
    * - **Tab**: PQRS
    * - **Documentation**: https://prismic.io/docs/field#group
-   */
+   */;
   pqrs_inputs: prismic.GroupField<Simplify<ModalDocumentDataPqrsInputsItem>>;
 
   /**
@@ -1288,19 +1202,6 @@ interface ModalDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   pqrs_brands: prismic.GroupField<Simplify<ModalDocumentDataPqrsBrandsItem>> /**
-   * Support labels field in *Modal*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.support_labels[]
-   * - **Tab**: Support
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  support_labels: prismic.GroupField<
-    Simplify<ModalDocumentDataSupportLabelsItem>
-  >;
-
-  /**
    * Support inputs field in *Modal*
    *
    * - **Field Type**: Group
@@ -1308,23 +1209,10 @@ interface ModalDocumentData {
    * - **API ID Path**: modal.support_inputs[]
    * - **Tab**: Support
    * - **Documentation**: https://prismic.io/docs/field#group
-   */
+   */;
   support_inputs: prismic.GroupField<
     Simplify<ModalDocumentDataSupportInputsItem>
   > /**
-   * Services labels field in *Modal*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.services_labels[]
-   * - **Tab**: Services
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  services_labels: prismic.GroupField<
-    Simplify<ModalDocumentDataServicesLabelsItem>
-  >;
-
-  /**
    * Services inputs field in *Modal*
    *
    * - **Field Type**: Group
@@ -1332,7 +1220,7 @@ interface ModalDocumentData {
    * - **API ID Path**: modal.services_inputs[]
    * - **Tab**: Services
    * - **Documentation**: https://prismic.io/docs/field#group
-   */
+   */;
   services_inputs: prismic.GroupField<
     Simplify<ModalDocumentDataServicesInputsItem>
   >;
@@ -5450,12 +5338,9 @@ declare module "@prismicio/client" {
       ModalDocument,
       ModalDocumentData,
       ModalDocumentDataInputsItem,
-      ModalDocumentDataPqrsLabelsItem,
       ModalDocumentDataPqrsInputsItem,
       ModalDocumentDataPqrsBrandsItem,
-      ModalDocumentDataSupportLabelsItem,
       ModalDocumentDataSupportInputsItem,
-      ModalDocumentDataServicesLabelsItem,
       ModalDocumentDataServicesInputsItem,
       PaymentMethodsDocument,
       PaymentMethodsDocumentData,

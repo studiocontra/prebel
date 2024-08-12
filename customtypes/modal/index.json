@@ -74,29 +74,6 @@
       }
     },
     "PQRS": {
-      "pqrs_labels": {
-        "type": "Group",
-        "config": {
-          "label": "PQRS Labels",
-          "repeat": false,
-          "fields": {
-            "headline": {
-              "type": "Text",
-              "config": {
-                "label": "Headline",
-                "placeholder": ""
-              }
-            },
-            "description": {
-              "type": "Text",
-              "config": {
-                "label": "Description",
-                "placeholder": ""
-              }
-            }
-          }
-        }
-      },
       "pqrs_inputs": {
         "type": "Group",
         "config": {
@@ -229,29 +206,6 @@
       }
     },
     "Support": {
-      "support_labels": {
-        "type": "Group",
-        "config": {
-          "label": "Support labels",
-          "repeat": false,
-          "fields": {
-            "headline": {
-              "type": "Text",
-              "config": {
-                "label": "Headline",
-                "placeholder": ""
-              }
-            },
-            "description": {
-              "type": "Text",
-              "config": {
-                "label": "Description",
-                "placeholder": ""
-              }
-            }
-          }
-        }
-      },
       "support_inputs": {
         "type": "Group",
         "config": {
@@ -298,29 +252,6 @@
       }
     },
     "Services": {
-      "services_labels": {
-        "type": "Group",
-        "config": {
-          "label": "Services labels",
-          "repeat": false,
-          "fields": {
-            "headline": {
-              "type": "Text",
-              "config": {
-                "label": "Headline",
-                "placeholder": ""
-              }
-            },
-            "description": {
-              "type": "Text",
-              "config": {
-                "label": "Description",
-                "placeholder": ""
-              }
-            }
-          }
-        }
-      },
       "services_inputs": {
         "type": "Group",
         "config": {

@@ -99,6 +99,11 @@
           <prismic-image :field="modalData.image" />
         </picture>
         <div class="modal-form">
+
+          <div class="modal-form-content">
+            <h3>{{ modalData.headline }}</h3>
+            <p>{{ modalData.description }}</p>
+          </div>
           <div class="modal-select-wrapper">
             <svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -118,10 +123,6 @@
           </div>
 
           <div v-if="selectedForm === 'default'" class="modal-default">
-            <div class="modal-form-content">
-              <h3>{{ modalData.headline }}</h3>
-              <p>{{ modalData.description }}</p>
-            </div>
             <form @submit.prevent="submitForm" class="modal-form-inputs">
               <input v-model="name" type="text" name="name" :placeholder="modalData.inputs[0].name" required></input>
               <input v-model="phone" type="text" name="phone" :placeholder="modalData.inputs[0].phone" required></input>
@@ -140,10 +141,6 @@
           </div>
 
           <div v-if="selectedForm === 'pqrs'" class="modal-default">
-            <div class="modal-form-content">
-              <h3>{{ modalData.headline }}</h3>
-              <p>{{ modalData.description }}</p>
-            </div>
             <form @submit.prevent="pqrsSubmitForm" class="modal-form-inputs">
               <input v-model="pqrsName" type="text" name="name" :placeholder="modalData.pqrs_inputs[0].name"
                 required></input>
@@ -218,10 +215,6 @@
           </div>
 
           <div v-if="selectedForm === 'support'" class="modal-default">
-            <div class="modal-form-content">
-              <h3>{{ modalData.headline }}</h3>
-              <p>{{ modalData.description }}</p>
-            </div>
             <form @submit.prevent="submitForm" class="modal-form-inputs">
               <input v-model="supportName" type="text" name="name" :placeholder="modalData.support_inputs[0].name"
                 required></input>
@@ -245,10 +238,6 @@
           </div>
 
           <div v-if="selectedForm === 'services'" class="modal-default">
-            <div class="modal-form-content">
-              <h3>{{ modalData.headline }}</h3>
-              <p>{{ modalData.description }}</p>
-            </div>
             <form @submit.prevent="submitForm" class="modal-form-inputs">
               <input v-model="servicesName" type="text" name="name" :placeholder="modalData.services_inputs[0].name"
                 required></input>
