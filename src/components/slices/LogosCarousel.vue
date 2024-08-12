@@ -15,6 +15,9 @@
           <template v-for="(logo, id) in items" :key="id">
             <prismic-image :field="logo.logo" class="single-logo" />
           </template>
+          <template v-for="(logo, id) in items" :key="id">
+            <prismic-image :field="logo.logo" class="single-logo" />
+          </template>
         </div>
       </div>
     </div>

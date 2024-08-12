@@ -13,7 +13,7 @@
   animation: scrolling 20s linear infinite;
   align-items: center;
   flex: 0;
-  gap: 0 30px;
+  gap: 0 90px;
 
   .single-logo {
     margin: 0;
@@ -29,7 +29,34 @@
   0% {
     translate: 0;
   }
+
   100% {
     translate: -92% 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .marquee__content {
+    display: flex;
+    animation: scrolling 20s linear infinite;
+    align-items: center;
+    flex: 0;
+    gap: 0 30px;
+  }
+
+
+  .single-logo {
+    width: 220px;
+    margin: 0 30px;
+  }
+
+  @keyframes scrolling {
+    0% {
+      translate: 0;
+    }
+
+    100% {
+      translate: -600% 0;
+    }
   }
 }
