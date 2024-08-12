@@ -10,17 +10,23 @@
 .hero-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
   color: $white;
+
+  @include m992 {
+    flex-direction: row;
+    align-items: center;
+    padding: 7rem 0 2.5rem 0;
+  }
 
   h1 {
     max-width: 700px;
     text-wrap: balance;
-    padding-top: 3rem;
   }
 
   picture {
     position: relative;
-    align-self: flex-end;
     margin-top: -3.5rem;
 
     :deep(.drop) {
@@ -52,6 +58,7 @@
 
     @include m768 {
       padding-right: 4rem;
+
       :deep(.drop) {
         width: 160px;
       }
@@ -69,16 +76,30 @@
       }
     }
 
+    @include m992 {
+      margin-top: 0rem;
+    }
+
+
     img {
       position: relative;
       border-radius: .6rem;
       z-index: 1;
+      width: 100%;
 
-      @include m768 {
-        width: 700px;
+      @include m992 {
+        width: 400px;
       }
+
+      @include m992 {
+        width: 400px;
+      }
+
+      @include m1200 {
+        width: 100%;
+      }
+
+      max-width: 600px;
     }
   }
-
-  
 }
