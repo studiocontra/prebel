@@ -33,6 +33,10 @@
     }
   }
 
+  .swiper {
+    padding-bottom: 1rem;
+  }
+
   :deep(.swiper-pagination) {
     position: absolute;
     z-index: 2;
