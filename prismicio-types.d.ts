@@ -1162,6 +1162,17 @@ interface ModalDocumentData {
   description: prismic.KeyTextField;
 
   /**
+   * Description rich field in *Modal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: modal.description_rich
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_rich: prismic.RichTextField;
+
+  /**
    * Button label field in *Modal*
    *
    * - **Field Type**: Text

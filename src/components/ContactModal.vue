@@ -102,7 +102,8 @@
 
           <div class="modal-form-content">
             <h3>{{ modalData.headline }}</h3>
-            <p>{{ modalData.description }}</p>
+            <p>
+              <PrismicRichText :field="modalData.description_rich" /> </p>
           </div>
           <div class="modal-select-wrapper">
             <svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
