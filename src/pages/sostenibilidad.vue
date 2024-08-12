@@ -18,6 +18,8 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const { value: { iso, code } } = localeProperties;
+import { useHeaderStore } from '@/stores/header';
+const headerStore = useHeaderStore();
 
 // Import your slices
 import ImageText from '@/slices/ImageText'
@@ -33,6 +35,8 @@ const { data } = await useAsyncData("[sustainability]", () =>
 );
 
 const sustainabilityData = data.value.data;
+
+onMounted(() => headerStore.setTheme(sustainabilityData.header_color_scheme.toLowerCase()));
 </script>
 
 <style lang="scss" scoped>
