@@ -2,8 +2,8 @@
   <div class="section items-image">
     <div class="container">
 
-      <div class="row align-center">
-        <div class="col-md-7 col-lg-6">
+      <div class="row align-center justify-center">
+        <div class="col-md-7 col-lg-5 items-col">
           <div class="items-image__items">
             <div class="line"></div>
 
@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <div class="col-md-5 col-lg-6">
+        <div class="col-md-5 col-lg-4">
           <div class="items-image__image">
             <Drop
               class="drop--1"
