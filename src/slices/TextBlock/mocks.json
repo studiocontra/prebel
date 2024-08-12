@@ -52,6 +52,11 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"informes_eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "seven",
+				"type": "Text"
 			}
 		},
 		"items": []

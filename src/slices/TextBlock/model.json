@@ -47,6 +47,13 @@
             "default_value": "left"
           }
         },
+        "informes_eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Informes eyebrow",
+            "placeholder": ""
+          }
+        },
         "button_label": {
           "type": "Text",
           "config": {

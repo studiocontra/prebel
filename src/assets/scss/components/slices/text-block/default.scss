@@ -21,4 +21,16 @@
       display: inline-block;
     }
   }
+
+
+  .informes {
+
+    .eyebrow {
+      margin-bottom: .8rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: .4rem
+  }
 }

@@ -4590,6 +4590,16 @@ export interface TextBlockSliceDefaultPrimary {
   text_align: prismic.SelectField<"left" | "center", "filled">;
 
   /**
+   * Informes eyebrow field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.default.primary.informes_eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  informes_eyebrow: prismic.KeyTextField;
+
+  /**
    * Button Label field in *TextBlock → Default → Primary*
    *
    * - **Field Type**: Text
