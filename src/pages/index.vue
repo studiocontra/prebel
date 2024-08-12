@@ -12,6 +12,7 @@
         locations_map: LocationsMap,
         page_hero: PageHero,
         services_slider: ServicesSlider,
+        video: Video,
       }"
     />
   </main>
@@ -38,6 +39,7 @@ import ImageText from "@/slices/ImageText";
 import LocationsMap from "@/slices/LocationsMap";
 import PageHero from "@/slices/PageHero";
 import ServicesSlider from "@/slices/ServicesSlider";
+import Video from '@/slices/Video'
 
 const { data } = await useAsyncData("[home]", () =>
   client.getSingle("home", { lang: iso })

@@ -503,6 +503,7 @@ export type FormDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<FormDocumentData>, "form", Lang>;
 
 type HomeDocumentDataSlicesSlice =
+  | VideoSlice
   | TextBlockSlice
   | TabsImageDataSlice
   | CardsSlice
