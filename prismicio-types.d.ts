@@ -2099,6 +2099,41 @@ export type CalloutTextContentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Cards → Square → Primary → Jobs*
+ */
+export interface CardsSliceSquarePrimaryJobsItem {
+  /**
+   * Categoria field in *Cards → Square → Primary → Jobs*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.square.primary.jobs[].categoria
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  categoria: prismic.SelectField<"PO" | "PA" | "EP" | "PE">;
+
+  /**
+   * Cargo field in *Cards → Square → Primary → Jobs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.square.primary.jobs[].cargo
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cargo: prismic.KeyTextField;
+
+  /**
+   * Description field in *Cards → Square → Primary → Jobs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.square.primary.jobs[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Cards → Default → Primary*
  */
 export interface CardsSliceDefaultPrimary {
@@ -2400,6 +2435,26 @@ export interface CardsSliceSquarePrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   eyebrow: prismic.KeyTextField;
+
+  /**
+   * Jobs field in *Cards → Square → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.square.primary.jobs[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  jobs: prismic.GroupField<Simplify<CardsSliceSquarePrimaryJobsItem>>;
+
+  /**
+   * Text not found jobs field in *Cards → Square → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.square.primary.text_not_found_jobs
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_not_found_jobs: prismic.KeyTextField;
 }
 
 /**
@@ -2447,14 +2502,14 @@ export interface CardsSliceSquareItem {
   button_label: prismic.KeyTextField;
 
   /**
-   * Button Link field in *Cards → Items*
+   * Categoria field in *Cards → Items*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: cards.items[].button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: cards.items[].categoria
+   * - **Documentation**: https://prismic.io/docs/field#select
    */
-  button_link: prismic.LinkField;
+  categoria: prismic.SelectField<"PO" | "PA" | "EP" | "PE">;
 }
 
 /**
@@ -5395,6 +5450,7 @@ declare module "@prismicio/client" {
       CardsSliceLargeImageItem,
       CardsSliceRoundedPrimary,
       CardsSliceRoundedItem,
+      CardsSliceSquarePrimaryJobsItem,
       CardsSliceSquarePrimary,
       CardsSliceSquareItem,
       CardsSliceVariation,

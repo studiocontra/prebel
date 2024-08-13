@@ -254,6 +254,45 @@
 				"__TYPE__": "FieldContent",
 				"value": "instance",
 				"type": "Text"
+			},
+			"jobs": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"categoria",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "PE",
+									"type": "Select"
+								}
+							],
+							[
+								"cargo",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "twice",
+									"type": "Text"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "report",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"text_not_found_jobs": {
+				"__TYPE__": "FieldContent",
+				"value": "leader",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -303,21 +342,19 @@
 						}
 					],
 					[
-						"button_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "http://google.com"
-							}
-						}
-					],
-					[
 						"description",
 						{
 							"__TYPE__": "FieldContent",
 							"value": "none",
 							"type": "Text"
+						}
+					],
+					[
+						"categoria",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "PO",
+							"type": "Select"
 						}
 					]
 				]

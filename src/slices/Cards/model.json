@@ -215,6 +215,49 @@
             "label": "Eyebrow",
             "placeholder": ""
           }
+        },
+        "jobs": {
+          "type": "Group",
+          "config": {
+            "label": "Jobs",
+            "repeat": true,
+            "fields": {
+              "categoria": {
+                "type": "Select",
+                "config": {
+                  "label": "Categoria",
+                  "placeholder": "",
+                  "options": [
+                    "PO",
+                    "PA",
+                    "EP",
+                    "PE"
+                  ]
+                }
+              },
+              "cargo": {
+                "type": "Text",
+                "config": {
+                  "label": "Cargo",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "text_not_found_jobs": {
+          "type": "Text",
+          "config": {
+            "label": "Text not found jobs",
+            "placeholder": ""
+          }
         }
       },
       "items": {
@@ -247,12 +290,17 @@
             "placeholder": ""
           }
         },
-        "button_link": {
-          "type": "Link",
+        "categoria": {
+          "type": "Select",
           "config": {
-            "label": "Button Link",
+            "label": "Categoria",
             "placeholder": "",
-            "select": null
+            "options": [
+              "PO",
+              "PA",
+              "EP",
+              "PE"
+            ]
           }
         }
       }

@@ -36,5 +36,7 @@ defineProps(
     v-if="slice.variation == 'square'"
     :id="slice.primary.data_id || slice.id"
     :headline="slice.primary.headline"
-    :cards="slice.items" />
+    :jobs="slice.primary.jobs"
+    :cards="slice.items"
+    :textNotFoundJobs="slice.primary.text_not_found_jobs" />
 </template>
