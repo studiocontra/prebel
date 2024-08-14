@@ -119,10 +119,10 @@
               <option value="default" :selected="selectedForm === 'default'">
                 {{ $t('modal select.contact') }}
               </option>
-              <option value="pqrs">PQRS</option>
               <option value="support">
                 {{ $t('modal select.support') }}
               </option>
+              <option value="pqrs">PQRS</option>
               <option value="services">
                 {{ $t('modal select.services') }}
               </option>
