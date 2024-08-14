@@ -1,6 +1,6 @@
 <template>
   <Header :key="localeProperties.code" />
-  <ContactModal />
+  <ContactModal :key="localeProperties.code" />
   <slot />
   <Footer :key="localeProperties.code" />
   <Loader />

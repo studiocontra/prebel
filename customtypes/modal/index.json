@@ -21,13 +21,6 @@
           "placeholder": ""
         }
       },
-      "description": {
-        "type": "Text",
-        "config": {
-          "label": "Description",
-          "placeholder": ""
-        }
-      },
       "description_rich": {
         "type": "StructuredText",
         "config": {

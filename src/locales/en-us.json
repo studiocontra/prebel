@@ -1,62 +1,67 @@
 {
-  "footer form": {
-    "name": {
-      "label": "Name",
-      "error": "This value is required."
-    },
-    "email": {
-      "label": "Email",
-      "error": "This value is required.",
-      "error-email": "This value should be a valid email."
-    },
-    "phone": {
-      "label": "Phone Number",
-      "error": "This value is required."
-    },
-    "message": {
-      "label": "¿What model are you interested in?",
-      "error": "This value is required."
-    },
-    "occupation": {
-      "label": "¿What model are you interested in?",
-      "error": "This value is required."
-    },
-    "attach_file": {
-      "label": "¿What model are you interested in?",
-      "error": "This value is required."
-    },
-    "submit": "Submit"
-  },
-  "work form": {
-    "name": {
-      "label": "Name",
-      "placeholder": "Enter your name",
-      "error": "This value is required."
-    },
-    "email": {
-      "label": "Email",
-      "placeholder": "Enter your Email",
-      "error": "This value is required.",
-      "error-email": "This value should be a valid email."
-    },
-    "location": {
-      "label": "Ubicación",
-      "placeholder": "Please choose one",
-      "error": "This value is required."
-    },
-    "area": {
-      "label": "Area",
-      "placeholder": "Please choose one",
-      "error": "This value is required."
-    },
-    "cv": {
-      "label": "Upload your CV",
-      "button label": "Select a file"
-    },
-    "submit": "Submit"
-  },
-  "tabs": {
-    "principal": "Servicios principales",
-    "complementarios": "Servicios complementarios"
-  }
+	"footer form": {
+		"name": {
+			"label": "Name",
+			"error": "This value is required."
+		},
+		"email": {
+			"label": "Email",
+			"error": "This value is required.",
+			"error-email": "This value should be a valid email."
+		},
+		"phone": {
+			"label": "Phone Number",
+			"error": "This value is required."
+		},
+		"message": {
+			"label": "¿What model are you interested in?",
+			"error": "This value is required."
+		},
+		"occupation": {
+			"label": "¿What model are you interested in?",
+			"error": "This value is required."
+		},
+		"attach_file": {
+			"label": "¿What model are you interested in?",
+			"error": "This value is required."
+		},
+		"submit": "Submit"
+	},
+	"work form": {
+		"name": {
+			"label": "Name",
+			"placeholder": "Enter your name",
+			"error": "This value is required."
+		},
+		"email": {
+			"label": "Email",
+			"placeholder": "Enter your Email",
+			"error": "This value is required.",
+			"error-email": "This value should be a valid email."
+		},
+		"location": {
+			"label": "Ubicación",
+			"placeholder": "Please choose one",
+			"error": "This value is required."
+		},
+		"area": {
+			"label": "Area",
+			"placeholder": "Please choose one",
+			"error": "This value is required."
+		},
+		"cv": {
+			"label": "Upload your CV",
+			"button label": "Select a file"
+		},
+		"submit": "Submit"
+	},
+	"tabs": {
+		"principal": "Servicios principales",
+		"complementarios": "Servicios complementarios"
+	},
+	"modal select": {
+		"contact": "Contact",
+    "support": "Product complaint",
+    "services": "Distribution"
+	}
 }

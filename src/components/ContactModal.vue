@@ -116,10 +116,16 @@
             </svg>
 
             <select v-model="selectedForm" value="default" class="modal-select btn btn--dark">
-              <option value="default" :selected="selectedForm === 'default'">Contact</option>
+              <option value="default" :selected="selectedForm === 'default'">
+                {{ $t('modal select.contact') }}
+              </option>
               <option value="pqrs">PQRS</option>
-              <option value="support">Support</option>
-              <option value="services">Services</option>
+              <option value="support">
+                {{ $t('modal select.support') }}
+              </option>
+              <option value="services">
+                {{ $t('modal select.services') }}
+              </option>
             </select>
           </div>
 

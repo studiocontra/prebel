@@ -1151,17 +1151,6 @@ interface ModalDocumentData {
   headline: prismic.KeyTextField;
 
   /**
-   * Description field in *Modal*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: modal.description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
-
-  /**
    * Description rich field in *Modal*
    *
    * - **Field Type**: Rich Text

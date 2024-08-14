@@ -50,5 +50,10 @@
   "tabs": {
     "principal": "Servicios principales",
     "complementarios": "Servicios complementarios"
-  }
+  },
+  "modal select": {
+		"contact": "Contacto",
+    "support": "Reclamo productos",
+    "services": "Distribución"
+	}
 }
