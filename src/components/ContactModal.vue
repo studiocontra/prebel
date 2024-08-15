@@ -307,21 +307,18 @@ function submitForm(e) {
   let data = {
     name: name.value,
     email: email.value,
+    phone: phone.value,
     message: message.value
   };
   axios
-    .post("https://getform.io/f/rbeqwkxb", data, {
-      headers: {
-        Accept: "application/x-www-form-urlencoded",
-      }
-    })
+    .post("https://formbold.com/s/9EGpl", data)
     .then(
       response => {
         if (response.status === 200) {
           messageSuccess.value = 'Se ha enviado tu información correctamente'
           e.target.reset()
         } else {
-          console.error('No se pudo enviar tu formulario')
+          messageSuccess.value = 'No se envió tu información correctamente'
         }
       },
     );
@@ -350,7 +347,6 @@ function handleSubmitFile(e) {
 function pqrsSubmitForm(e) {
   e.preventDefault();
   let data = {
-    access_key: '68a397df-297d-4bf1-9fc6-51be330cc879',
     name: pqrsName.value,
     email: pqrsEmail.value,
     phone: pqrsPhone.value,
@@ -369,7 +365,7 @@ function pqrsSubmitForm(e) {
   };
 
   axios
-    .post("https://getform.io/f/rbeqwkxb", data, {
+    .post("https://formbold.com/s/9EGpl", data, {
       headers: {
         'content-type': 'multipart/form-data'
       }
@@ -404,11 +400,7 @@ function servicesSubmitForm(e) {
   };
 
   axios
-    .post("https://getform.io/f/rbeqwkxb", data, {
-      headers: {
-        'content-type': 'multipart/form-data'
-      }
-    })
+    .post("https://formbold.com/s/9EGpl", data)
     .then(
       response => {
         console.log(response)
@@ -439,11 +431,7 @@ function supportSubmitForm(e) {
   };
 
   axios
-    .post("https://getform.io/f/rbeqwkxb", data, {
-      headers: {
-        'content-type': 'multipart/form-data'
-      }
-    })
+    .post("https://formbold.com/s/9EGpl", data)
     .then(
       response => {
         console.log(response)
