@@ -1,5 +1,5 @@
 <template>
-  <div class="hero hero--etics">
+  <div class="hero hero--text-only" :class="{'hero--small': size === 'small'}">
     <div class="container">
       <div class="row justify-center">
         <div class="col-lg-10">
@@ -20,6 +20,7 @@
 
 <script setup>
 const props = defineProps({
+  size: String,
   headline: String,
   content: Object,
 });
@@ -27,5 +28,5 @@ const props = defineProps({
 
 <style lang="scss" scoped>
   @import "@scss/components/slices/hero/base";
-  @import "@scss/components/etics/hero";
+  @import "@scss/components/slices/hero/text-only";
 </style>

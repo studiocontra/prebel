@@ -1,4 +1,4 @@
-.hero--etics {
+.hero--text-only {
   text-align: center;
   background: linear-gradient(to bottom, $black 10%, $gray 65%, $white 100%);
 
@@ -16,4 +16,8 @@
       margin-top: 0.5em;
     }
   }
+}
+
+.hero--small {
+  min-height: 0;
 }

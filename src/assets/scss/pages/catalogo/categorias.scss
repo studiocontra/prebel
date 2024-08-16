@@ -1,0 +1,71 @@
+.hero {
+  position: relative;
+  min-height: 80lvh;
+  padding: 120px 0 100px;
+  color: $white;
+  background: linear-gradient(180deg, #4D5461 10.42%, #8C96A1 43.23%, #EDEBE3 100%);
+
+  @include m768 {
+    padding: 15vh 0 100px;
+  }
+  @include m992 {
+    padding: 25vh 0 100px;
+  }
+}
+
+
+.hero__image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+
+  @include m768 {
+    aspect-ratio: 16 / 9;
+  }
+
+  img {
+    border-radius: 18px;
+    @include fullAbs();
+    @include fit();
+  }
+}
+
+.wrap-products {
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 4.5em;
+  }
+
+  .card__image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.8em;
+    border-radius: 18px;
+    aspect-ratio: 1 / 1.2;
+
+    img {
+      @include fullAbs();
+      @include fit();
+    }
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+    align-items: center;
+
+    .title {
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .btn {
+      display: inline-flex;
+      width: auto;
+      margin-top: auto;
+    }
+  }
+}
