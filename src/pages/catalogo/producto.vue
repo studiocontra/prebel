@@ -1,8 +1,8 @@
 <template>
   <div class="wrap-product" v-if="productData">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row justify-center">
+        <div class="col-md-6 col-xl-5">
           <div class="product__image">
             <Swiper
               class="swiper"
@@ -14,7 +14,7 @@
             </Swiper>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-xl-4">
           <div class="product__breadcrumb">
             <NuxtLinkLocale
               to="/catalogo"
