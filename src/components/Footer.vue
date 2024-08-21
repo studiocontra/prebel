@@ -116,7 +116,7 @@ const { localeProperties } = useI18n();
 const { value: { language, code } } = localeProperties;
 
 const { data } = await useAsyncData("[footer]", () =>
-  client.getSingle("footer", {lang: iso})
+  client.getSingle("footer", { lang: language })
 );
 
 const footerData = data.value.data;
