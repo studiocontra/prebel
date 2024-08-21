@@ -288,10 +288,10 @@ const selectedForm = ref('default')
 
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 const { data } = await useAsyncData("[modal]", () =>
-  client.getSingle("modal", { lang: iso })
+  client.getSingle("modal", { lang: language })
 );
 
 const modalData = data.value.data;

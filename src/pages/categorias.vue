@@ -13,7 +13,7 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const {
-  value: { iso, code },
+  value: { language, code },
 } = localeProperties;
 
 import { useHeaderStore } from "@/stores/header";
@@ -23,7 +23,7 @@ const headerStore = useHeaderStore();
 import TextImagesShape from "@/slices/TextImagesShape";
 
 const { data } = await useAsyncData("[categorias]", () =>
-  client.getSingle("categorias", { lang: iso })
+  client.getSingle("categorias", { lang: language })
 );
 
 const categoriasData = data.value.data;

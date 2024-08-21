@@ -2,9 +2,9 @@
   background: linear-gradient(to bottom, $green 10%, $green_light 75%, $white 100%);
 
   :deep(.drop) {
+    z-index: 2;
     top: 45%;
     left: 65%;
-    z-index: 2;
   }
 
   .title {
@@ -47,8 +47,8 @@
 }
 
 .hero__image--pill {
-  aspect-ratio: 1 / 1.65;
   max-width: 230px;
+  aspect-ratio: 1 / 1.65;
 
   img {
     border-radius: 50% / 28%;

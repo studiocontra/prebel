@@ -142,10 +142,10 @@ import { required, email } from '@vuelidate/validators'
 
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 const { data } = await useAsyncData("[form]", () =>
-  client.getSingle("form", { lang: iso })
+  client.getSingle("form", { lang: language })
 );
 
 const formData = data.value.data

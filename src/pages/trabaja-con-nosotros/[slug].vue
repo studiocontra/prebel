@@ -14,7 +14,7 @@
 const { client } = usePrismic();
 const route = useRoute();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 // Import your slices
 import PageHero from '@/slices/PageHero'
@@ -22,7 +22,7 @@ import WorkForm from '@/slices/WorkForm'
 
 const { data } = await useAsyncData(
   `[single_work-uid-${route.params.uid}]`,
-  () => client.getByUID("single_work", route.params.slug, {lang: iso}),
+  () => client.getByUID("single_work", route.params.slug, {lang: language}),
 );
 
 const singleWorkData = data.value.data;

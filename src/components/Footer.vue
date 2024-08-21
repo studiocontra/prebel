@@ -113,7 +113,7 @@
 <script setup>
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 const { data } = await useAsyncData("[footer]", () =>
   client.getSingle("footer", {lang: iso})

@@ -13,7 +13,7 @@
 <script setup>
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 import { useHeaderStore } from "@/stores/header";
 
@@ -25,7 +25,7 @@ import PaymentMethods from '@/slices/PaymentMethods'
 import TextBlock from '@/slices/TextBlock'
 
 const { data } = await useAsyncData("[pagos]", () =>
-  client.getSingle("payment_methods", { lang: iso })
+  client.getSingle("payment_methods", { lang: language })
 );
 
 const paymentMethodsData = data.value.data;

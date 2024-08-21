@@ -22,7 +22,7 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const {
-  value: { iso },
+  value: { language, code },
 } = localeProperties;
 
 import { useHeaderStore } from "@/stores/header";
@@ -42,8 +42,14 @@ import ServicesSlider from "@/slices/ServicesSlider";
 import Video from '@/slices/Video'
 
 const { data } = await useAsyncData("[home]", () =>
-  client.getSingle("home", { lang: iso })
+  client.getSingle("home", {
+    lang: language,
+    pageSize: 5
+   })
 );
+
+console.log('iso', language);
+
 
 const homeData = data.value?.data;
 onMounted(() =>

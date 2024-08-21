@@ -4,9 +4,9 @@
 
 .card {
   margin-bottom: 4.5em;
+  padding: 50px 48px;
   border-radius: 18px;
   background-color: $beige;
-  padding: 50px 48px;
 
   @include m768 {
     padding: 10% 15%;
@@ -15,8 +15,8 @@
 
 .card__image {
   position: relative;
-  margin-bottom: 1.8em;
   max-width: 150px;
+  margin-bottom: 1.8em;
 }
 
 .card__content {
@@ -36,17 +36,17 @@
   }
 
   .btn {
-    margin-top: auto;
     display: inline-flex;
     width: auto;
+    margin-top: auto;
   }
 }
 
 :deep(.swiper-pagination) {
   .swiper-pagination-bullet {
     --swiper-pagination-bullet-size: 10px;
-    background: $black;
     opacity: 0.4;
+    background: $black;
   }
 
   .swiper-pagination-bullet-active {

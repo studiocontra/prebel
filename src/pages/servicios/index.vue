@@ -16,7 +16,7 @@
 <script setup>
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 // Import your slices
 import Accordion from '@/slices/Accordion'
@@ -27,7 +27,7 @@ import PageHero from '@/slices/PageHero'
 import Testimonials from '@/slices/Testimonials'
 
 const { data } = await useAsyncData("[services]", () =>
-  client.getSingle("services", {lang: iso})
+  client.getSingle("services", {lang: language})
 );
 
 const servicesData = data.value.data;

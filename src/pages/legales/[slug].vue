@@ -17,12 +17,12 @@ import TextBlock from '@/slices/TextBlock'
 const { client } = usePrismic();
 const route = useRoute();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 console.log(route.params.slug);
 
 const { data } = useAsyncData(`[legales-uid-${route.params.slug}]`, () =>
-  client.getByUID("legales", route.params.slug, {lang: iso}),
+  client.getByUID("legales", route.params.slug, {lang: language}),
 );
 
 const pageData = data.value.data;

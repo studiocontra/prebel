@@ -10,14 +10,14 @@
 .hero-content {
   display: flex;
   flex-direction: column;
+  color: $white;
   justify-content: center;
   gap: 2rem;
-  color: $white;
 
   @include m992 {
     flex-direction: row;
-    align-items: center;
     padding: 7rem 0 2.5rem 0;
+    align-items: center;
   }
 
   h1 {
@@ -34,15 +34,15 @@
     }
 
     :deep(.drop:first-child) {
-      right: -4rem;
-      top: .5rem;
       z-index: 1;
+      top: .5rem;
+      right: -4rem;
     }
 
     :deep(.drop:last-child) {
-      left: 1rem;
-      bottom: -4.5rem;
       z-index: 1;
+      bottom: -4.5rem;
+      left: 1rem;
     }
 
     @include m576 {
@@ -51,8 +51,8 @@
       }
 
       :deep(.drop:first-child) {
-        right: -8rem;
         z-index: 1;
+        right: -8rem;
       }
     }
 
@@ -64,15 +64,15 @@
       }
 
       :deep(.drop:first-child) {
-        right: -4rem;
-        top: 2rem;
         z-index: 0;
+        top: 2rem;
+        right: -4rem;
       }
 
       :deep(.drop:last-child) {
-        left: 0rem;
-        bottom: -5rem;
         z-index: 2;
+        bottom: -5rem;
+        left: 0rem;
       }
     }
 
@@ -83,9 +83,10 @@
 
     img {
       position: relative;
-      border-radius: .6rem;
       z-index: 1;
       width: 100%;
+      max-width: 600px;
+      border-radius: .6rem;
 
       @include m992 {
         width: 400px;
@@ -98,8 +99,6 @@
       @include m1200 {
         width: 100%;
       }
-
-      max-width: 600px;
     }
   }
 }

@@ -14,7 +14,7 @@
 const { client } = usePrismic();
 const route = useRoute();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 // Import your slices
 import Logosgrid from '@/slices/LogosGrid'

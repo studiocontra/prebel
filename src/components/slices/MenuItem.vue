@@ -14,7 +14,6 @@
             class="menu-item menu-item--sub">
             <NuxtLinkLocale
               :to="subItem.link.uid">
-              {{ console.log(subItem) }}
               {{ subItem.label }}
             </NuxtLinkLocale>
           </li>

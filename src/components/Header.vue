@@ -43,7 +43,7 @@
 <script setup>
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
-const { value: { iso, code } } = localeProperties;
+const { value: { language, code } } = localeProperties;
 
 import { ref } from "vue";
 import { useHeaderStore } from "@/stores/header";
@@ -55,7 +55,7 @@ const mainHeader = ref(null);
  * Get menu items
  */
 const { data } = await useAsyncData("[mainNav]", () =>
-  client.getSingle("main_nav", { lang: iso })
+  client.getSingle("main_nav", { lang: language })
 );
 
 const headerData = data.value.data;

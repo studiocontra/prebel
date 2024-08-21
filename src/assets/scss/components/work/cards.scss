@@ -13,8 +13,8 @@
 }
 
 .work-cards__slider {
-  padding-left: calc(24px - 1em);
   padding-bottom: 4em;
+  padding-left: calc(24px - 1em);
 
   @include m768 {
     padding-left: calc(32px - 1em);
@@ -34,10 +34,10 @@
 .card {
   display: flex;
   flex-direction: column;
-  text-align: center;
   height: 100%;
-  justify-content: flex-end;
   padding: 0 1em;
+  text-align: center;
+  justify-content: flex-end;
 }
 
 .card__headline {

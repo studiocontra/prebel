@@ -16,10 +16,10 @@
 
   .text {
     :deep(strong) {
-      font-size: 0.9em;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: $black;
+      font-size: 0.9em;
     }
   }
 
