@@ -22,7 +22,7 @@
 const { client } = usePrismic();
 const { localeProperties } = useI18n();
 const {
-  value: { iso, code },
+  value: { iso },
 } = localeProperties;
 
 import { useHeaderStore } from "@/stores/header";
